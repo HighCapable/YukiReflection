@@ -49,6 +49,7 @@ With `Kotlin` elegant `lambda` and `YukiReflection`, you can make your reflectio
 ```kotlin
 Class.forName("android.os.SystemProperties")
     .getDeclaredMethod("get", String::class.java, String::class.java)
+    .apply { isAccessible = true }
     .invoke(null, "ro.system.build.fingerprint", "none")
 ```
 
