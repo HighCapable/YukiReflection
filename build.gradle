@@ -1,0 +1,45 @@
+//file:noinspection unused
+plugins {
+    id 'com.android.application' version '7.4.0' apply false
+    id 'com.android.library' version '7.4.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.22' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.7.22' apply false
+}
+
+ext {
+    devId = "0"
+    devUser = "fankesyooni"
+    userEmail = "qzmmcn@163.com"
+    groupId = "com.highcapable.yukireflection"
+    apiVersion = "1.0.0"
+    repoName = "YukiReflection"
+    repoDescription = "An efficient Reflection API for the Android platform built in Kotlin."
+    licenceName = "MIT License"
+    licenceUrl = "https://github.com/fankes/YukiReflection/blob/master/LICENSE"
+    website = "https://github.com/fankes/YukiReflection"
+    githubConnection = "scm:git:git://github.com/path/to/repo.git"
+    githubDeveloperConnection = "scm:git:ssh://github.com/path/to/repo.git"
+    githubUrl = "https://github.com/path/to/repo"
+    ossName = "OSSRH"
+    ossUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+}
+
+/**
+ * 获取授权文件内容 - 用于 Maven 的提交
+ *
+ * 若编译失败请将路径替换为自己的或置空
+ * @param name
+ * @return [String]
+ */
+static String getFileContent(String name) {
+    String result = ""
+    try {
+        FileReader reader = new FileReader("/Users/fankes/Project/Android/Library/YukiReflection/.gradle/" + name)
+        BufferedReader buff = new BufferedReader(reader)
+        result = buff.readLine()
+        buff.close()
+        reader.close()
+    } catch (Throwable ignored) {
+    }
+    return result
+}
