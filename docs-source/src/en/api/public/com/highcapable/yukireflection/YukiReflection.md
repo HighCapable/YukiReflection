@@ -18,7 +18,7 @@ object YukiReflection
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -32,7 +32,7 @@ const val API_VERSION_NAME: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -46,7 +46,7 @@ const val API_VERSION_CODE: Int
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -60,7 +60,7 @@ object Configs
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -74,7 +74,7 @@ var debugTag: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -92,7 +92,7 @@ var isDebug: Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -110,7 +110,7 @@ var isAllowPrintingLogs: Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -130,7 +130,7 @@ var isEnableMemberCache: Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -154,7 +154,7 @@ inline fun configs(initiate: Configs.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

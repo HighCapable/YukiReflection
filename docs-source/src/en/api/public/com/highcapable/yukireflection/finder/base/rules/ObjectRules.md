@@ -18,7 +18,7 @@ class ObjectRules private constructor(private val instance: Any)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

@@ -18,7 +18,7 @@ class MemberRulesResult internal constructor(private val rulesData: MemberRulesD
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -32,7 +32,7 @@ fun none(): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -46,7 +46,7 @@ fun count(num: Int): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -60,7 +60,7 @@ fun count(numRange: IntRange): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -74,7 +74,7 @@ fun count(conditions: CountConditions): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

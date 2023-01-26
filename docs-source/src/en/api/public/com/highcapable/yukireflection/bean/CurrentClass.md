@@ -18,7 +18,7 @@ class CurrentClass internal constructor(internal val classSet: Class<*>, interna
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -32,7 +32,7 @@ val name: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -46,7 +46,7 @@ val simpleName: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -60,7 +60,7 @@ fun generic(): GenericClass?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -76,7 +76,7 @@ inline fun generic(initiate: GenericClass.() -> Unit): GenericClass?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -92,7 +92,7 @@ fun superClass(): SuperClass
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -106,7 +106,7 @@ inline fun field(initiate: FieldConditions): FieldFinder.Result.Instance
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -120,7 +120,7 @@ inline fun method(initiate: MethodConditions): MethodFinder.Result.Instance
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -134,7 +134,7 @@ inner class SuperClass internal constructor(internal val superClassSet: Class<*>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -148,7 +148,7 @@ val name: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -162,7 +162,7 @@ val simpleName: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -176,7 +176,7 @@ fun generic(): GenericClass?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -192,7 +192,7 @@ inline fun generic(initiate: GenericClass.() -> Unit): GenericClass?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -208,7 +208,7 @@ inline fun field(initiate: FieldConditions): FieldFinder.Result.Instance
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -222,7 +222,7 @@ inline fun method(initiate: MethodConditions): MethodFinder.Result.Instance
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

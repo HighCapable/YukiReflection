@@ -18,7 +18,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>) : Membe
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -34,7 +34,7 @@ var name: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -54,7 +54,7 @@ var paramCount: Int
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -72,7 +72,7 @@ var returnType: Any?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -86,7 +86,7 @@ fun modifiers(conditions: ModifierConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -108,7 +108,7 @@ fun emptyParam(): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -122,7 +122,7 @@ fun param(vararg paramType: Any): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -150,7 +150,7 @@ fun param(conditions: ObjectsConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -174,7 +174,7 @@ fun order(): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -188,7 +188,7 @@ fun name(value: String): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -210,7 +210,7 @@ fun name(conditions: NameConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -232,7 +232,7 @@ fun paramCount(num: Int): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -256,7 +256,7 @@ fun paramCount(numRange: IntRange): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -278,7 +278,7 @@ fun paramCount(conditions: CountConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -300,7 +300,7 @@ fun returnType(value: Any): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -322,7 +322,7 @@ fun returnType(conditions: ObjectConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -344,7 +344,7 @@ fun superClass(isOnlySuperClass: Boolean)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -364,7 +364,7 @@ inner class RemedyPlan internal constructor()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -378,7 +378,7 @@ inline fun method(initiate: MethodConditions): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -394,7 +394,7 @@ inner class Result internal constructor()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -408,7 +408,7 @@ fun onFind(initiate: HashSet<Method>.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -436,7 +436,7 @@ inner class Result internal constructor(internal val isNoSuch: Boolean, private 
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -450,7 +450,7 @@ inline fun result(initiate: Result.() -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -481,7 +481,7 @@ fun get(instance: Any?): Instance
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -525,7 +525,7 @@ fun all(instance: Any?): ArrayList<Instance>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -555,7 +555,7 @@ fun give(): Method?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -573,7 +573,7 @@ fun giveAll(): HashSet<Method>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -591,7 +591,7 @@ fun wait(instance: Any?, initiate: Instance.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -615,7 +615,7 @@ fun waitAll(instance: Any?, initiate: ArrayList<Instance>.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -639,7 +639,7 @@ inline fun remedys(initiate: RemedyPlan.() -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -674,7 +674,7 @@ inline fun onNoSuchMethod(result: (Throwable) -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -690,7 +690,7 @@ fun ignored(): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -710,7 +710,7 @@ inner class Instance internal constructor(private val instance: Any?, private va
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -724,7 +724,7 @@ fun call(vararg args: Any?): Any?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -738,7 +738,7 @@ fun <T> invoke(vararg args: Any?): T?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -752,7 +752,7 @@ fun byte(vararg args: Any?): Byte?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -766,7 +766,7 @@ fun int(vararg args: Any?): Int
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -780,7 +780,7 @@ fun long(vararg args: Any?): Long
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -794,7 +794,7 @@ fun short(vararg args: Any?): Short
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -808,7 +808,7 @@ fun double(vararg args: Any?): Double
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -822,7 +822,7 @@ fun float(vararg args: Any?): Float
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -836,7 +836,7 @@ fun string(vararg args: Any?): String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -850,7 +850,7 @@ fun char(vararg args: Any?): Char
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -864,7 +864,7 @@ fun boolean(vararg args: Any?): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -878,7 +878,7 @@ inline fun <reified T> array(vararg args: Any?): Array<T>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -892,7 +892,7 @@ inline fun <reified T> list(vararg args: Any?): List<T>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

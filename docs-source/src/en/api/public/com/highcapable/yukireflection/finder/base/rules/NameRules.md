@@ -18,7 +18,7 @@ class NameRules private constructor()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -34,7 +34,7 @@ fun String.isSynthetic(index: Int): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -48,7 +48,7 @@ fun String.isOnlySymbols(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -62,7 +62,7 @@ fun String.isOnlyLetters(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -76,7 +76,7 @@ fun String.isOnlyNumbers(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -90,7 +90,7 @@ fun String.isOnlyLettersNumbers(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -104,7 +104,7 @@ fun String.isOnlyLowercase(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -120,7 +120,7 @@ fun String.isOnlyUppercase(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

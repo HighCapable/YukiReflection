@@ -18,7 +18,7 @@ class GenericClass internal constructor(private val type: ParameterizedType)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -36,7 +36,7 @@ inline fun <reified T> argument(index: Int): Class<T>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

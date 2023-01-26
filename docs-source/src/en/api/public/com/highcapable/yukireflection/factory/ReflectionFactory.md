@@ -14,7 +14,7 @@ You can use the **Chrome Translation Plugin** to translate entire pages for refe
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -28,7 +28,7 @@ fun ClassLoader.listOfClasses(): List<String>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -50,7 +50,7 @@ inline fun ClassLoader.searchClass(context: Context?, name: String, async: Boole
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -76,7 +76,7 @@ val Class<*>.hasExtends: Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -90,7 +90,7 @@ infix fun Class<*>?.extends(other: Class<*>?): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -124,7 +124,7 @@ infix fun Class<*>?.notExtends(other: Class<*>?): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -156,7 +156,7 @@ infix fun Class<*>?.implements(other: Class<*>?): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -188,7 +188,7 @@ infix fun Class<*>?.notImplements(other: Class<*>?): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -220,7 +220,7 @@ fun Class<*>.toJavaPrimitiveType(): Class<*>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -253,7 +253,7 @@ inline fun <reified T> String.toClass(loader: ClassLoader?, initialize: Boolean)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -325,7 +325,7 @@ inline fun <reified T> String.toClassOrNull(loader: ClassLoader?, initialize: Bo
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -345,7 +345,7 @@ inline fun <reified T> classOf(loader: ClassLoader?, initialize: Boolean): Class
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -386,7 +386,7 @@ fun String.hasClass(loader: ClassLoader?): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -423,7 +423,7 @@ inline fun Class<*>.hasField(initiate: FieldConditions): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -437,7 +437,7 @@ inline fun Class<*>.hasMethod(initiate: MethodConditions): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -451,7 +451,7 @@ inline fun Class<*>.hasConstructor(initiate: ConstructorConditions): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -465,7 +465,7 @@ inline fun Member.hasModifiers(conditions: ModifierConditions): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -479,7 +479,7 @@ inline fun Class<*>.hasModifiers(conditions: ModifierConditions): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -493,7 +493,7 @@ inline fun Class<*>.field(initiate: FieldConditions): FieldFinder.Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -507,7 +507,7 @@ inline fun Class<*>.method(initiate: MethodConditions): MethodFinder.Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -521,7 +521,7 @@ inline fun Class<*>.constructor(initiate: ConstructorConditions): ConstructorFin
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -535,7 +535,7 @@ fun Class<*>.generic(): GenericClass?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -551,7 +551,7 @@ inline fun Class<*>.generic(initiate: GenericClass.() -> Unit): GenericClass?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -571,7 +571,7 @@ inline fun <reified T : Any> T.current(ignored: Boolean, initiate: CurrentClass.
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -589,7 +589,7 @@ inline fun <T> Class<*>.buildOf(vararg args: Any?, initiate: ConstructorConditio
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -603,7 +603,7 @@ inline fun Class<*>.allMethods(isAccessible: Boolean, result: (index: Int, metho
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -617,7 +617,7 @@ inline fun Class<*>.allConstructors(isAccessible: Boolean, result: (index: Int, 
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -631,7 +631,7 @@ inline fun Class<*>.allFields(isAccessible: Boolean, result: (index: Int, field:
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

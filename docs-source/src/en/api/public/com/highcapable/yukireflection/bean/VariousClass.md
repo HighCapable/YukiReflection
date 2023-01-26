@@ -18,7 +18,7 @@ class VariousClass(private vararg val name: String)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -32,7 +32,7 @@ fun get(loader: ClassLoader? = null, initialize: Boolean): Class<*>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -48,7 +48,7 @@ fun getOrNull(loader: ClassLoader? = null, initialize: Boolean): Class<*>?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

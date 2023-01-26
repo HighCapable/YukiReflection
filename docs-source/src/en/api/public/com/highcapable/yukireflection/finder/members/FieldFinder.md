@@ -18,7 +18,7 @@ class FieldFinder internal constructor(override val classSet: Class<*>?) : Membe
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -34,7 +34,7 @@ var name: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -54,7 +54,7 @@ var type: Any?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -70,7 +70,7 @@ fun modifiers(conditions: ModifierConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -92,7 +92,7 @@ fun order(): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -106,7 +106,7 @@ fun name(value: String): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -128,7 +128,7 @@ fun name(conditions: NameConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -150,7 +150,7 @@ fun type(value: Any): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -172,7 +172,7 @@ fun type(conditions: ObjectConditions): IndexTypeCondition
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -194,7 +194,7 @@ fun superClass(isOnlySuperClass: Boolean)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -214,7 +214,7 @@ inner class RemedyPlan internal constructor()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -228,7 +228,7 @@ inline fun field(initiate: FieldConditions): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -244,7 +244,7 @@ inner class Result internal constructor()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -258,7 +258,7 @@ fun onFind(initiate: HashSet<Field>.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -286,7 +286,7 @@ inner class Result internal constructor(internal val isNoSuch: Boolean, private 
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -300,7 +300,7 @@ inline fun result(initiate: Result.() -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -335,7 +335,7 @@ fun get(instance: Any?): Instance
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -373,7 +373,7 @@ fun all(instance: Any?): ArrayList<Instance>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -403,7 +403,7 @@ fun give(): Field?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -421,7 +421,7 @@ fun giveAll(): HashSet<Field>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -439,7 +439,7 @@ fun wait(instance: Any?, initiate: Instance.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -463,7 +463,7 @@ fun waitAll(instance: Any?, initiate: ArrayList<Instance>.() -> Unit)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -487,7 +487,7 @@ inline fun remedys(initiate: RemedyPlan.() -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -522,7 +522,7 @@ fun onNoSuchField(result: (Throwable) -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -536,7 +536,7 @@ fun ignored(): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -556,7 +556,7 @@ inner class Instance internal constructor(private val instance: Any?, private va
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -574,7 +574,7 @@ inline fun current(ignored: Boolean, initiate: CurrentClass.() -> Unit): Any?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -588,7 +588,7 @@ fun <T> cast(): T?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -602,7 +602,7 @@ fun byte(): Byte?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -616,7 +616,7 @@ fun int(): Int
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -630,7 +630,7 @@ fun long(): Long
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -643,7 +643,7 @@ fun short(): Short
 ```
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -657,7 +657,7 @@ fun double(): Double
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -670,7 +670,7 @@ fun float(): Float
 ```
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -684,7 +684,7 @@ fun string(): String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -698,7 +698,7 @@ fun char(): Char
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -712,7 +712,7 @@ fun boolean(): Boolean
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -725,7 +725,7 @@ fun any(): Any?
 ```
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -739,7 +739,7 @@ inline fun <reified T> array(): Array<T>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -753,7 +753,7 @@ inline fun <reified T> list(): List<T>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -767,7 +767,7 @@ fun set(any: Any?)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -780,7 +780,7 @@ fun setTrue()
 ```
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -800,7 +800,7 @@ fun setFalse()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -820,7 +820,7 @@ fun setNull()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

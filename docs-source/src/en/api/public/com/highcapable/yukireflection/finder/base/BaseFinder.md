@@ -18,7 +18,7 @@ abstract class BaseFinder
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -32,7 +32,7 @@ inner class IndexTypeCondition internal constructor(private val type: IndexConfi
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -46,7 +46,7 @@ fun index(num: Int)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -64,7 +64,7 @@ fun index(): IndexTypeConditionSort
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -78,7 +78,7 @@ inner class IndexTypeConditionSort internal constructor()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -92,7 +92,7 @@ fun first()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -106,7 +106,7 @@ fun last()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -120,7 +120,7 @@ fun reverse(num: Int)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

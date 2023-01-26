@@ -23,7 +23,7 @@ class DexClassFinder internal constructor(
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -41,7 +41,7 @@ class DexClassFinder internal constructor(
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 ### clearCache <span class="symbol">- method</span>
 
@@ -51,7 +51,7 @@ fun clearCache(context: Context, versionName: String?, versionCode: Long?)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -67,7 +67,7 @@ var fullName: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -85,7 +85,7 @@ var simpleName: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -105,7 +105,7 @@ var singleName: String
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -125,7 +125,7 @@ fun from(vararg name: String): FromPackageRules
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -153,7 +153,7 @@ fun modifiers(conditions: ModifierConditions)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -169,7 +169,7 @@ fun fullName(value: String): ClassNameRules
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -187,7 +187,7 @@ fun simpleName(value: String): ClassNameRules
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -207,7 +207,7 @@ fun singleName(value: String): ClassNameRules
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -227,7 +227,7 @@ fun fullName(conditions: NameConditions)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -243,7 +243,7 @@ fun simpleName(conditions: NameConditions)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -259,7 +259,7 @@ fun singleName(conditions: NameConditions)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -275,7 +275,7 @@ inline fun <reified T> extends()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -289,7 +289,7 @@ fun extends(vararg name: String)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -305,7 +305,7 @@ inline fun <reified T> implements()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -319,7 +319,7 @@ fun implements(vararg name: String)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -335,7 +335,7 @@ fun anonymous()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -353,7 +353,7 @@ fun noExtends()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -375,7 +375,7 @@ fun noImplements()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -395,7 +395,7 @@ fun noSuper()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -417,7 +417,7 @@ inline fun <reified T> enclosing()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -431,7 +431,7 @@ fun enclosing(vararg name: String)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -447,7 +447,7 @@ inner class FromPackageRules internal constructor(private val packages: ArrayLis
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -461,7 +461,7 @@ fun absolute()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -487,7 +487,7 @@ inner class ClassNameRules internal constructor(private val name: ClassRulesData
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -501,7 +501,7 @@ fun optional()
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -527,7 +527,7 @@ inline fun member(initiate: MemberRules.() -> Unit): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -541,7 +541,7 @@ inline fun field(initiate: FieldRules.() -> Unit): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -555,7 +555,7 @@ inline fun method(initiate: MethodRules.() -> Unit): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -569,7 +569,7 @@ inline fun constructor(initiate: ConstructorRules.() -> Unit): MemberRulesResult
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -583,7 +583,7 @@ inner class Result internal constructor(internal var isNotFound: Boolean, intern
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -597,7 +597,7 @@ inline fun result(initiate: Result.() -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -611,7 +611,7 @@ fun get(): Class<*>?
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -631,7 +631,7 @@ fun all(): HashSet<Class<*>>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -651,7 +651,7 @@ fun all(result: (Class<*>) -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -671,7 +671,7 @@ fun wait(result: (Class<*>?) -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -691,7 +691,7 @@ fun waitAll(result: (HashSet<Class<*>>) -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -711,7 +711,7 @@ fun onNoClassDefFoundError(result: (Throwable) -> Unit): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -725,7 +725,7 @@ fun ignored(): Result
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

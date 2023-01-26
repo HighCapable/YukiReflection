@@ -18,7 +18,7 @@ class MemberRules internal constructor(internal val rulesData: MemberRulesData) 
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -32,7 +32,7 @@ fun modifiers(conditions: ModifierConditions)
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 

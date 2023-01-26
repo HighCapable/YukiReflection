@@ -14,7 +14,7 @@ You can use the **Chrome Translation Plugin** to translate entire pages for refe
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
@@ -28,7 +28,7 @@ val VagueType: Class<*>
 
 **Change Records**
 
-`v1.0.0` `added`
+`v1.0.0` `first`
 
 **Function Illustrate**
 
