@@ -49,6 +49,10 @@
 - 工作不易，无意外情况此项目将继续维护下去，提供更多可能，欢迎打赏。<br/><br/>
   <img src="https://github.com/fankes/YukiReflection/blob/master/img-src/wechat_code.jpg?raw=true" width = "200" height = "200"/>
 
+## Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=fankes/YukiReflection&type=Date)
+
 ## 许可证
 
 - [MIT](https://choosealicense.com/licenses/mit)

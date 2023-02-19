@@ -48,6 +48,10 @@ The following are projects that have collaborated and are using `YukiReflection`
 Are you also using `YukiReflection`? Come and **PR** to add your repository to the list above (private repositories do not need to indicate web
 links).
 
+## Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=fankes/YukiReflection&type=Date)
+
 ## License
 
 - [MIT](https://choosealicense.com/licenses/mit)
