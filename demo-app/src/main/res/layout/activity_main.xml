@@ -56,4 +56,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modified Static Field Using Reflection" />
+
+    <TextView
+        android:id="@+id/yuki_reflection_version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:alpha="0.55"
+        android:ellipsize="end"
+        android:gravity="center|start"
+        android:singleLine="true"
+        android:textSize="15sp" />
 </LinearLayout>

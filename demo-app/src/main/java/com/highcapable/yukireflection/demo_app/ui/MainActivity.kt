@@ -31,6 +31,7 @@ package com.highcapable.yukireflection.demo_app.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.highcapable.yukireflection.YukiReflection
 import com.highcapable.yukireflection.demo_app.databinding.ActivityMainBinding
 import com.highcapable.yukireflection.demo_app.test.Main
 import com.highcapable.yukireflection.factory.*
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
+            yukiReflectionVersionText.text = "YukiReflection Version：${YukiReflection.API_VERSION_NAME}(${YukiReflection.API_VERSION_CODE})"
             testObjectDirectlyButton.setOnClickListener {
                 tipText.text = Main("I am directly call of new object").getContent()
             }
