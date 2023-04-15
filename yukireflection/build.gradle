@@ -1,31 +1,33 @@
 plugins {
-    id 'java-library'
-    id 'org.jetbrains.kotlin.jvm'
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
     id 'maven-publish'
     id 'signing'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-    sourceSets.main { java.srcDir("src/api/kotlin") }
-    withJavadocJar()
-    withSourcesJar()
-}
+android {
+    namespace 'com.highcapable.yukireflection'
+    compileSdk 33
 
-javadoc {
-    options.addStringOption("charset", "UTF-8")
-    if (JavaVersion.current().isJava9Compatible()) options.addBooleanOption('html5', true)
-}
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
 
-kotlin {
-    sourceSets.main { kotlin.srcDir("src/api/kotlin") }
-    sourceSets { all { languageSettings { optIn('com.highcapable.yukireflection.annotation.YukiPrivateApi') } } }
-}
+        consumerProguardFiles 'consumer-rules.pro'
+    }
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
     kotlinOptions {
-        jvmTarget = 11
+        jvmTarget = '11'
         freeCompilerArgs = [
                 '-opt-in=com.highcapable.yukireflection.annotation.YukiPrivateApi',
                 '-Xno-param-assertions',
@@ -33,11 +35,27 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
                 '-Xno-receiver-assertions'
         ]
     }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
+kotlin { sourceSets { all { languageSettings { optIn('com.highcapable.yukireflection.annotation.YukiPrivateApi') } } } }
+
 dependencies {
-    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.annotation:annotation:1.6.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
+
+tasks.register('androidSourcesJar', Jar) {
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
 }
 
 group = rootProject.ext.groupId
@@ -45,9 +63,10 @@ version = rootProject.ext.apiVersion
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        release(MavenPublication) {
             artifactId = 'api'
-            from components.java
+            artifact "$buildDir/outputs/aar/${project.name}-release.aar"
+            artifact androidSourcesJar
             pom {
                 name = rootProject.ext.repoName
                 description = rootProject.ext.repoDescription
@@ -86,6 +105,4 @@ publishing {
     }
 }
 
-signing {
-    sign(publishing.publications.mavenJava)
-}
+signing { sign publishing.publications }
