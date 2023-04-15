@@ -47,10 +47,10 @@ import java.lang.reflect.Method
 object YukiReflection {
 
     /** 获取当前 [YukiReflection] 的版本 */
-    const val API_VERSION_NAME = "1.0.0"
+    const val API_VERSION_NAME = BuildConfig.API_VERSION_NAME
 
     /** 获取当前 [YukiReflection] 的版本号 */
-    const val API_VERSION_CODE = 1
+    const val API_VERSION_CODE = BuildConfig.API_VERSION_CODE
 
     /**
      * 配置 [YukiReflection]

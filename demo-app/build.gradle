@@ -5,16 +5,18 @@ plugins {
 
 android {
     namespace 'com.highcapable.yukireflection.demo_app'
-    compileSdk 33
+    compileSdk rootProject.ext.android.compileSdk
 
     defaultConfig {
-        applicationId "com.highcapable.yukireflection.demo_app"
-        minSdk 21
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        applicationId 'com.highcapable.yukireflection.demo_app'
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdk rootProject.ext.android.minSdk
+        targetSdk rootProject.ext.android.targetSdk
+
+        versionCode rootProject.ext.app.versionCode
+        versionName rootProject.ext.app.versionName
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
