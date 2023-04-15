@@ -14,7 +14,7 @@ ext {
             targetSdk : 33
     ]
     app = [
-            versionName: '1.0.0',
+            versionName: 'universal',
             versionCode: 1
     ]
     maven = [
@@ -26,8 +26,8 @@ ext {
             repository    : [
                     groupId    : 'com.highcapable.yukireflection',
                     apiVersion : [
-                            name: '1.0.0',
-                            code: 1
+                            name: '1.0.1',
+                            code: 2
                     ],
                     name       : 'YukiReflection',
                     description: 'An efficient Reflection API for the Android platform built in Kotlin.',

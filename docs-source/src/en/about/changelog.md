@@ -16,6 +16,11 @@ Time zone of version release date: **UTC+8**
 
 :::
 
-### 1.0.0 | 2023.01.26 &ensp;<Badge type="tip" text="latest" vertical="middle" />
+### 1.0.1 | 2023.04.16 &ensp;<Badge type="tip" text="latest" vertical="middle" />
+
+- Change the type of dependent library from **Java Library** (jar) to **Android Library** (aar)
+- Removed wrong `Class` object declaration in Android `type`
+
+### 1.0.0 | 2023.01.26 &ensp;<Badge type="warning" text="stale" vertical="middle" />
 
 - The first version is submitted to Maven

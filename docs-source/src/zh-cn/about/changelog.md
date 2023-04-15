@@ -8,6 +8,11 @@
 
 :::
 
-### 1.0.0 | 2023.01.26 &ensp;<Badge type="tip" text="最新" vertical="middle" />
+### 1.0.1 | 2023.04.16 &ensp;<Badge type="tip" text="最新" vertical="middle" />
+
+- 将依赖库的类型由 **Java Library** (jar) 修改为 **Android Library** (aar)
+- 移除了 Android `type` 中的错误 `Class` 对象声明
+
+### 1.0.0 | 2023.01.26 &ensp;<Badge type="warning" text="过旧" vertical="middle" />
 
 - 首个版本提交至 Maven
