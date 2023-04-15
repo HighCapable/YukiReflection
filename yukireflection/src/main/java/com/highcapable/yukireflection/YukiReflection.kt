@@ -96,15 +96,13 @@ object YukiReflection {
          * 除非缓存的 [Member] 发生了混淆的问题 - 例如使用 R8 混淆后的 APP 的目标 [Member] - 否则建议启用
          */
         var isEnableMemberCache = true
-
-        /** 结束方法体 */
-        @PublishedApi
-        internal fun build() = Unit
     }
 
     /**
      * 配置 [YukiReflection] 相关参数
      * @param initiate 方法体
      */
-    inline fun configs(initiate: Configs.() -> Unit) = Configs.apply(initiate).build()
+    inline fun configs(initiate: Configs.() -> Unit) {
+        Configs.apply(initiate)
+    }
 }
