@@ -26,8 +26,8 @@ ext {
             repository    : [
                     groupId    : 'com.highcapable.yukireflection',
                     apiVersion : [
-                            name: '1.0.1',
-                            code: 2
+                            name: '1.0.2',
+                            code: 3
                     ],
                     name       : 'YukiReflection',
                     description: 'An efficient Reflection API for the Android platform built in Kotlin.',

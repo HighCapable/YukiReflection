@@ -16,7 +16,13 @@ Time zone of version release date: **UTC+8**
 
 :::
 
-### 1.0.1 | 2023.04.16 &ensp;<Badge type="tip" text="latest" vertical="middle" />
+### 1.0.2 | 2023.04.25 &ensp;<Badge type="tip" text="latest" vertical="middle" />
+
+- Fixed a critical issue where the `Member` cache did not take effect and persistent storage eventually caused app out of memory (OOM), thanks to [Art-Chen](https://github.com/Art-Chen)
+- Remove the direct cache function of `Member` and deprecated ~~`YukiReflection.Configs.isEnableMemberCache`~~, keep the cache function of `Class`
+- Modified finder to `Sequence`, optimize the finding speed and performance of `Member`
+
+### 1.0.1 | 2023.04.16 &ensp;<Badge type="warning" text="stale" vertical="middle" />
 
 - Change the type of dependent library from **Java Library** (jar) to **Android Library** (aar)
 - Removed wrong `Class` object declaration in Android `type`
