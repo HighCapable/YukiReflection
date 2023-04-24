@@ -82,23 +82,6 @@ YukiReflection.configs {
 YukiReflection.Configs.isAllowPrintingLogs = true
 ```
 
-### 启用或禁用 Member 缓存
-
-你可以使用如下方式来启用或禁用 `Member` 缓存。
-
-为防止 `Member` 复用过高造成的系统 GC 问题，此功能默认启用。
-
-> 示例如下
-
-```kotlin
-// 通过 configs 方法
-YukiReflection.configs {
-    isEnableMemberCache = true
-}
-// 直接设置
-YukiReflection.Configs.isEnableMemberCache = true
-```
-
 ### 使用 configs 方法配置
 
 为了一次性配置多个功能，你可以直接使用 `YukiReflection.configs { ... }` 方法进行配置。
@@ -110,7 +93,6 @@ YukiReflection.configs {
     debugTag = "YourCustomTag"
     isDebug = true
     isAllowPrintingLogs = true
-    isEnableMemberCache = true
 }
 ```
 

@@ -82,23 +82,6 @@ YukiReflection.configs {
 YukiReflection.Configs.isAllowPrintingLogs = true
 ```
 
-### Enable or Disable Member Cache
-
-You can enable or disable `Member` caching as follows.
-
-To prevent system GC problems caused by excessive `Member` reuse, this feature is enabled by default.
-
-> The following example
-
-```kotlin
-// Via the configs method
-YukiReflection.configs {
-    isEnableMemberCache = true
-}
-// Set directly
-YukiReflection.Configs.isEnableMemberCache = true
-```
-
 ### Use the configs Method to Configure
 
 In order to configure multiple features at once, you can directly use the `YukiReflection.configs { ... }` method to configure.
@@ -110,7 +93,6 @@ YukiReflection.configs {
     debugTag = "YourCustomTag"
     isDebug = true
     isAllowPrintingLogs = true
-    isEnableMemberCache = true
 }
 ```
 
