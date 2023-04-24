@@ -30,14 +30,7 @@
 package com.highcapable.yukireflection
 
 import com.highcapable.yukireflection.YukiReflection.Configs
-import com.highcapable.yukireflection.finder.members.ConstructorFinder
-import com.highcapable.yukireflection.finder.members.FieldFinder
-import com.highcapable.yukireflection.finder.members.MethodFinder
-import com.highcapable.yukireflection.finder.store.ReflectsCacheStore
-import java.lang.reflect.Constructor
-import java.lang.reflect.Field
 import java.lang.reflect.Member
-import java.lang.reflect.Method
 
 /**
  * [YukiReflection] 的装载调用类
@@ -85,17 +78,12 @@ object YukiReflection {
         /**
          * 是否启用 [Member] 缓存功能
          *
-         * - 为防止 [Member] 复用过高造成的系统 GC 问题 - 此功能默认启用
+         * - ❗此方法及功能已被移除 - 在之后的版本中将直接被删除
          *
-         * 启用后会缓存已经找到的 [Method]、[Constructor]、[Field]
-         *
-         * 缓存的 [Member] 都将处于 [ReflectsCacheStore] 的全局静态实例中
-         *
-         * 推荐使用 [MethodFinder]、[ConstructorFinder]、[FieldFinder] 来获取 [Member]
-         *
-         * 除非缓存的 [Member] 发生了混淆的问题 - 例如使用 R8 混淆后的 APP 的目标 [Member] - 否则建议启用
+         * - ❗[Member] 的直接缓存功能已被移除 - 因为其存在内存溢出 (OOM) 问题
          */
-        var isEnableMemberCache = true
+        @Deprecated(message = "此方法及功能已被移除，请删除此方法")
+        var isEnableMemberCache = false
     }
 
     /**
