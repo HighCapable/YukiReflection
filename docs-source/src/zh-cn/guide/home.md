@@ -1,6 +1,6 @@
 # 介绍
 
-> `YukiReflection` 是一个基于 Android 平台的反射 API。
+> `YukiReflection` 是一个基于 Java 和 Android 平台的反射 API。
 
 ## 背景
 
@@ -24,7 +24,7 @@
 
 ## 灵感来源
 
-`YukiReflection` 最初是集成在 [YukiHookAPI](https://github.com/fankes/YukiHookAPI) 项目中的核心功能，现在进行了解耦合，使得这套反射 API 可以在任何 Android 平台的项目中使用。
+`YukiReflection` 最初是集成在 [YukiHookAPI](https://github.com/fankes/YukiHookAPI) 项目中的核心功能，现在进行了解耦合，使得这套反射 API 可以在任何 Java 和 Android 平台的项目中使用。
 
 现在，我们只需要编写少量的代码，就能实现一个简单的反射调用。
 

@@ -18,14 +18,6 @@ and it is also the core function being used by [YukiHookAPI](https://github.com/
 
 The name is taken from ["ももくり" heroine Yuki Kurihara](https://www.bilibili.com/bangumi/play/ss5016).
 
-## What it can do
-
-Instead of Java's native Reflection API, use a more user-friendly language to implement a more complete set of reflection solutions.
-
-Use annotations to declare classes, methods, and fields that need reflection, construct a `stub`,
-and call directly to achieve the same function as the Reflection API, which is more elegant and efficient.
-(under development, and it is expected to gradually implement this function later)
-
 ## Get Started
 
 [Click here](https://fankes.github.io/YukiReflection/en/) go to the documentation page for more detailed tutorials and content.

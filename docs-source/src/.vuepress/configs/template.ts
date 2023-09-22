@@ -63,11 +63,11 @@ export const configs = {
         locales: {
             '/en/': {
                 lang: 'en-US',
-                description: 'An efficient Reflection API for the Android platform built in Kotlin'
+                description: 'An efficient Reflection API for Java and Android built in Kotlin'
             },
             '/zh-cn/': {
                 lang: 'zh-CN',
-                description: '一个使用 Kotlin 构建的 Android 平台高效反射 API'
+                description: '一个使用 Kotlin 构建的用于 Java 和 Android 平台高效反射 API'
             }
         }
     },

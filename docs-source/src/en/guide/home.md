@@ -1,6 +1,6 @@
 # Introduce
 
-> `YukiReflection` is a Reflection API based on the Android platform.
+> `YukiReflection` is a Reflection API based on the Java and Android platform.
 
 ## Background
 
@@ -24,7 +24,7 @@ All Demo sample codes in the document will be described using `Kotlin`, if you d
 
 ## Source of Inspiration
 
-`YukiReflection` was originally the core function integrated in the [YukiHookAPI](https://github.com/fankes/YukiHookAPI) project, and now it is decoupled so that this Reflection API can be used in any Android platform project.
+`YukiReflection` was originally the core function integrated in the [YukiHookAPI](https://github.com/fankes/YukiHookAPI) project, and now it is decoupled so that this Reflection API can be used in any Java and Android platform project.
 
 Now, we only need to write a small amount of code to implement a simple reflection call.
 

@@ -126,6 +126,8 @@ At this point, there is `DexClassFinder`, its role is to determine the instance 
 
 ::: warning
 
+**This feature is only available on the Android platform.**
+
 At present, the function of **DexClassFinder** is still in the experimental stage.
 
 Since the search function is only implemented through the Java layer, the performance may not reach the optimal level when there are too many current app's **Class**.
@@ -139,6 +141,14 @@ The speed of searching **Class** depends on the performance of the current devic
 At present, the mainstream mobile processors are in the **3~10s** range when the conditions are not complicated in the **10~15w** number of **Class**, the fastest speed can reach within **25s** under slightly complex conditions.
 
 Please note that the more the same type **Class** is matched, the slower the speed.
+
+:::
+
+::: danger
+
+After **YukiHookAPI** 2.x.x released, this function will be deprecated and will be removed directly from **YukiReflection**.
+
+We welcome all developers to start using [DexKit](https://github.com/LuckyPray/DexKit), which is a high-performance runtime parsing library for **Dex** implemented in C++, which is more efficient than the Java layer in terms of performance, efficient and excellent, it is still in the development stage, your valuable suggestions are welcome.
 
 :::
 
