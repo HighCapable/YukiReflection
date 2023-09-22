@@ -1,52 +1,44 @@
 # Yuki Reflection
 
-![Blank](https://img.shields.io/badge/license-MIT-blue)
-![Blank](https://img.shields.io/badge/version-v1.0.2-green)
-[![Telegram](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/YukiReflection)
-<br/><br/>
-<img src="https://github.com/fankes/YukiReflection/blob/master/img-src/icon.png?raw=true" width = "100" height = "100"/>
-<br/>
-<br/>
-🌴️ An efficient Reflection API for the Android platform built in Kotlin.
-<br/>
+[![GitHub license](https://img.shields.io/github/license/fankes/YukiReflection?color=blue)](https://github.com/fankes/YukiReflection/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/fankes/YukiReflection?display_name=release&logo=github&color=green)](https://github.com/fankes/YukiReflection/releases)
+[![Telegram](https://img.shields.io/badge/discussion-Telegram-blue.svg?logo=telegram)](https://t.me/YukiReflection)
+[![Telegram](https://img.shields.io/badge/discussion%20dev-Telegram-blue.svg?logo=telegram)](https://t.me/HighCapable_Dev)
+
+<img src="https://github.com/fankes/YukiReflection/blob/master/img-src/icon.png?raw=true" width = "100" height = "100" alt="LOGO"/>
+
+🌴️ An efficient Reflection API for Java and Android built in Kotlin.
 
 English | [简体中文](https://github.com/fankes/YukiReflection/blob/master/README-zh-CN.md)
 
 ## What's this
 
-- This is a concise and efficient Reflection API rebuilt based on Java's native Reflection API using Kotlin, and it is also the core function
-  being used by [YukiHookAPI](https://github.com/fankes/YukiHookAPI)
-- The name is taken from ["ももくり" heroine Yuki Kurihara](https://www.bilibili.com/bangumi/play/ss5016)
+This is a concise and efficient Reflection API rebuilt based on Java's native Reflection API using Kotlin,
+and it is also the core function being used by [YukiHookAPI](https://github.com/fankes/YukiHookAPI).
+
+The name is taken from ["ももくり" heroine Yuki Kurihara](https://www.bilibili.com/bangumi/play/ss5016).
 
 ## What it can do
 
-- Instead of Java's native Reflection API, use a more user-friendly language to implement a more complete set of reflection solutions
-- Use annotations to declare classes, methods, and fields that need reflection, construct a `stub`, and call directly to achieve the same
-  function as the Reflection API, which is more elegant and efficient (under development, and it is expected to gradually implement this function
-  later)
+Instead of Java's native Reflection API, use a more user-friendly language to implement a more complete set of reflection solutions.
+
+Use annotations to declare classes, methods, and fields that need reflection, construct a `stub`,
+and call directly to achieve the same function as the Reflection API, which is more elegant and efficient.
+(under development, and it is expected to gradually implement this function later)
 
 ## Get Started
 
-- [Click here](https://fankes.github.io/YukiReflection/en/) go to the documentation page for more detailed tutorials and content.
+[Click here](https://fankes.github.io/YukiReflection/en/) go to the documentation page for more detailed tutorials and content.
 
-## Contacts
+## Promotion
 
-- [Follow us on Telegram](https://t.me/YukiReflection)
+If you are looking for a Gradle plugin that can automatically manage Gradle project dependencies,
+you can check out the [SweetDependency](https://github.com/HighCapable/SweetDependency) project.
 
-## Features
+If you are looking for a Gradle plugin that can automatically generate properties key-values,
+you can check out the [SweetProperty](https://github.com/HighCapable/SweetProperty) project.
 
-If you like the `YukiReflection` project, we welcome you to make a **PR** in this project, any suggestions for improvement and new features.
-
-## Cooperations
-
-The following are projects that have collaborated and are using `YukiReflection`.
-
-| Repository                                           | Developer                                |
-|------------------------------------------------------|------------------------------------------|
-| [YukiHookAPI](https://github.com/fankes/YukiHookAPI) | [fankesyooni](https://github.com/fankes) |
-
-Are you also using `YukiReflection`? Come and **PR** to add your repository to the list above (private repositories do not need to indicate web
-links).
+This project also uses **SweetDependency** and **SweetProperty**.
 
 ## Star History
 
