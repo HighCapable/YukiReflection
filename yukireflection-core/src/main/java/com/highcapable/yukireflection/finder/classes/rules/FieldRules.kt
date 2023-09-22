@@ -23,7 +23,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is Created by fankes on 2022/9/12.
+ * This file is created by fankes on 2022/9/12.
  * This file is Modified by fankes on 2023/1/25.
  */
 package com.highcapable.yukireflection.finder.classes.rules
