@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Using functions below to test"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="Waiting for your operation"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/test_object_directly_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Create an Object and Call Directly" />
+
+    <Button
+        android:id="@+id/test_object_reflection_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Create an Object and Call Reflection" />
+
+    <Button
+        android:id="@+id/test_static_directly_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Get Static and Call Directly" />
+
+    <Button
+        android:id="@+id/test_static_reflection_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="Get Static and Call Reflection" />
+
+    <Button
+        android:id="@+id/test_modify_static_reflection_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modified Static Field Using Reflection" />
+
+    <TextView
+        android:id="@+id/yuki_reflection_version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:alpha="0.55"
+        android:ellipsize="end"
+        android:gravity="center|start"
+        android:singleLine="true"
+        android:textSize="15sp" />
+</LinearLayout>
