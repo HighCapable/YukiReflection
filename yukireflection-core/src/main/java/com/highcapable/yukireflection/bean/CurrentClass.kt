@@ -150,7 +150,7 @@ class CurrentClass @PublishedApi internal constructor(@PublishedApi internal val
         inline fun method(initiate: MethodConditions) =
             superClassSet.method(initiate).result { if (isShutErrorPrinting) ignored() }.get(instance)
 
-        override fun toString() = "CurrentClass super [${superClassSet}]"
+        override fun toString() = "CurrentClass super [$superClassSet]"
     }
 
     override fun toString() = "CurrentClass [$classSet]"

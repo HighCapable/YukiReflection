@@ -30,10 +30,33 @@
 
 package com.highcapable.yukireflection.type.android
 
-import android.graphics.*
-import android.graphics.drawable.*
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.ColorMatrix
+import android.graphics.ColorMatrixColorFilter
+import android.graphics.Matrix
+import android.graphics.NinePatch
+import android.graphics.Outline
+import android.graphics.Paint
+import android.graphics.Point
+import android.graphics.PointF
+import android.graphics.Rect
+import android.graphics.RectF
+import android.graphics.Typeface
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.Icon
 import android.os.Build
-import android.text.*
+import android.text.Editable
+import android.text.GetChars
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.TextPaint
+import android.text.TextUtils
+import android.text.TextWatcher
 import android.util.Size
 import android.util.SizeF
 import com.highcapable.yukireflection.factory.classOf

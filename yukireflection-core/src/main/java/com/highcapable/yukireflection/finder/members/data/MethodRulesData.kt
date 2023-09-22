@@ -76,9 +76,9 @@ internal class MethodRulesData internal constructor(
 
     override val isInitialize
         get() = super.isInitializeOfSuper || name.isNotBlank() || nameConditions != null || paramTypes != null || paramTypesConditions != null ||
-                paramCount >= 0 || paramCountRange.isEmpty().not() || paramCountConditions != null ||
-                returnType != null || returnTypeConditions != null
+            paramCount >= 0 || paramCountRange.isEmpty().not() || paramCountConditions != null ||
+            returnType != null || returnTypeConditions != null
 
     override fun toString() = "[$name][$nameConditions][$paramTypes][$paramTypesConditions][$paramCount]" +
-            "[$paramCountRange][$returnType][$returnTypeConditions]" + super.toString()
+        "[$paramCountRange][$returnType][$returnTypeConditions]" + super.toString()
 }

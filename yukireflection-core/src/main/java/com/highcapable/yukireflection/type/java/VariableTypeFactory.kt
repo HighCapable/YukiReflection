@@ -40,7 +40,7 @@ import dalvik.system.InMemoryDexClassLoader
 import dalvik.system.PathClassLoader
 import org.json.JSONArray
 import org.json.JSONObject
-import java.io.*
+import java.io.* // ktlint-disable no-wildcard-imports
 import java.lang.ref.Reference
 import java.lang.ref.WeakReference
 import java.lang.reflect.Constructor

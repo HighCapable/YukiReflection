@@ -62,7 +62,7 @@ internal class ConstructorRulesData internal constructor(
 
     override val isInitialize
         get() = super.isInitializeOfSuper || paramTypes != null || paramTypesConditions != null || paramCount >= 0 ||
-                paramCountRange.isEmpty().not() || paramCountConditions != null
+            paramCountRange.isEmpty().not() || paramCountConditions != null
 
     override fun toString() = "[$paramTypes][$paramTypesConditions][$paramCount][$paramCountRange]" + super.toString()
 }

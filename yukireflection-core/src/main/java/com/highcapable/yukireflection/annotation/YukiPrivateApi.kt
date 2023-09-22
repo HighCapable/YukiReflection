@@ -26,7 +26,7 @@
  * This file is created by fankes on 2022/4/3.
  * This file is Modified by fankes on 2023/1/21.
  */
-@file:Suppress("OPT_IN_IS_NOT_ENABLED", "EXPERIMENTAL_IS_NOT_ENABLED")
+@file:Suppress("unused")
 
 package com.highcapable.yukireflection.annotation
 

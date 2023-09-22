@@ -199,7 +199,7 @@ internal class Conditions<T>(internal var value: T) {
          */
         private val result by lazy {
             optConditions.takeIf { it.isNotEmpty() }?.any { it } == true ||
-                    andConditions.takeIf { it.isNotEmpty() }?.any { it.not() }?.not() == true
+                andConditions.takeIf { it.isNotEmpty() }?.any { it.not() }?.not() == true
         }
 
         /**

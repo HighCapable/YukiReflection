@@ -30,7 +30,7 @@
 
 package com.highcapable.yukireflection.type.android
 
-import android.app.*
+import android.app.* // ktlint-disable no-wildcard-imports
 import android.appwidget.AppWidgetHost
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider

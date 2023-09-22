@@ -32,7 +32,12 @@ package com.highcapable.yukireflection.finder.tools
 
 import android.util.ArrayMap
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.factory.*
+import com.highcapable.yukireflection.factory.classOf
+import com.highcapable.yukireflection.factory.current
+import com.highcapable.yukireflection.factory.field
+import com.highcapable.yukireflection.factory.hasClass
+import com.highcapable.yukireflection.factory.hasExtends
+import com.highcapable.yukireflection.factory.toClass
 import com.highcapable.yukireflection.finder.base.data.BaseRulesData
 import com.highcapable.yukireflection.finder.classes.data.ClassRulesData
 import com.highcapable.yukireflection.finder.members.data.ConstructorRulesData
@@ -46,13 +51,19 @@ import com.highcapable.yukireflection.type.java.DalvikBaseDexClassLoader
 import com.highcapable.yukireflection.type.java.NoClassDefFoundErrorClass
 import com.highcapable.yukireflection.type.java.NoSuchFieldErrorClass
 import com.highcapable.yukireflection.type.java.NoSuchMethodErrorClass
-import com.highcapable.yukireflection.utils.*
+import com.highcapable.yukireflection.utils.conditions
+import com.highcapable.yukireflection.utils.findLastIndex
+import com.highcapable.yukireflection.utils.lastIndex
+import com.highcapable.yukireflection.utils.let
+import com.highcapable.yukireflection.utils.runOrFalse
+import com.highcapable.yukireflection.utils.takeIf
+import com.highcapable.yukireflection.utils.value
 import dalvik.system.BaseDexClassLoader
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
 import java.lang.reflect.Member
 import java.lang.reflect.Method
-import java.util.*
+import java.util.Enumeration
 import kotlin.math.abs
 
 /**
@@ -539,7 +550,7 @@ internal object ReflectionTool {
      * @return [Boolean] 返回是否成立
      */
     private fun Pair<Int, Boolean>?.compare(need: Int, last: Int) = this == null || ((first >= 0 && first == need && second) ||
-            (first < 0 && abs(first) == (last - need) && second) || (last == need && second.not()))
+        (first < 0 && abs(first) == (last - need) && second) || (last == need && second.not()))
 
     /**
      * 比较位置下标的前后顺序
@@ -550,8 +561,8 @@ internal object ReflectionTool {
     private fun Pair<Int, Boolean>?.compare(need: Int, last: Int, result: (Boolean) -> Unit) {
         if (this == null) return
         ((first >= 0 && first == need && second) ||
-                (first < 0 && abs(first) == (last - need) && second) ||
-                (last == need && second.not())).also(result)
+            (first < 0 && abs(first) == (last - need) && second) ||
+            (last == need && second.not())).also(result)
     }
 
     /**

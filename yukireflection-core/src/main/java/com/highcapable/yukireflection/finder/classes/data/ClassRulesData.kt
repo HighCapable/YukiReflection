@@ -172,11 +172,11 @@ internal class ClassRulesData internal constructor(
 
     override val isInitialize
         get() = super.isInitialize || fromPackages.isNotEmpty() || fullName != null || simpleName != null || singleName != null ||
-                fullNameConditions != null || simpleNameConditions != null || singleNameConditions != null || isAnonymousClass != null ||
-                isNoExtendsClass != null || isNoImplementsClass != null || extendsClass.isNotEmpty() || enclosingClass.isNotEmpty() ||
-                memberRules.isNotEmpty() || fieldRules.isNotEmpty() || methodRules.isNotEmpty() || constroctorRules.isNotEmpty()
+            fullNameConditions != null || simpleNameConditions != null || singleNameConditions != null || isAnonymousClass != null ||
+            isNoExtendsClass != null || isNoImplementsClass != null || extendsClass.isNotEmpty() || enclosingClass.isNotEmpty() ||
+            memberRules.isNotEmpty() || fieldRules.isNotEmpty() || methodRules.isNotEmpty() || constroctorRules.isNotEmpty()
 
     override fun toString() = "[$fromPackages][$fullName][$simpleName][$singleName][$fullNameConditions][$simpleNameConditions]" +
-            "[$singleNameConditions][$modifiers][$isAnonymousClass][$isNoExtendsClass][$isNoImplementsClass][$extendsClass][$implementsClass]" +
-            "[$enclosingClass][$memberRules][$fieldRules][$methodRules][$constroctorRules]" + super.toString()
+        "[$singleNameConditions][$modifiers][$isAnonymousClass][$isNoExtendsClass][$isNoImplementsClass][$extendsClass][$implementsClass]" +
+        "[$enclosingClass][$memberRules][$fieldRules][$methodRules][$constroctorRules]" + super.toString()
 }

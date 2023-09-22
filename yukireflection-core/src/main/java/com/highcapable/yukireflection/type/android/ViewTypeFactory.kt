@@ -30,17 +30,51 @@
 
 package com.highcapable.yukireflection.type.android
 
-import android.animation.*
+import android.animation.Animator
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
+import android.animation.ValueAnimator
 import android.appwidget.AppWidgetHostView
 import android.util.AttributeSet
-import android.view.*
+import android.view.GestureDetector
+import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.Surface
+import android.view.SurfaceView
+import android.view.TextureView
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewParent
+import android.view.ViewPropertyAnimator
+import android.view.ViewStructure
+import android.view.ViewStub
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.BaseAdapter
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.CompoundButton
+import android.widget.EditText
+import android.widget.FrameLayout
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.ListAdapter
+import android.widget.ListView
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
+import android.widget.RemoteViews
 import android.widget.RemoteViews.RemoteView
+import android.widget.TextClock
+import android.widget.TextView
+import android.widget.VideoView
+import android.widget.ViewAnimator
 import com.highcapable.yukireflection.factory.classOf
 
 /**
