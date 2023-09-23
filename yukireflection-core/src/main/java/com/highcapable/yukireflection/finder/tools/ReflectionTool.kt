@@ -30,7 +30,6 @@
 
 package com.highcapable.yukireflection.finder.tools
 
-import android.util.ArrayMap
 import com.highcapable.yukireflection.YukiReflection
 import com.highcapable.yukireflection.factory.classOf
 import com.highcapable.yukireflection.factory.current
@@ -87,10 +86,10 @@ internal object ReflectionTool {
     private object MemoryCache {
 
         /** 缓存的 [Class] 列表数组 */
-        val dexClassListData = ArrayMap<String, List<String>>()
+        val dexClassListData = HashMap<String, List<String>>()
 
         /** 缓存的 [Class] 对象数组 */
-        val classData = ArrayMap<String, Class<*>?>()
+        val classData = HashMap<String, Class<*>?>()
     }
 
     /**
