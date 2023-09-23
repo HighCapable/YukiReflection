@@ -30,8 +30,7 @@ package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
 import com.highcapable.yukireflection.annotation.YukiPrivateApi
-import com.highcapable.yukireflection.log.yLoggerE
-import com.highcapable.yukireflection.log.yLoggerI
+import com.highcapable.yukireflection.utils.debug.YukiLog
 
 /**
  * 这是 [Class] 查找类功能的基本类实现
@@ -64,7 +63,7 @@ abstract class ClassBaseFinder internal constructor(internal open val loaderSet:
      * @param msg 调试日志内容
      */
     internal fun onDebuggingMsg(msg: String) {
-        if (YukiReflection.Configs.isDebug) yLoggerI(msg)
+        if (YukiReflection.Configs.isDebug) YukiLog.debug(msg)
     }
 
     /**
@@ -75,7 +74,7 @@ abstract class ClassBaseFinder internal constructor(internal open val loaderSet:
         if (isShutErrorPrinting) return
         /** 判断是否为 [LOADERSET_IS_NULL] */
         if (throwable?.message == LOADERSET_IS_NULL) return
-        yLoggerE(msg = "NoClassDefFound happend in [$loaderSet]", e = throwable)
+        YukiLog.error(msg = "NoClassDefFound happend in [$loaderSet]", e = throwable)
     }
 
     @YukiPrivateApi

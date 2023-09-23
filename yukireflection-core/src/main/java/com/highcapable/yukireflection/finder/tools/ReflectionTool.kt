@@ -43,13 +43,13 @@ import com.highcapable.yukireflection.finder.members.data.ConstructorRulesData
 import com.highcapable.yukireflection.finder.members.data.FieldRulesData
 import com.highcapable.yukireflection.finder.members.data.MemberRulesData
 import com.highcapable.yukireflection.finder.members.data.MethodRulesData
-import com.highcapable.yukireflection.log.yLoggerW
 import com.highcapable.yukireflection.type.defined.UndefinedType
 import com.highcapable.yukireflection.type.defined.VagueType
 import com.highcapable.yukireflection.type.java.DalvikBaseDexClassLoader
 import com.highcapable.yukireflection.type.java.NoClassDefFoundErrorClass
 import com.highcapable.yukireflection.type.java.NoSuchFieldErrorClass
 import com.highcapable.yukireflection.type.java.NoSuchMethodErrorClass
+import com.highcapable.yukireflection.utils.debug.YukiLog
 import com.highcapable.yukireflection.utils.factory.conditions
 import com.highcapable.yukireflection.utils.factory.findLastIndex
 import com.highcapable.yukireflection.utils.factory.lastIndex
@@ -204,7 +204,7 @@ internal object ReflectionTool {
                     fun MemberRulesData.exists(vararg type: Any?): Boolean {
                         if (type.isEmpty()) return true
                         for (i in type.indices) if (type[i] == UndefinedType) {
-                            yLoggerW(msg = "$objectName type[$i] mistake, it will be ignored in current conditions")
+                            YukiLog.warn(msg = "$objectName type[$i] mistake, it will be ignored in current conditions")
                             return false
                         }
                         return true
@@ -668,7 +668,7 @@ internal object ReflectionTool {
                 addAll(declaredConstructors.toList())
             }.asSequence()
         }.onFailure {
-            yLoggerW(msg = "Failed to get the declared Members in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Members in [$this] because got an exception\n$it")
         }.getOrNull()
 
     /**
@@ -677,7 +677,7 @@ internal object ReflectionTool {
      */
     private val Class<*>.existFields
         get() = runCatching { declaredFields.asSequence() }.onFailure {
-            yLoggerW(msg = "Failed to get the declared Fields in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Fields in [$this] because got an exception\n$it")
         }.getOrNull()
 
     /**
@@ -686,7 +686,7 @@ internal object ReflectionTool {
      */
     private val Class<*>.existMethods
         get() = runCatching { declaredMethods.asSequence() }.onFailure {
-            yLoggerW(msg = "Failed to get the declared Methods in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Methods in [$this] because got an exception\n$it")
         }.getOrNull()
 
     /**
@@ -695,7 +695,7 @@ internal object ReflectionTool {
      */
     private val Class<*>.existConstructors
         get() = runCatching { declaredConstructors.asSequence() }.onFailure {
-            yLoggerW(msg = "Failed to get the declared Constructors in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Constructors in [$this] because got an exception\n$it")
         }.getOrNull()
 
     /**

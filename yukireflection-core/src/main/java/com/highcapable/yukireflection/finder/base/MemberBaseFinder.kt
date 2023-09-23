@@ -31,8 +31,7 @@
 package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.log.yLoggerE
-import com.highcapable.yukireflection.log.yLoggerI
+import com.highcapable.yukireflection.utils.debug.YukiLog
 import com.highcapable.yukireflection.utils.factory.await
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
@@ -115,7 +114,7 @@ abstract class MemberBaseFinder internal constructor(
 
     /** 存在日志时输出日志 */
     internal fun printLogIfExist() {
-        if (loggingContent != null) yLoggerE(
+        if (loggingContent != null) YukiLog.error(
             msg = "NoSuch$tag happend in [$classSet] ${loggingContent?.first}",
             e = loggingContent?.second
         )
@@ -128,6 +127,6 @@ abstract class MemberBaseFinder internal constructor(
      * @param msg 调试日志内容
      */
     internal fun onDebuggingMsg(msg: String) {
-        if (YukiReflection.Configs.isDebug) yLoggerI(msg)
+        if (YukiReflection.Configs.isDebug) YukiLog.debug(msg)
     }
 }
