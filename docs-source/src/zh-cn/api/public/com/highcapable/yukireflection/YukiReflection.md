@@ -16,33 +16,53 @@ object YukiReflection
 
 > 这是 `YukiReflection` 的装载调用类。
 
-## API_VERSION_NAME <span class="symbol">- field</span>
+## TAG <span class="symbol">- field</span>
 
 ```kotlin:no-line-numbers
-const val API_VERSION_NAME: String
+const val TAG: String
 ```
 
 **变更记录**
 
-`v1.0.0` `添加`
+`v1.0.3` `新增`
+
+**功能描述**
+
+> 获取当前 `YukiReflection` 的名称 (标签)。
+
+## VERSION <span class="symbol">- field</span>
+
+```kotlin:no-line-numbers
+const val VERSION: String
+```
+
+**变更记录**
+
+`v1.0.3` `新增`
 
 **功能描述**
 
 > 获取当前 `YukiReflection` 的版本。
 
-## API_VERSION_CODE <span class="symbol">- field</span>
-
-```kotlin:no-line-numbers
-const val API_VERSION_CODE: Int
-```
+<h3 class="deprecated">API_VERSION_NAME - field</h3>
 
 **变更记录**
 
 `v1.0.0` `添加`
 
-**功能描述**
+`v1.0.3` `作废`
 
-> 获取当前 `YukiReflection` 的版本号。
+不再区分版本名称和版本号，请迁移到 `VERSION`
+
+<h3 class="deprecated">API_VERSION_CODE - field</h3>
+
+**变更记录**
+
+`v1.0.0` `添加`
+
+`v1.0.3` `作废`
+
+不再区分版本名称和版本号，请迁移到 `VERSION`
 
 ## Configs <span class="symbol">- object</span>
 
