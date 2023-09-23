@@ -6,17 +6,17 @@
 
 You can configure some functions of `YukiReflection` before using it.
 
-## Get the API Version
+## Get the API Tag & Version
 
-You can get the current API version of `YukiReflection` as follows.
+You can get the current tag and version of `YukiReflection` as follows.
 
 > The following example
 
 ```kotlin
-// Get the version name
-val versionName = YukiReflection. API_VERSION_NAME
-// Get the version code
-val versionCode = YukiReflection. API_VERSION_CODE
+// Get the tag
+val tag = YukiReflection.TAG
+// Get the version
+val version = YukiReflection.VERSION
 ```
 
 You can judge the difference between different versions or display it in the about information by obtaining the version.
@@ -76,10 +76,10 @@ This function is enabled by default, and disable will stop `YukiReflection` outp
 ```kotlin
 // Via the configs method
 YukiReflection.configs {
-    isAllowPrintingLogs = true
+    isEnableLogs = true
 }
 // Set directly
-YukiReflection.Configs.isAllowPrintingLogs = true
+YukiReflection.Configs.isEnableLogs = true
 ```
 
 ### Use the configs Method to Configure
@@ -92,7 +92,7 @@ In order to configure multiple features at once, you can directly use the `YukiR
 YukiReflection.configs {
     debugTag = "YourCustomTag"
     isDebug = true
-    isAllowPrintingLogs = true
+    isEnableLogs = true
 }
 ```
 

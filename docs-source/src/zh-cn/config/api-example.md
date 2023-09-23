@@ -6,17 +6,17 @@
 
 你可以在使用之前对 `YukiReflection` 进行一些功能配置。
 
-## 获取 API 版本
+## 获取 API 标签 & 版本
 
-你可以通过如下方式获取当前 `YukiReflection` 的 API 版本。
+你可以通过如下方式获取当前 `YukiReflection` 的标签和版本。
 
 > 示例如下
 
 ```kotlin
-// 获取版本名称
-val versionName = YukiReflection.API_VERSION_NAME
-// 获取版本号
-val versionCode = YukiReflection.API_VERSION_CODE
+// 获取标签
+val tag = YukiReflection.TAG
+// 获取版本
+val version = YukiReflection.VERSION
 ```
 
 你可以通过获取版本进行一些不同版本差异的判断或用于显示在关于信息中。
@@ -76,10 +76,10 @@ YukiReflection.Configs.isDebug = true
 ```kotlin
 // 通过 configs 方法
 YukiReflection.configs {
-    isAllowPrintingLogs = true
+    isEnableLogs = true
 }
 // 直接设置
-YukiReflection.Configs.isAllowPrintingLogs = true
+YukiReflection.Configs.isEnableLogs = true
 ```
 
 ### 使用 configs 方法配置
@@ -92,7 +92,7 @@ YukiReflection.Configs.isAllowPrintingLogs = true
 YukiReflection.configs {
     debugTag = "YourCustomTag"
     isDebug = true
-    isAllowPrintingLogs = true
+    isEnableLogs = true
 }
 ```
 
