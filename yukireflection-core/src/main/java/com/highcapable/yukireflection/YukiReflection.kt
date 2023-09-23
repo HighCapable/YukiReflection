@@ -40,11 +40,31 @@ import java.lang.reflect.Member
  */
 object YukiReflection {
 
-    /** 版本名称 */
-    const val API_VERSION_NAME = YukiReflectionProperties.PROJECT_YUKIREFLECTION_CORE_VERSION
+    /** 标签名称 */
+    const val TAG = YukiReflectionProperties.PROJECT_NAME
 
-    /** 版本号 */
-    const val API_VERSION_CODE = 3
+    /** 当前版本 */
+    const val VERSION = YukiReflectionProperties.PROJECT_YUKIREFLECTION_CORE_VERSION
+
+    /**
+     * 版本名称
+     *
+     * - ❗此方法已弃用 - 在之后的版本中将直接被删除
+     *
+     * - ❗请现在迁移到 [VERSION]
+     */
+    @Deprecated(message = "不再区分版本名称和版本号", ReplaceWith("VERSION"))
+    const val API_VERSION_NAME = VERSION
+
+    /**
+     * 版本号
+     *
+     * - ❗此方法已弃用 - 在之后的版本中将直接被删除
+     *
+     * - ❗请现在迁移到 [VERSION]
+     */
+    @Deprecated(message = "不再区分版本名称和版本号", ReplaceWith("VERSION"))
+    const val API_VERSION_CODE = -1
 
     /**
      * 配置 [YukiReflection]
@@ -54,11 +74,11 @@ object YukiReflection {
         /**
          * 这是一个调试日志的全局标识
          *
-         * 默认文案为 YukiReflection
+         * 默认文案为 [TAG]
          *
          * 你可以修改为你自己的文案
          */
-        var debugTag = "YukiReflection"
+        var debugTag = TAG
 
         /**
          * 是否开启调试模式 - 默认不启用
