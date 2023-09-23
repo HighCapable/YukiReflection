@@ -33,7 +33,7 @@ package com.highcapable.yukireflection.finder.base
 import com.highcapable.yukireflection.YukiReflection
 import com.highcapable.yukireflection.log.yLoggerE
 import com.highcapable.yukireflection.log.yLoggerI
-import com.highcapable.yukireflection.utils.await
+import com.highcapable.yukireflection.utils.factory.await
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
 import java.lang.reflect.Member

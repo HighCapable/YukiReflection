@@ -46,7 +46,7 @@ import com.highcapable.yukireflection.finder.type.factory.ObjectsConditions
 import com.highcapable.yukireflection.log.yLoggerW
 import com.highcapable.yukireflection.type.defined.UndefinedType
 import com.highcapable.yukireflection.type.defined.VagueType
-import com.highcapable.yukireflection.utils.runBlocking
+import com.highcapable.yukireflection.utils.factory.runBlocking
 import java.lang.reflect.Method
 
 /**
