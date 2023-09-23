@@ -59,7 +59,7 @@ import com.highcapable.yukireflection.type.java.StringClass
 
 @Composable
 fun MainLayout() {
-    val currentVersion = "YukiReflection Version: ${YukiReflection.VERSION}"
+    val currentVersion = "${YukiReflection.TAG} Version: ${YukiReflection.VERSION}"
     val operationState = remember { mutableStateOf("Waiting for your operation") }
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -135,7 +135,7 @@ fun MainLayout() {
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
-        title = "YukiReflection",
+        title = YukiReflection.TAG,
         resizable = false,
         state = rememberWindowState(width = 450.dp, height = 600.dp)
     ) { MaterialTheme(colorScheme = MaterialTheme.colorScheme.copy(primary = Color(0xFF31A4FF.toInt()))) { MainLayout() } }

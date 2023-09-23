@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
-            yukiReflectionVersionText.text = "YukiReflection Version: ${YukiReflection.VERSION}"
+            yukiReflectionVersionText.text = "${YukiReflection.TAG} Version: ${YukiReflection.VERSION}"
             testObjectDirectlyButton.setOnClickListener {
                 tipText.text = Main("I am directly call of new object").getContent()
             }
