@@ -296,7 +296,7 @@ val ShortArrayType get() = ArrayClass(ShortType)
  *
  * - ❗此方法已弃用 - 在之后的版本中将直接被删除
  *
- * - ❗请现在转移到 [ShortArrayType]
+ * - ❗请现在迁移到 [ShortArrayType]
  * @return [Class]<[JavaArray]>
  */
 @Deprecated(message = "请使用修复后的命名方法", ReplaceWith("ShortArrayType"))
