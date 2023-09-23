@@ -122,15 +122,15 @@ var isDebug: Boolean
 
 请过滤 `debugTag` 即可找到每条日志。
 
-### isAllowPrintingLogs <span class="symbol">- field</span>
+### isEnableLogs <span class="symbol">- field</span>
 
 ```kotlin:no-line-numbers
-var isAllowPrintingLogs: Boolean
+var isEnableLogs: Boolean
 ```
 
 **Change Records**
 
-`v1.0.0` `first`
+`v1.0.3` `added`
 
 **Function Illustrate**
 
@@ -138,9 +138,19 @@ var isAllowPrintingLogs: Boolean
 
 ::: warning
 
-关闭后将会停用 **YukiReflection** 对全部日志的输出。
+关闭后将会停用 **YukiReflection** 对全部日志的输出，同时 **isDebug** 将不再有效。
 
 :::
+
+<h3 class="deprecated">isAllowPrintingLogs - field</h3>
+
+**Change Records**
+
+`v1.0.0` `first`
+
+`v1.0.3` `deprecated`
+
+请迁移到 `isEnableLogs`
 
 <h3 class="deprecated">isEnableMemberCache - field</h3>
 
