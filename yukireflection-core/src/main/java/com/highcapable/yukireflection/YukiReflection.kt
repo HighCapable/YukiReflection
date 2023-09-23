@@ -92,9 +92,22 @@ object YukiReflection {
         /**
          * 是否启用调试日志的输出功能
          *
-         * - ❗关闭后将会停用 [YukiReflection] 对全部日志的输出
+         * - ❗关闭后将会停用 [YukiReflection] 对全部日志的输出 - 同时 [isDebug] 将不再有效
          */
-        var isAllowPrintingLogs = true
+        var isEnableLogs = true
+
+        /**
+         * 是否启用调试日志的输出功能
+         *
+         * - ❗此方法已弃用 - 在之后的版本中将直接被删除
+         *
+         * - ❗请现在迁移到 [isEnableLogs]
+         */
+        @Deprecated(message = "请使用新方式来实现此功能", ReplaceWith("isEnableLogs"))
+        var isAllowPrintingLogs get() = isEnableLogs
+            set(value) {
+                isEnableLogs = value
+            }
 
         /**
          * 是否启用 [Member] 缓存功能
