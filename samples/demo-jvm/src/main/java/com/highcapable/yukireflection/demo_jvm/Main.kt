@@ -59,7 +59,7 @@ import com.highcapable.yukireflection.type.java.StringClass
 
 @Composable
 fun MainLayout() {
-    val currentVersion = "YukiReflection Version: ${YukiReflection.API_VERSION_NAME}(${YukiReflection.API_VERSION_CODE})"
+    val currentVersion = "YukiReflection Version: ${YukiReflection.VERSION}"
     val operationState = remember { mutableStateOf("Waiting for your operation") }
     Column(
         modifier = Modifier.fillMaxSize(),
