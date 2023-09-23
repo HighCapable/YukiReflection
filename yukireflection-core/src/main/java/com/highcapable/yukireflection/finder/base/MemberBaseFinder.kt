@@ -59,13 +59,10 @@ abstract class MemberBaseFinder internal constructor(
     internal var isUsingRemedyPlan = false
 
     /** 是否开启忽略错误警告功能 */
-    internal var isShutErrorPrinting = false
+    internal var isIgnoreErrorLogs = false
 
     /** 当前找到的 [Member] 数组 */
     internal var memberInstances = HashSet<Member>()
-
-    /** 需要输出的日志内容 */
-    private var loggingContent: Pair<String, Throwable?>? = null
 
     /**
      * 将 [HashSet]<[Member]> 转换为 [HashSet]<[Field]>
@@ -95,38 +92,28 @@ abstract class MemberBaseFinder internal constructor(
     internal fun Any?.compat() = compat(tag, classSet?.classLoader)
 
     /**
-     * 发生错误时输出日志
-     * @param msg 消息日志
-     * @param throwable 错误
-     * @param isAlwaysPrint 忽略条件每次都打印错误
+     * 在开启 [YukiReflection.Configs.isDebug] 的情况下输出调试信息
+     * @param msg 消息内容
      */
-    internal fun onFailureMsg(msg: String = "", throwable: Throwable? = null, isAlwaysPrint: Boolean = false) {
-        /** 创建日志 */
-        fun build() {
-            if (isUsingRemedyPlan.not() && isShutErrorPrinting.not()) loggingContent = Pair(msg, throwable)
-        }
-        /** 判断是否为 [CLASSSET_IS_NULL] */
-        if (throwable?.message == CLASSSET_IS_NULL) return
-        /** 判断始终输出日志或等待结果后输出日志 */
-        if (isAlwaysPrint) build().run { printLogIfExist() }
-        else await { build().run { printLogIfExist() } }
-    }
-
-    /** 存在日志时输出日志 */
-    internal fun printLogIfExist() {
-        if (loggingContent != null) YukiLog.error(
-            msg = "NoSuch$tag happend in [$classSet] ${loggingContent?.first}",
-            e = loggingContent?.second
-        )
-        /** 仅输出一次 - 然后清掉日志 */
-        loggingContent = null
+    internal fun debugMsg(msg: String) {
+        if (YukiReflection.Configs.isDebug) YukiLog.debug(msg)
     }
 
     /**
-     * 在开启 [YukiReflection.Configs.isDebug] 的情况下输出调试信息
-     * @param msg 调试日志内容
+     * 发生错误时输出日志
+     * @param msg 消息内容
+     * @param e 异常堆栈 - 默认空
+     * @param e 异常堆栈数组 - 默认空
+     * @param isAlwaysMode 忽略条件每次都输出日志
      */
-    internal fun onDebuggingMsg(msg: String) {
-        if (YukiReflection.Configs.isDebug) YukiLog.debug(msg)
+    internal fun errorMsg(msg: String = "", e: Throwable? = null, es: List<Throwable> = emptyList(), isAlwaysMode: Boolean = false) {
+        /** 判断是否为 [CLASSSET_IS_NULL] */
+        if (e?.message == CLASSSET_IS_NULL) return
+        await {
+            if (isIgnoreErrorLogs) return@await
+            if (isAlwaysMode.not() && isUsingRemedyPlan) return@await
+            YukiLog.error(msg = "NoSuch$tag happend in [$classSet] $msg".trim(), e = e)
+            es.forEachIndexed { index, e -> YukiLog.error(msg = "Throwable [${index + 1}]", e = e) }
+        }
     }
 }

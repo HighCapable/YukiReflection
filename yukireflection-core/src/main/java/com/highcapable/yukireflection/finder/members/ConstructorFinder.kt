@@ -248,7 +248,7 @@ class ConstructorFinder @PublishedApi internal constructor(@PublishedApi overrid
         runBlocking {
             setInstance(result)
         }.result { ms ->
-            memberInstances.takeIf { it.isNotEmpty() }?.forEach { onDebuggingMsg(msg = "Find Constructor [$it] takes ${ms}ms") }
+            memberInstances.takeIf { it.isNotEmpty() }?.forEach { debugMsg(msg = "Find Constructor [$it] takes ${ms}ms") }
         }
     }
 
@@ -257,7 +257,7 @@ class ConstructorFinder @PublishedApi internal constructor(@PublishedApi overrid
         internalBuild()
         Result()
     }.getOrElse {
-        onFailureMsg(throwable = it)
+        errorMsg(e = it)
         Result(isNoSuch = true, it)
     }
 
@@ -284,41 +284,33 @@ class ConstructorFinder @PublishedApi internal constructor(@PublishedApi overrid
          * @param initiate 方法体
          */
         inline fun constructor(initiate: ConstructorConditions) =
-            Result().apply { remedyPlans.add(Pair(ConstructorFinder(classSet).apply(initiate), this)) }
+            Result().apply { remedyPlans.add(ConstructorFinder(classSet).apply(initiate) to this) }
 
         /** 开始重查找 */
         @PublishedApi
         internal fun build() {
             if (classSet == null) return
-            if (remedyPlans.isNotEmpty()) run {
+            if (remedyPlans.isNotEmpty()) {
+                val errors = mutableListOf<Throwable>()
                 var isFindSuccess = false
-                var lastError: Throwable? = null
-                remedyPlans.forEachIndexed { p, it ->
+                remedyPlans.forEachIndexed { index, plan ->
                     runCatching {
                         runBlocking {
-                            setInstance(it.first.result)
+                            setInstance(plan.first.result)
                         }.result { ms ->
-                            memberInstances.takeIf { it.isNotEmpty() }?.forEach { onDebuggingMsg(msg = "Find Constructor [$it] takes ${ms}ms") }
+                            memberInstances.takeIf { it.isNotEmpty() }?.forEach { debugMsg(msg = "Find Constructor [$it] takes ${ms}ms") }
                         }
                         isFindSuccess = true
-                        it.second.onFindCallback?.invoke(memberInstances.constructors())
+                        plan.second.onFindCallback?.invoke(memberInstances.constructors())
                         remedyPlansCallback?.invoke()
                         memberInstances.takeIf { it.isNotEmpty() }
-                            ?.forEach { onDebuggingMsg(msg = "Constructor [$it] trying ${p + 1} times success by RemedyPlan") }
-                        return@run
-                    }.onFailure {
-                        lastError = it
-                        onFailureMsg(msg = "Trying ${p + 1} times by RemedyPlan --> $it", isAlwaysPrint = true)
-                    }
+                            ?.forEach { debugMsg(msg = "RemedyPlan successed after ${index + 1} attempts of Constructor [$it]") }
+                        return
+                    }.onFailure { errors.add(it) }
                 }
-                if (isFindSuccess.not()) {
-                    onFailureMsg(
-                        msg = "Trying ${remedyPlans.size} times and all failure by RemedyPlan",
-                        throwable = lastError,
-                        isAlwaysPrint = true
-                    )
-                    remedyPlans.clear()
-                }
+                if (isFindSuccess) return
+                errorMsg(msg = "RemedyPlan failed after ${remedyPlans.size} attempts", es = errors, isAlwaysMode = true)
+                remedyPlans.clear()
             } else YukiLog.warn(msg = "RemedyPlan is empty, forgot it?")
         }
 
@@ -467,7 +459,7 @@ class ConstructorFinder @PublishedApi internal constructor(@PublishedApi overrid
          * @return [Result] 可继续向下监听
          */
         fun ignored(): Result {
-            isShutErrorPrinting = true
+            isIgnoreErrorLogs = true
             return this
         }
 
