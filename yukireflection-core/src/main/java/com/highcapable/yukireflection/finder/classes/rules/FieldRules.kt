@@ -1,5 +1,5 @@
 /*
- * YukiReflection - An efficient Reflection API for Java and Android built in Kotlin
+ * YukiReflection - An efficient Reflection API for Java and Android built in Kotlin.
  * Copyright (C) 2019-2023 HighCapable
  * https://github.com/fankes/YukiReflection
  *
