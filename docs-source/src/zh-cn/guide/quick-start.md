@@ -20,7 +20,7 @@
 
 ## 项目要求
 
-项目需要使用 `Android Studio` 或 `IntelliJ IDEA` 创建且类型为 Java 或 Android 项目并已集成 `Kotlin` 环境依赖。
+项目需要使用 `Android Studio` 或 `IntelliJ IDEA` 创建且类型为 Java 或 Android 项目并已集成 Kotlin 环境依赖。
 
 ### 集成依赖
 

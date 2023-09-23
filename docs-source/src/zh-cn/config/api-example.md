@@ -2,7 +2,7 @@
 
 > 这里介绍了 `YukiReflection` 的基本配置方法。
 
-`YukiReflection` 无需一些复杂的配置即可直接开始使用，且不会与 `Java` 原生的反射 API 冲突。
+`YukiReflection` 无需一些复杂的配置即可直接开始使用，且不会与 Java 原生的反射 API 冲突。
 
 你可以在使用之前对 `YukiReflection` 进行一些功能配置。
 

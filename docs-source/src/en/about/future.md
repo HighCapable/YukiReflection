@@ -8,9 +8,9 @@
 
 ### Automatically Generate Reflection Code
 
-Use `stub` to create a `Kotlin` class, and declare the parameters in it, as well as its different states in each version.
+Use `stub` to create a Kotlin class, and declare the parameters in it, as well as its different states in each version.
 
-For example, the `Java` class below is the target class we need to reflect.
+For example, the Java class below is the target class we need to reflect.
 
 > The following example
 
@@ -56,7 +56,7 @@ classOf<MyClass>().buildOf().current {
 }
 ```
 
-The function to be implemented at present can be directly defined as the following `Kotlin` class using the reflection function.
+The function to be implemented at present can be directly defined as the following Kotlin class using the reflection function.
 
 > The following example
 
@@ -80,7 +80,7 @@ class MyClass {
 }
 ```
 
-Then we can directly call this defined `Kotlin` class to implement the reflection function, and the API will automatically generate the reflection code according to the annotation.
+Then we can directly call this defined Kotlin class to implement the reflection function, and the API will automatically generate the reflection code according to the annotation.
 
 > The following example
 

@@ -2,7 +2,7 @@
 
 > The basic configuration method of `YukiReflection` is introduced here.
 
-`YukiReflection` can be used directly without some complex configuration, and does not conflict with `Java`'s native Reflection API.
+`YukiReflection` can be used directly without some complex configuration, and does not conflict with Java's native Reflection API.
 
 You can configure some functions of `YukiReflection` before using it.
 

@@ -20,7 +20,7 @@
 
 ## Project Requirements
 
-The project needs to be created using `Android Studio` or `IntelliJ IDEA` and the type is an Java or Android project and the `Kotlin` environment dependency has been integrated.
+The project needs to be created using `Android Studio` or `IntelliJ IDEA` and the type is an Java or Android project and the Kotlin environment dependency has been integrated.
 
 ## Integration Dependencies
 
