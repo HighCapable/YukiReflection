@@ -72,7 +72,7 @@ import kotlin.math.abs
 internal object ReflectionTool {
 
     /** 当前工具类的标签 */
-    private const val TAG = "YukiReflection#ReflectionTool"
+    private const val TAG = "${YukiReflection.TAG}#ReflectionTool"
 
     /**
      * 当前工具类的 [ClassLoader]
