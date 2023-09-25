@@ -30,7 +30,7 @@ package com.highcapable.yukireflection.utils.debug
 import android.util.Log
 import com.highcapable.yukireflection.YukiReflection
 import com.highcapable.yukireflection.factory.hasClass
-import com.highcapable.yukireflection.utils.factory.toStackTrace
+import com.highcapable.yukireflection.utils.factory.dumpToString
 
 /**
  * 全局 Log 管理类
@@ -112,6 +112,6 @@ internal object YukiLog {
          */
         fun innerLog(msg: String) = if (color.isBlank()) println(msg) else println("\u001B[${color}m$msg\u001B[0m")
         innerLog(msg)
-        e?.also { innerLog(it.toStackTrace()) }
+        e?.also { innerLog(it.dumpToString()) }
     }
 }

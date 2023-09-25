@@ -51,7 +51,6 @@ import com.highcapable.yukireflection.finder.type.factory.NameConditions
 import com.highcapable.yukireflection.utils.debug.YukiLog
 import com.highcapable.yukireflection.utils.factory.await
 import com.highcapable.yukireflection.utils.factory.runBlocking
-import com.highcapable.yukireflection.utils.factory.toStackTrace
 import dalvik.system.BaseDexClassLoader
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
@@ -93,7 +92,7 @@ class DexClassFinder @PublishedApi internal constructor(
                 ?.let { "${CACHE_FILE_NAME}_${versionName ?: it.versionName}_${versionCode ?: runCatching { it.longVersionCode }.getOrNull() ?: it.versionCode}" }
                 ?: "${CACHE_FILE_NAME}_unknown",
                 Context.MODE_PRIVATE)
-        }.onFailure { YukiLog.warn(msg = "Failed to read app's SharedPreferences when using DexClassFinder\n${it.toStackTrace()}") }.getOrNull()
+        }.onFailure { YukiLog.warn(msg = "Failed to read app's SharedPreferences when using DexClassFinder", e = it) }.getOrNull()
 
         /**
          * 清除当前 [DexClassFinder] 的 [Class] 缓存
