@@ -7,8 +7,8 @@ pluginManagement {
     }
 }
 plugins {
-    id("com.highcapable.sweetdependency") version "1.0.1"
-    id("com.highcapable.sweetproperty") version "1.0.2"
+    id("com.highcapable.sweetdependency") version "1.0.2"
+    id("com.highcapable.sweetproperty") version "1.0.3"
 }
 sweetProperty {
     global {
@@ -18,9 +18,9 @@ sweetProperty {
         }
     }
     rootProject { all { isEnable = false } }
-    project("samples:demo-android") { sourcesCode { isEnable = false } }
-    project("samples:demo-jvm") { sourcesCode { isEnable = false } }
-    project("yukireflection-core") { sourcesCode { className = rootProject.name } }
+    project(":samples:demo-android") { sourcesCode { isEnable = false } }
+    project(":samples:demo-jvm") { sourcesCode { isEnable = false } }
+    project(":yukireflection-core") { sourcesCode { className = rootProject.name } }
 }
 rootProject.name = "YukiReflection"
 include(":samples:demo-android", ":samples:demo-jvm")

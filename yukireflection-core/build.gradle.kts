@@ -33,7 +33,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 
 dependencies {
-    compileOnly(files("libs/android-34.jar"))
+    compileOnly(autowire("libs/android-34.jar"))
 }
 
 mavenPublishing {
