@@ -25,6 +25,8 @@
  *
  * This file is created by fankes on 2023/9/23.
  */
+@file:Suppress("unused")
+
 package com.highcapable.yukireflection.utils.debug
 
 import android.util.Log
@@ -36,12 +38,6 @@ import com.highcapable.yukireflection.utils.factory.dumpToString
  * 全局 Log 管理类
  */
 internal object YukiLog {
-
-    /**
-     * 是否为 Android 模式
-     * @return [Boolean]
-     */
-    private val isAndroidMode get() = "android.util.Log".hasClass()
 
     /**
      * 是否启用
@@ -61,9 +57,7 @@ internal object YukiLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun debug(msg: String, e: Throwable? = null) {
-        if (isEnable.not()) return
-        if (isAndroidMode) Log.d(tag, msg, e)
-        else log(msg = "[$tag] $msg", e)
+        if (isEnable) log(Type.DEBUG, msg, e)
     }
 
     /**
@@ -72,9 +66,7 @@ internal object YukiLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun info(msg: String, e: Throwable? = null) {
-        if (isEnable.not()) return
-        if (isAndroidMode) Log.i(tag, msg, e)
-        else log(msg = "[$tag] $msg", e, color = "38;5;10")
+        if (isEnable) log(Type.INFO, msg, e)
     }
 
     /**
@@ -83,9 +75,7 @@ internal object YukiLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun warn(msg: String, e: Throwable? = null) {
-        if (isEnable.not()) return
-        if (isAndroidMode) Log.w(tag, msg, e)
-        else log(msg = "[$tag] $msg", e, color = "33")
+        if (isEnable) log(Type.WARN, msg, e)
     }
 
     /**
@@ -94,24 +84,44 @@ internal object YukiLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun error(msg: String, e: Throwable? = null) {
-        if (isEnable.not()) return
-        if (isAndroidMode) Log.e(tag, msg, e)
-        else log(msg = "[$tag] $msg", e, color = "31")
+        if (isEnable) log(Type.ERROR, msg, e)
     }
 
     /**
      * 打印 Log
+     * @param type 类型
      * @param msg 消息内容
      * @param e 异常堆栈 - 默认空
-     * @param color 颜色代码 - 默认无颜色
      */
-    private fun log(msg: String, e: Throwable? = null, color: String = "") {
+    private fun log(type: Type, msg: String, e: Throwable? = null) {
+        val isAndroid = "android.util.Log".hasClass()
+        val mixedContent = "[$tag][${type.alias}] $msg"
+
         /**
          * 打印 Log
          * @param msg 消息内容
          */
-        fun innerLog(msg: String) = if (color.isBlank()) println(msg) else println("\u001B[${color}m$msg\u001B[0m")
-        innerLog(msg)
-        e?.also { innerLog(it.dumpToString()) }
+        fun innerLog(msg: String) {
+            when {
+                isAndroid -> when (type) {
+                    Type.DEBUG -> Log.d(tag, msg, e)
+                    Type.INFO -> Log.i(tag, msg, e)
+                    Type.WARN -> Log.w(tag, msg, e)
+                    Type.ERROR -> Log.e(tag, msg, e)
+                }
+                type.color.isBlank() -> println(mixedContent)
+                else -> println("\u001B[${type.color}m$mixedContent\u001B[0m")
+            }
+        }; innerLog(msg)
+        if (isAndroid.not()) e?.also { innerLog(it.dumpToString()) }
+    }
+
+    /**
+     * Log 类型定义类
+     * @param alias 类型别名
+     * @param color 颜色代码 - 默认无颜色
+     */
+    private enum class Type(val alias: String, val color: String = "") {
+        DEBUG("D"), INFO("I", "38;5;10"), WARN("W", "33"), ERROR("E", "31")
     }
 }
