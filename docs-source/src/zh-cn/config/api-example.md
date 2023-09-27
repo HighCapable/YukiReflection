@@ -42,10 +42,12 @@ API 内部的日志将会使用此标签进行打印。
 ```kotlin
 // 通过 configs 方法
 YukiReflection.configs {
-    debugTag = "YourCustomTag"
+    debugLog {
+        tag = "YourCustomTag"
+    }
 }
 // 直接设置
-YukiReflection.Configs.debugTag = "YourCustomTag"
+YLog.Configs.tag = "YourCustomTag"
 ```
 
 ### 启用或禁用 Debug 模式
@@ -76,10 +78,12 @@ YukiReflection.Configs.isDebug = true
 ```kotlin
 // 通过 configs 方法
 YukiReflection.configs {
-    isEnableLogs = true
+    debugLog {
+        isEnable = true
+    }
 }
 // 直接设置
-YukiReflection.Configs.isEnableLogs = true
+YLog.Configs.isEnable = true
 ```
 
 ### 使用 configs 方法配置
@@ -90,9 +94,11 @@ YukiReflection.Configs.isEnableLogs = true
 
 ```kotlin
 YukiReflection.configs {
-    debugTag = "YourCustomTag"
+    debugLog {
+        tag = "YourCustomTag"
+        isEnable = true
+    }
     isDebug = true
-    isEnableLogs = true
 }
 ```
 

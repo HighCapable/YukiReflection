@@ -42,10 +42,12 @@ Logs inside the API will be printed using this tag.
 ```kotlin
 // Via the configs method
 YukiReflection.configs {
-    debugTag = "YourCustomTag"
+    debugLog {
+        tag = "YourCustomTag"
+    }
 }
 // Set directly
-YukiReflection.Configs.debugTag = "YourCustomTag"
+YLog.Configs.tag = "YourCustomTag"
 ```
 
 ### Enable or Disable Debug Mode
@@ -76,10 +78,12 @@ This function is enabled by default, and disable will stop `YukiReflection` outp
 ```kotlin
 // Via the configs method
 YukiReflection.configs {
-    isEnableLogs = true
+    debugLog {
+        isEnable = true
+    }
 }
 // Set directly
-YukiReflection.Configs.isEnableLogs = true
+YLog.Configs.isEnable = true
 ```
 
 ### Use the configs Method to Configure
@@ -90,9 +94,11 @@ In order to configure multiple features at once, you can directly use the `YukiR
 
 ```kotlin
 YukiReflection.configs {
-    debugTag = "YourCustomTag"
+    debugLog {
+        tag = "YourCustomTag"
+        isEnable = true
+    }
     isDebug = true
-    isEnableLogs = true
 }
 ```
 
