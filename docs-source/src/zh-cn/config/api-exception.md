@@ -29,15 +29,15 @@ Method/Constructor/Field match type "**TYPE**" not allowed
 ```kotlin
 // 查找一个方法
 method {
-    // ❗设置了无效的类型举例
+    // 设置了无效的类型举例
     param(false, 1, 0)
-    // ❗设置了无效的类型举例
+    // 设置了无效的类型举例
     returnType = false
 }
 
 // 查找一个变量
 field {
-    // ❗设置了无效的类型举例
+    // 设置了无效的类型举例
     type = false
 }
 ```

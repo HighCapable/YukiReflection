@@ -49,9 +49,9 @@ object YukiReflection {
     /**
      * 版本名称
      *
-     * - ❗此方法已弃用 - 在之后的版本中将直接被删除
+     * - 此方法已弃用 - 在之后的版本中将直接被删除
      *
-     * - ❗请现在迁移到 [VERSION]
+     * - 请现在迁移到 [VERSION]
      */
     @Deprecated(message = "不再区分版本名称和版本号", ReplaceWith("VERSION"))
     const val API_VERSION_NAME = VERSION
@@ -59,9 +59,9 @@ object YukiReflection {
     /**
      * 版本号
      *
-     * - ❗此方法已弃用 - 在之后的版本中将直接被删除
+     * - 此方法已弃用 - 在之后的版本中将直接被删除
      *
-     * - ❗请现在迁移到 [VERSION]
+     * - 请现在迁移到 [VERSION]
      */
     @Deprecated(message = "不再区分版本名称和版本号", ReplaceWith("VERSION"))
     const val API_VERSION_CODE = -1
@@ -92,16 +92,16 @@ object YukiReflection {
         /**
          * 是否启用调试日志的输出功能
          *
-         * - ❗关闭后将会停用 [YukiReflection] 对全部日志的输出 - 同时 [isDebug] 将不再有效
+         * - 关闭后将会停用 [YukiReflection] 对全部日志的输出 - 同时 [isDebug] 将不再有效
          */
         var isEnableLogs = true
 
         /**
          * 是否启用调试日志的输出功能
          *
-         * - ❗此方法已弃用 - 在之后的版本中将直接被删除
+         * - 此方法已弃用 - 在之后的版本中将直接被删除
          *
-         * - ❗请现在迁移到 [isEnableLogs]
+         * - 请现在迁移到 [isEnableLogs]
          */
         @Deprecated(message = "请使用新方式来实现此功能", ReplaceWith("isEnableLogs"))
         var isAllowPrintingLogs get() = isEnableLogs
@@ -112,9 +112,9 @@ object YukiReflection {
         /**
          * 是否启用 [Member] 缓存功能
          *
-         * - ❗此方法及功能已被移除 - 在之后的版本中将直接被删除
+         * - 此方法及功能已被移除 - 在之后的版本中将直接被删除
          *
-         * - ❗[Member] 的直接缓存功能已被移除 - 因为其存在内存溢出 (OOM) 问题
+         * - [Member] 的直接缓存功能已被移除 - 因为其存在内存溢出 (OOM) 问题
          */
         @Deprecated(message = "此方法及功能已被移除，请删除此方法")
         var isEnableMemberCache = false

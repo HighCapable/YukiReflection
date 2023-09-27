@@ -79,7 +79,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
     /**
      * 设置 [Constructor] 标识符筛选条件
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -114,12 +114,12 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
      * param(StringType, BooleanType, VagueType, IntType)
      * ```
      *
-     * - ❗无参 [Constructor] 请使用 [emptyParam] 设置查找条件
+     * - 无参 [Constructor] 请使用 [emptyParam] 设置查找条件
      *
-     * - ❗有参 [Constructor] 必须使用此方法设定参数或使用 [paramCount] 指定个数
+     * - 有参 [Constructor] 必须使用此方法设定参数或使用 [paramCount] 指定个数
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
-     * @param paramType 参数类型数组 - ❗只能是 [Class]、[String]、[VariousClass]
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * @param paramType 参数类型数组 - 只能是 [Class]、[String]、[VariousClass]
      * @return [BaseFinder.IndexTypeCondition]
      */
     fun param(vararg paramType: Any): IndexTypeCondition {
@@ -137,11 +137,11 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
      * param { it[1] == StringClass || it[2].name == "java.lang.String" }
      * ```
      *
-     * - ❗无参 [Constructor] 请使用 [emptyParam] 设置查找条件
+     * - 无参 [Constructor] 请使用 [emptyParam] 设置查找条件
      *
-     * - ❗有参 [Constructor] 必须使用此方法设定参数或使用 [paramCount] 指定个数
+     * - 有参 [Constructor] 必须使用此方法设定参数或使用 [paramCount] 指定个数
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -163,7 +163,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
      *
      * 若参数个数小于零则忽略并使用 [param]
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param num 个数
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -183,7 +183,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
      * paramCount(1..5)
      * ```
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param numRange 个数范围
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -203,7 +203,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
      * paramCount { it >= 5 || it.isZero() }
      * ```
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -215,7 +215,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
     /**
      * 设置在 [classSet] 的所有父类中查找当前 [Constructor]
      *
-     * - ❗若当前 [classSet] 的父类较多可能会耗时 - API 会自动循环到父类继承是 [Any] 前的最后一个类
+     * - 若当前 [classSet] 的父类较多可能会耗时 - API 会自动循环到父类继承是 [Any] 前的最后一个类
      * @param isOnlySuperClass 是否仅在当前 [classSet] 的父类中查找 - 若父类是 [Any] 则不会生效
      */
     fun superClass(isOnlySuperClass: Boolean = false) {
@@ -349,9 +349,9 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
          *
          * - 若有多个 [Constructor] 结果只会返回第一个
          *
-         * - ❗在 [memberInstances] 结果为空时使用此方法将无法获得对象
+         * - 在 [memberInstances] 结果为空时使用此方法将无法获得对象
          *
-         * - ❗若你设置了 [remedys] 请使用 [wait] 回调结果方法
+         * - 若你设置了 [remedys] 请使用 [wait] 回调结果方法
          * @return [Instance]
          */
         fun get() = Instance(give())
@@ -361,9 +361,9 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
          *
          * - 返回全部查找条件匹配的多个 [Constructor] 实例结果
          *
-         * - ❗在 [memberInstances] 结果为空时使用此方法将无法获得对象
+         * - 在 [memberInstances] 结果为空时使用此方法将无法获得对象
          *
-         * - ❗若你设置了 [remedys] 请使用 [waitAll] 回调结果方法
+         * - 若你设置了 [remedys] 请使用 [waitAll] 回调结果方法
          * @return [ArrayList]<[Instance]>
          */
         fun all() = arrayListOf<Instance>().apply { giveAll().takeIf { it.isNotEmpty() }?.forEach { add(Instance(it)) } }
@@ -393,9 +393,9 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
          *
          * - 若有多个 [Constructor] 结果只会返回第一个
          *
-         * - ❗若你设置了 [remedys] 必须使用此方法才能获得结果
+         * - 若你设置了 [remedys] 必须使用此方法才能获得结果
          *
-         * - ❗若你没有设置 [remedys] 此方法将不会被回调
+         * - 若你没有设置 [remedys] 此方法将不会被回调
          * @param initiate 回调 [Instance]
          */
         fun wait(initiate: Instance.() -> Unit) {
@@ -408,9 +408,9 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
          *
          * - 返回全部查找条件匹配的多个 [Constructor] 实例结果
          *
-         * - ❗若你设置了 [remedys] 必须使用此方法才能获得结果
+         * - 若你设置了 [remedys] 必须使用此方法才能获得结果
          *
-         * - ❗若你没有设置 [remedys] 此方法将不会被回调
+         * - 若你没有设置 [remedys] 此方法将不会被回调
          * @param initiate 回调 [ArrayList]<[Instance]>
          */
         fun waitAll(initiate: ArrayList<Instance>.() -> Unit) {
@@ -448,7 +448,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
         /**
          * 忽略异常并停止打印任何错误日志
          *
-         * - ❗此时若要监听异常结果 - 你需要手动实现 [onNoSuchConstructor] 方法
+         * - 此时若要监听异常结果 - 你需要手动实现 [onNoSuchConstructor] 方法
          * @return [Result] 可继续向下监听
          */
         fun ignored(): Result {
@@ -461,7 +461,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
          *
          * 调用与创建目标实例类对象
          *
-         * - ❗请使用 [get]、[wait]、[all]、[waitAll] 方法来获取 [Instance]
+         * - 请使用 [get]、[wait]、[all]、[waitAll] 方法来获取 [Instance]
          * @param constructor 当前 [Constructor] 实例对象
          */
         inner class Instance internal constructor(private val constructor: Constructor<*>?) {

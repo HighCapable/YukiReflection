@@ -29,15 +29,15 @@ A disallowed parameter type was set when looking up methods, constructors, and v
 ```kotlin
 // Find a method
 method {
-    // ❗ Invalid type example is set
+    //  Invalid type example is set
     param(false, 1, 0)
-    // ❗ Invalid type example is set
+    //  Invalid type example is set
     returnType = false
 }
 
 // Find a variable
 field {
-    // ❗ Invalid type example is set
+    //  Invalid type example is set
     type = false
 }
 ```

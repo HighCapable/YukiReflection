@@ -73,9 +73,9 @@ import java.lang.reflect.ParameterizedType
 /**
  * 写出当前 [ClassLoader] 下所有 [Class] 名称数组
  *
- * - ❗此方法在 [Class] 数量过多时会非常耗时
+ * - 此方法在 [Class] 数量过多时会非常耗时
  *
- * - ❗若要按指定规则查找一个 [Class] - 请使用 [searchClass] 方法
+ * - 若要按指定规则查找一个 [Class] - 请使用 [searchClass] 方法
  * @return [List]<[String]>
  * @throws IllegalStateException 如果当前 [ClassLoader] 不是 [BaseDexClassLoader]
  */
@@ -84,13 +84,13 @@ fun ClassLoader.listOfClasses() = ReflectionTool.findDexClassList(loader = this)
 /**
  * 通过当前 [ClassLoader] 按指定条件查找并得到 Dex 中的 [Class]
  *
- * - ❗此方法在 [Class] 数量过多及查找条件复杂时会非常耗时
+ * - 此方法在 [Class] 数量过多及查找条件复杂时会非常耗时
  *
- * - ❗建议启用 [async] 或设置 [name] 参数 - [name] 参数将在当前 APP 不同版本中自动进行本地缓存以提升效率
+ * - 建议启用 [async] 或设置 [name] 参数 - [name] 参数将在当前 APP 不同版本中自动进行本地缓存以提升效率
  *
- * - ❗如果使用了 [async] 或 [name] 参数 - 则必须填写 [context] 参数
+ * - 如果使用了 [async] 或 [name] 参数 - 则必须填写 [context] 参数
  *
- * - ❗此功能尚在试验阶段 - 性能与稳定性可能仍然存在问题 - 使用过程遇到问题请向我们报告并帮助我们改进
+ * - 此功能尚在试验阶段 - 性能与稳定性可能仍然存在问题 - 使用过程遇到问题请向我们报告并帮助我们改进
  * @param context 当前 [Context] - 默认空
  * @param name 标识当前 [Class] 缓存的名称 - 不设置将不启用缓存 - 启用缓存自动启用 [async]
  * @param async 是否启用异步 - 默认否

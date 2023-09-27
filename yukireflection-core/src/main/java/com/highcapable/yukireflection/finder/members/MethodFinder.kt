@@ -67,7 +67,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
     /**
      * 设置 [Method] 名称
      *
-     * - ❗若不填写名称则必须存在一个其它条件
+     * - 若不填写名称则必须存在一个其它条件
      * @return [String]
      */
     var name
@@ -93,7 +93,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
     /**
      * 设置 [Method] 返回值
      *
-     * - ❗只能是 [Class]、[String]、[VariousClass]
+     * - 只能是 [Class]、[String]、[VariousClass]
      *
      * - 可不填写返回值
      * @return [Any] or null
@@ -109,7 +109,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      *
      * - 可不设置筛选条件
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -144,12 +144,12 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      * param(StringType, BooleanType, VagueType, IntType)
      * ```
      *
-     * - ❗无参 [Method] 请使用 [emptyParam] 设置查找条件
+     * - 无参 [Method] 请使用 [emptyParam] 设置查找条件
      *
-     * - ❗有参 [Method] 必须使用此方法设定参数或使用 [paramCount] 指定个数
+     * - 有参 [Method] 必须使用此方法设定参数或使用 [paramCount] 指定个数
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
-     * @param paramType 参数类型数组 - ❗只能是 [Class]、[String]、[VariousClass]
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * @param paramType 参数类型数组 - 只能是 [Class]、[String]、[VariousClass]
      * @return [BaseFinder.IndexTypeCondition]
      */
     fun param(vararg paramType: Any): IndexTypeCondition {
@@ -167,11 +167,11 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      * param { it[1] == StringClass || it[2].name == "java.lang.String" }
      * ```
      *
-     * - ❗无参 [Method] 请使用 [emptyParam] 设置查找条件
+     * - 无参 [Method] 请使用 [emptyParam] 设置查找条件
      *
-     * - ❗有参 [Method] 必须使用此方法设定参数或使用 [paramCount] 指定个数
+     * - 有参 [Method] 必须使用此方法设定参数或使用 [paramCount] 指定个数
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -189,9 +189,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
     /**
      * 设置 [Method] 名称
      *
-     * - ❗若不填写名称则必须存在一个其它条件
+     * - 若不填写名称则必须存在一个其它条件
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param value 名称
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -203,9 +203,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
     /**
      * 设置 [Method] 名称条件
      *
-     * - ❗若不填写名称则必须存在一个其它条件
+     * - 若不填写名称则必须存在一个其它条件
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -221,7 +221,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      *
      * 若参数个数小于零则忽略并使用 [param]
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param num 个数
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -241,7 +241,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      * paramCount(1..5)
      * ```
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param numRange 个数范围
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -261,7 +261,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      * paramCount { it >= 5 || it.isZero() }
      * ```
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -275,7 +275,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      *
      * - 可不填写返回值
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param value 个数
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -295,7 +295,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      * returnType { it == StringClass || it.name == "java.lang.String" }
      * ```
      *
-     * - ❗存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
+     * - 存在多个 [BaseFinder.IndexTypeCondition] 时除了 [order] 只会生效最后一个
      * @param conditions 条件方法体
      * @return [BaseFinder.IndexTypeCondition]
      */
@@ -307,7 +307,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
     /**
      * 设置在 [classSet] 的所有父类中查找当前 [Method]
      *
-     * - ❗若当前 [classSet] 的父类较多可能会耗时 - API 会自动循环到父类继承是 [Any] 前的最后一个类
+     * - 若当前 [classSet] 的父类较多可能会耗时 - API 会自动循环到父类继承是 [Any] 前的最后一个类
      * @param isOnlySuperClass 是否仅在当前 [classSet] 的父类中查找 - 若父类是 [Any] 则不会生效
      */
     fun superClass(isOnlySuperClass: Boolean = false) {
@@ -441,9 +441,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 若有多个 [Method] 结果只会返回第一个
          *
-         * - ❗在 [memberInstances] 结果为空时使用此方法将无法获得对象
+         * - 在 [memberInstances] 结果为空时使用此方法将无法获得对象
          *
-         * - ❗若你设置了 [remedys] 请使用 [wait] 回调结果方法
+         * - 若你设置了 [remedys] 请使用 [wait] 回调结果方法
          * @param instance 所在实例
          * @return [Instance]
          */
@@ -454,9 +454,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 返回全部查找条件匹配的多个 [Method] 实例结果
          *
-         * - ❗在 [memberInstances] 结果为空时使用此方法将无法获得对象
+         * - 在 [memberInstances] 结果为空时使用此方法将无法获得对象
          *
-         * - ❗若你设置了 [remedys] 请使用 [waitAll] 回调结果方法
+         * - 若你设置了 [remedys] 请使用 [waitAll] 回调结果方法
          * @param instance 所在实例
          * @return [ArrayList]<[Instance]>
          */
@@ -488,9 +488,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 若有多个 [Method] 结果只会返回第一个
          *
-         * - ❗若你设置了 [remedys] 必须使用此方法才能获得结果
+         * - 若你设置了 [remedys] 必须使用此方法才能获得结果
          *
-         * - ❗若你没有设置 [remedys] 此方法将不会被回调
+         * - 若你没有设置 [remedys] 此方法将不会被回调
          * @param instance 所在实例
          * @param initiate 回调 [Instance]
          */
@@ -504,9 +504,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 返回全部查找条件匹配的多个 [Method] 实例结果
          *
-         * - ❗若你设置了 [remedys] 必须使用此方法才能获得结果
+         * - 若你设置了 [remedys] 必须使用此方法才能获得结果
          *
-         * - ❗若你没有设置 [remedys] 此方法将不会被回调
+         * - 若你没有设置 [remedys] 此方法将不会被回调
          * @param instance 所在实例
          * @param initiate 回调 [ArrayList]<[Instance]>
          */
@@ -547,7 +547,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
         /**
          * 忽略异常并停止打印任何错误日志
          *
-         * - ❗此时若要监听异常结果 - 你需要手动实现 [onNoSuchMethod] 方法
+         * - 此时若要监听异常结果 - 你需要手动实现 [onNoSuchMethod] 方法
          * @return [Result] 可继续向下监听
          */
         fun ignored(): Result {
@@ -558,7 +558,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
         /**
          * [Method] 实例处理类
          *
-         * - ❗请使用 [get]、[wait]、[all]、[waitAll] 方法来获取 [Instance]
+         * - 请使用 [get]、[wait]、[all]、[waitAll] 方法来获取 [Instance]
          * @param instance 当前 [Method] 所在类的实例对象
          * @param method 当前 [Method] 实例对象
          */
@@ -588,7 +588,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Byte] 返回值类型
              *
-             * - ❗请确认目标变量的类型 - 发生错误会返回 null
+             * - 请确认目标变量的类型 - 发生错误会返回 null
              * @param args 方法参数
              * @return [Byte] or null
              */
@@ -597,7 +597,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Int] 返回值类型
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回默认值
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回默认值
              * @param args 方法参数
              * @return [Int] 取不到返回 0
              */
@@ -606,7 +606,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Long] 返回值类型
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回默认值
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回默认值
              * @param args 方法参数
              * @return [Long] 取不到返回 0L
              */
@@ -615,7 +615,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Short] 返回值类型
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回默认值
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回默认值
              * @param args 方法参数
              * @return [Short] 取不到返回 0
              */
@@ -624,7 +624,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Double] 返回值类型
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回默认值
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回默认值
              * @param args 方法参数
              * @return [Double] 取不到返回 0.0
              */
@@ -633,7 +633,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Float] 返回值类型
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回默认值
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回默认值
              * @param args 方法参数
              * @return [Float] 取不到返回 0f
              */
@@ -656,7 +656,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Boolean] 返回值类型
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回默认值
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回默认值
              * @param args 方法参数
              * @return [Boolean] 取不到返回 false
              */
@@ -665,7 +665,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [Array] 返回值类型 - 每项类型 [T]
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回空数组
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回空数组
              * @return [Array] 取不到返回空数组
              */
             inline fun <reified T> array(vararg args: Any?) = invoke(*args) ?: arrayOf<T>()
@@ -673,7 +673,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
             /**
              * 执行 [Method] - 指定 [List] 返回值类型 - 每项类型 [T]
              *
-             * - ❗请确认目标 [Method] 的返回值 - 发生错误会返回空数组
+             * - 请确认目标 [Method] 的返回值 - 发生错误会返回空数组
              * @return [List] 取不到返回空数组
              */
             inline fun <reified T> list(vararg args: Any?) = invoke(*args) ?: listOf<T>()

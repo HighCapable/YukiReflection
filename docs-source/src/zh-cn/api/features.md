@@ -1110,7 +1110,7 @@ instance.current {
         name = "stop"
         emptyParam()
     }.call()
-// ❗注意，因为 current() 返回的是 CurrentClass 自身对象，所以不能像下面这样调用
+// 注意，因为 current() 返回的是 CurrentClass 自身对象，所以不能像下面这样调用
 instance.current().current()
 ```
 
@@ -1492,7 +1492,7 @@ TestGeneric::class.java.generic()?.argument()?.method {
 method {
     name = "test"
     param(BooleanType).index(num = 2)
-    // ❗错误的使用方法，请仅保留一个 index 方法
+    // 错误的使用方法，请仅保留一个 index 方法
     returnType(StringClass).index(num = 1)
 }
 ```
@@ -1619,7 +1619,7 @@ TestFoo::class.java.constructor()
 field {
     name = "test"
     type = BooleanType
-}.get().string() // ❗错误的使用方法，必须 cast 为字节码目标类型
+}.get().string() // 错误的使用方法，必须 cast 为字节码目标类型
 ```
 
 以下是正确的使用方法。
