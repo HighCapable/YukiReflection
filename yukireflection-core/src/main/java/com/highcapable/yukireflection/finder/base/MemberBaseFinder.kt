@@ -31,7 +31,7 @@
 package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.utils.debug.YukiLog
+import com.highcapable.yukireflection.utils.debug.YLog
 import com.highcapable.yukireflection.utils.factory.await
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
@@ -92,7 +92,7 @@ abstract class MemberBaseFinder internal constructor(private val tag: String, in
      * @param msg 消息内容
      */
     internal fun debugMsg(msg: String) {
-        if (YukiReflection.Configs.isDebug) YukiLog.debug(msg)
+        if (YukiReflection.Configs.isDebug) YLog.debug(msg)
     }
 
     /**
@@ -108,8 +108,8 @@ abstract class MemberBaseFinder internal constructor(private val tag: String, in
         await {
             if (isIgnoreErrorLogs) return@await
             if (isAlwaysMode.not() && isUsingRemedyPlan) return@await
-            YukiLog.error(msg = "NoSuch$tag happend in [$classSet] $msg".trim(), e = e)
-            es.forEachIndexed { index, e -> YukiLog.error(msg = "Throwable [${index + 1}]", e = e) }
+            YLog.error(msg = "NoSuch$tag happend in [$classSet] $msg".trim(), e = e)
+            es.forEachIndexed { index, e -> YLog.error(msg = "Throwable [${index + 1}]", e = e) }
         }
     }
 }

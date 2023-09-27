@@ -42,7 +42,7 @@ import com.highcapable.yukireflection.finder.type.factory.FieldConditions
 import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.NameConditions
 import com.highcapable.yukireflection.finder.type.factory.ObjectConditions
-import com.highcapable.yukireflection.utils.debug.YukiLog
+import com.highcapable.yukireflection.utils.debug.YLog
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import java.lang.reflect.Field
 
@@ -262,7 +262,7 @@ class FieldFinder internal constructor(override val classSet: Class<*>? = null) 
                 if (isFindSuccess) return
                 errorMsg(msg = "RemedyPlan failed after ${remedyPlans.size} attempts", es = errors, isAlwaysMode = true)
                 remedyPlans.clear()
-            } else YukiLog.warn(msg = "RemedyPlan is empty, forgot it?")
+            } else YLog.warn(msg = "RemedyPlan is empty, forgot it?")
         }
 
         /**

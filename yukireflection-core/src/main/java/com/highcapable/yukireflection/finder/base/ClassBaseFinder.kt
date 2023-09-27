@@ -29,7 +29,7 @@
 package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.utils.debug.YukiLog
+import com.highcapable.yukireflection.utils.debug.YLog
 
 /**
  * 这是 [Class] 查找类功能的基本类实现
@@ -62,7 +62,7 @@ abstract class ClassBaseFinder internal constructor(internal open val loaderSet:
      * @param msg 消息内容
      */
     internal fun debugMsg(msg: String) {
-        if (YukiReflection.Configs.isDebug) YukiLog.debug(msg)
+        if (YukiReflection.Configs.isDebug) YLog.debug(msg)
     }
 
     /**
@@ -73,7 +73,7 @@ abstract class ClassBaseFinder internal constructor(internal open val loaderSet:
         if (isIgnoreErrorLogs) return
         /** 判断是否为 [LOADERSET_IS_NULL] */
         if (e?.message == LOADERSET_IS_NULL) return
-        YukiLog.error(msg = "NoClassDefFound happend in [$loaderSet]", e = e)
+        YLog.error(msg = "NoClassDefFound happend in [$loaderSet]", e = e)
     }
 
     override fun failure(throwable: Throwable?) = error("DexClassFinder does not contain this usage")

@@ -47,7 +47,7 @@ import com.highcapable.yukireflection.finder.classes.rules.result.MemberRulesRes
 import com.highcapable.yukireflection.finder.tools.ReflectionTool
 import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.NameConditions
-import com.highcapable.yukireflection.utils.debug.YukiLog
+import com.highcapable.yukireflection.utils.debug.YLog
 import com.highcapable.yukireflection.utils.factory.await
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import dalvik.system.BaseDexClassLoader
@@ -91,7 +91,7 @@ class DexClassFinder internal constructor(
                 ?.let { "${CACHE_FILE_NAME}_${versionName ?: it.versionName}_${versionCode ?: runCatching { it.longVersionCode }.getOrNull() ?: it.versionCode}" }
                 ?: "${CACHE_FILE_NAME}_unknown",
                 Context.MODE_PRIVATE)
-        }.onFailure { YukiLog.warn(msg = "Failed to read app's SharedPreferences when using DexClassFinder", e = it) }.getOrNull()
+        }.onFailure { YLog.warn(msg = "Failed to read app's SharedPreferences when using DexClassFinder", e = it) }.getOrNull()
 
         /**
          * 清除当前 [DexClassFinder] 的 [Class] 缓存
@@ -102,7 +102,7 @@ class DexClassFinder internal constructor(
          * @param versionCode 版本号 - 默认空
          */
         fun clearCache(context: Context, versionName: String? = null, versionCode: Long? = null) =
-            context.currentSp(versionName, versionCode)?.edit()?.clear()?.apply() ?: YukiLog.warn(msg = "Failed to clear DexClassFinder's cache")
+            context.currentSp(versionName, versionCode)?.edit()?.clear()?.apply() ?: YLog.warn(msg = "Failed to clear DexClassFinder's cache")
     }
 
     override var rulesData = ClassRulesData()
@@ -451,7 +451,7 @@ class DexClassFinder internal constructor(
             takeIf { it.isNotEmpty() }?.forEach { names.add(it.name) }
             context?.also {
                 if (it.packageName == "android") error("Cannot create classes cache for \"android\", please remove \"name\" param")
-                it.currentSp()?.edit()?.apply { putStringSet(name, names) }?.apply() ?: YukiLog.warn(msg = "Failed to use caching in DexClassFinder")
+                it.currentSp()?.edit()?.apply { putStringSet(name, names) }?.apply() ?: YLog.warn(msg = "Failed to use caching in DexClassFinder")
             }
         }
     }

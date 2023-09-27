@@ -37,7 +37,7 @@ import com.highcapable.yukireflection.utils.factory.dumpToString
 /**
  * 全局 Log 管理类
  */
-internal object YukiLog {
+internal object YLog {
 
     /**
      * 是否启用

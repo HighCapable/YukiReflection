@@ -42,7 +42,7 @@ import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.ObjectsConditions
 import com.highcapable.yukireflection.type.defined.UndefinedType
 import com.highcapable.yukireflection.type.defined.VagueType
-import com.highcapable.yukireflection.utils.debug.YukiLog
+import com.highcapable.yukireflection.utils.debug.YLog
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import java.lang.reflect.Constructor
 
@@ -304,7 +304,7 @@ class ConstructorFinder internal constructor(override val classSet: Class<*>? = 
                 if (isFindSuccess) return
                 errorMsg(msg = "RemedyPlan failed after ${remedyPlans.size} attempts", es = errors, isAlwaysMode = true)
                 remedyPlans.clear()
-            } else YukiLog.warn(msg = "RemedyPlan is empty, forgot it?")
+            } else YLog.warn(msg = "RemedyPlan is empty, forgot it?")
         }
 
         /**
