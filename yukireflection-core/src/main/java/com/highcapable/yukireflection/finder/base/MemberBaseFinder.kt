@@ -31,7 +31,7 @@
 package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.utils.debug.YLog
+import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.utils.factory.await
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field

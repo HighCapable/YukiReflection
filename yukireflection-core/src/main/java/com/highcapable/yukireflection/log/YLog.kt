@@ -27,7 +27,7 @@
  */
 @file:Suppress("unused")
 
-package com.highcapable.yukireflection.utils.debug
+package com.highcapable.yukireflection.log
 
 import android.util.Log
 import com.highcapable.yukireflection.YukiReflection
@@ -37,19 +37,34 @@ import com.highcapable.yukireflection.utils.factory.dumpToString
 /**
  * 全局 Log 管理类
  */
-internal object YLog {
+object YLog {
 
     /**
-     * 是否启用
-     * @return [Boolean]
+     * 配置 [YLog]
      */
-    private val isEnable get() = YukiReflection.Configs.isEnableLogs
+    object Configs {
 
-    /**
-     * Log 标签
-     * @return [String]
-     */
-    private val tag get() = YukiReflection.Configs.debugTag
+        /**
+         * 这是一个调试日志的全局标识
+         *
+         * 默认文案为 [YukiReflection.TAG]
+         *
+         * 你可以修改为你自己的文案
+         */
+        var tag = YukiReflection.TAG
+
+        /**
+         * 是否启用调试日志的输出功能 - 默认启用
+         *
+         * - 关闭后将会停用 [YukiReflection] 对全部日志的输出
+         *
+         * 当 [isEnable] 关闭后 [YukiReflection.Configs.isDebug] 也将同时关闭
+         */
+        var isEnable = true
+
+        /** 结束方法体 */
+        internal fun build() = Unit
+    }
 
     /**
      * 打印 Debug 级别 Log
@@ -57,7 +72,7 @@ internal object YLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun debug(msg: String, e: Throwable? = null) {
-        if (isEnable) log(Type.DEBUG, msg, e)
+        if (Configs.isEnable) log(Type.DEBUG, msg, e)
     }
 
     /**
@@ -66,7 +81,7 @@ internal object YLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun info(msg: String, e: Throwable? = null) {
-        if (isEnable) log(Type.INFO, msg, e)
+        if (Configs.isEnable) log(Type.INFO, msg, e)
     }
 
     /**
@@ -75,7 +90,7 @@ internal object YLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun warn(msg: String, e: Throwable? = null) {
-        if (isEnable) log(Type.WARN, msg, e)
+        if (Configs.isEnable) log(Type.WARN, msg, e)
     }
 
     /**
@@ -84,7 +99,7 @@ internal object YLog {
      * @param e 异常堆栈 - 默认空
      */
     internal fun error(msg: String, e: Throwable? = null) {
-        if (isEnable) log(Type.ERROR, msg, e)
+        if (Configs.isEnable) log(Type.ERROR, msg, e)
     }
 
     /**
@@ -95,7 +110,7 @@ internal object YLog {
      */
     private fun log(type: Type, msg: String, e: Throwable? = null) {
         val isAndroid = "android.util.Log".hasClass()
-        val mixedContent = "[$tag][${type.alias}] $msg"
+        val mixedContent = "[${Configs.tag}][${type.alias}] $msg"
 
         /**
          * 打印 Log
@@ -104,10 +119,10 @@ internal object YLog {
         fun innerLog(msg: String) {
             when {
                 isAndroid -> when (type) {
-                    Type.DEBUG -> Log.d(tag, msg, e)
-                    Type.INFO -> Log.i(tag, msg, e)
-                    Type.WARN -> Log.w(tag, msg, e)
-                    Type.ERROR -> Log.e(tag, msg, e)
+                    Type.DEBUG -> Log.d(Configs.tag, msg, e)
+                    Type.INFO -> Log.i(Configs.tag, msg, e)
+                    Type.WARN -> Log.w(Configs.tag, msg, e)
+                    Type.ERROR -> Log.e(Configs.tag, msg, e)
                 }
                 type.color.isBlank() -> println(mixedContent)
                 else -> println("\u001B[${type.color}m$mixedContent\u001B[0m")

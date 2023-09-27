@@ -25,12 +25,13 @@
  *
  * This file is created by fankes on 2023/1/21.
  */
-@file:Suppress("unused")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate", "NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
 
 package com.highcapable.yukireflection
 
 import com.highcapable.yukireflection.YukiReflection.Configs
 import com.highcapable.yukireflection.generated.YukiReflectionProperties
+import com.highcapable.yukireflection.log.YLog
 import java.lang.reflect.Member
 
 /**
@@ -72,13 +73,23 @@ object YukiReflection {
     object Configs {
 
         /**
+         * 配置 [YLog.Configs] 相关参数
+         * @param initiate 方法体
+         */
+        inline fun debugLog(initiate: YLog.Configs.() -> Unit) = YLog.Configs.apply(initiate).build()
+
+        /**
          * 这是一个调试日志的全局标识
          *
-         * 默认文案为 [TAG]
+         * - 此方法已弃用 - 在之后的版本中将直接被删除
          *
-         * 你可以修改为你自己的文案
+         * - 请现在迁移到 [debugLog] 并使用 [YLog.Configs.tag]
          */
-        var debugTag = TAG
+        @Deprecated(message = "请使用新方式来实现此功能")
+        var debugTag get() = YLog.Configs.tag
+            set(value) {
+                YLog.Configs.tag = value
+            }
 
         /**
          * 是否开启调试模式 - 默认不启用
@@ -92,21 +103,14 @@ object YukiReflection {
         /**
          * 是否启用调试日志的输出功能
          *
-         * - 关闭后将会停用 [YukiReflection] 对全部日志的输出 - 同时 [isDebug] 将不再有效
-         */
-        var isEnableLogs = true
-
-        /**
-         * 是否启用调试日志的输出功能
-         *
          * - 此方法已弃用 - 在之后的版本中将直接被删除
          *
-         * - 请现在迁移到 [isEnableLogs]
+         * - 请现在迁移到 [debugLog] 并使用 [YLog.Configs.isEnable]
          */
-        @Deprecated(message = "请使用新方式来实现此功能", ReplaceWith("isEnableLogs"))
-        var isAllowPrintingLogs get() = isEnableLogs
+        @Deprecated(message = "请使用新方式来实现此功能")
+        var isAllowPrintingLogs get() = YLog.Configs.isEnable
             set(value) {
-                isEnableLogs = value
+                YLog.Configs.isEnable = value
             }
 
         /**
@@ -118,13 +122,14 @@ object YukiReflection {
          */
         @Deprecated(message = "此方法及功能已被移除，请删除此方法")
         var isEnableMemberCache = false
+
+        /** 结束方法体 */
+        internal fun build() = Unit
     }
 
     /**
      * 配置 [YukiReflection] 相关参数
      * @param initiate 方法体
      */
-    inline fun configs(initiate: Configs.() -> Unit) {
-        Configs.apply(initiate)
-    }
+    inline fun configs(initiate: Configs.() -> Unit) = Configs.apply(initiate).build()
 }

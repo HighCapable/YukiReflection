@@ -49,7 +49,7 @@ import com.highcapable.yukireflection.type.java.DalvikBaseDexClassLoader
 import com.highcapable.yukireflection.type.java.NoClassDefFoundErrorClass
 import com.highcapable.yukireflection.type.java.NoSuchFieldErrorClass
 import com.highcapable.yukireflection.type.java.NoSuchMethodErrorClass
-import com.highcapable.yukireflection.utils.debug.YLog
+import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.utils.factory.conditions
 import com.highcapable.yukireflection.utils.factory.findLastIndex
 import com.highcapable.yukireflection.utils.factory.lastIndex

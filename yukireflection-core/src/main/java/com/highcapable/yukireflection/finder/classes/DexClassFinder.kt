@@ -47,7 +47,7 @@ import com.highcapable.yukireflection.finder.classes.rules.result.MemberRulesRes
 import com.highcapable.yukireflection.finder.tools.ReflectionTool
 import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.NameConditions
-import com.highcapable.yukireflection.utils.debug.YLog
+import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.utils.factory.await
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import dalvik.system.BaseDexClassLoader

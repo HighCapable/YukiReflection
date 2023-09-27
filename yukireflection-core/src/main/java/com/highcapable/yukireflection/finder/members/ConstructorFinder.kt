@@ -42,7 +42,7 @@ import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.ObjectsConditions
 import com.highcapable.yukireflection.type.defined.UndefinedType
 import com.highcapable.yukireflection.type.defined.VagueType
-import com.highcapable.yukireflection.utils.debug.YLog
+import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import java.lang.reflect.Constructor
 

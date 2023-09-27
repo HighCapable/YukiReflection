@@ -42,7 +42,7 @@ import com.highcapable.yukireflection.finder.type.factory.FieldConditions
 import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.NameConditions
 import com.highcapable.yukireflection.finder.type.factory.ObjectConditions
-import com.highcapable.yukireflection.utils.debug.YLog
+import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import java.lang.reflect.Field
 

@@ -29,7 +29,7 @@
 package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.utils.debug.YLog
+import com.highcapable.yukireflection.log.YLog
 
 /**
  * 这是 [Class] 查找类功能的基本类实现
