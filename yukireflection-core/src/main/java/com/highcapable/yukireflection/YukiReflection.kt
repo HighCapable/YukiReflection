@@ -96,7 +96,7 @@ object YukiReflection {
          *
          * 启用后将交由日志输出管理器打印详细日志 (例如反射查找功能的耗时) 到控制台
          *
-         * 请过滤 [debugTag] 即可找到每条日志
+         * 当 [YLog.Configs.isEnable] 关闭后 [isDebug] 也将同时关闭
          */
         var isDebug = false
 
