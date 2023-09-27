@@ -47,7 +47,7 @@ import java.lang.reflect.Method
  * [Method] 查找条件实现类
  * @param rulesData 当前查找条件规则数据
  */
-class MethodRules internal constructor(@PublishedApi internal val rulesData: MethodRulesData) : BaseRules() {
+class MethodRules internal constructor(private val rulesData: MethodRulesData) : BaseRules() {
 
     /**
      * 设置 [Method] 名称
@@ -210,6 +210,5 @@ class MethodRules internal constructor(@PublishedApi internal val rulesData: Met
      * 返回结果实现类
      * @return [MemberRulesResult]
      */
-    @PublishedApi
     internal fun build() = MemberRulesResult(rulesData)
 }

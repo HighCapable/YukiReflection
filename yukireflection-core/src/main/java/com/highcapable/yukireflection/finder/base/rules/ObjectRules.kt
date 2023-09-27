@@ -40,7 +40,6 @@ import java.lang.reflect.Member
  */
 class ObjectRules private constructor(private val instance: Any) {
 
-    @PublishedApi
     internal companion object {
 
         /**
@@ -48,7 +47,6 @@ class ObjectRules private constructor(private val instance: Any) {
          * @param instance 实例对象
          * @return [ObjectRules]
          */
-        @PublishedApi
         internal fun with(instance: Any) = ObjectRules(instance)
     }
 

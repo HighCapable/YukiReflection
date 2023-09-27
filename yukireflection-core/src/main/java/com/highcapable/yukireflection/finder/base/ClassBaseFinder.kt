@@ -29,7 +29,6 @@
 package com.highcapable.yukireflection.finder.base
 
 import com.highcapable.yukireflection.YukiReflection
-import com.highcapable.yukireflection.annotation.YukiPrivateApi
 import com.highcapable.yukireflection.utils.debug.YukiLog
 
 /**
@@ -77,6 +76,5 @@ abstract class ClassBaseFinder internal constructor(internal open val loaderSet:
         YukiLog.error(msg = "NoClassDefFound happend in [$loaderSet]", e = e)
     }
 
-    @YukiPrivateApi
     override fun failure(throwable: Throwable?) = error("DexClassFinder does not contain this usage")
 }

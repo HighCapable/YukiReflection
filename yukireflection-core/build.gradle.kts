@@ -10,21 +10,10 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-kotlin {
-    sourceSets {
-        all {
-            languageSettings {
-                optIn(property.project.yukireflection.core.kotlin.optIn.yukiPrivateApi)
-            }
-        }
-    }
-}
-
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = "17"
         freeCompilerArgs = listOf(
-            "-opt-in=${property.project.yukireflection.core.kotlin.optIn.yukiPrivateApi}",
             "-Xno-param-assertions",
             "-Xno-call-assertions",
             "-Xno-receiver-assertions"

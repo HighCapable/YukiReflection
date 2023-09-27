@@ -40,7 +40,6 @@ import java.lang.reflect.Constructor
  * @param paramCountRange 参数个数范围
  * @param paramCountConditions 参数个数条件
  */
-@PublishedApi
 internal class ConstructorRulesData internal constructor(
     var paramTypes: Array<out Class<*>>? = null,
     var paramTypesConditions: ObjectsConditions? = null,

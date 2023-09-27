@@ -39,7 +39,6 @@ import java.lang.reflect.Field
  * @param type 类型
  * @param typeConditions 类型条件
  */
-@PublishedApi
 internal class FieldRulesData internal constructor(
     var name: String = "",
     var nameConditions: NameConditions? = null,

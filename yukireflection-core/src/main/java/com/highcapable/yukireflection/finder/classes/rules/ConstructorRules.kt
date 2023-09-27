@@ -45,7 +45,7 @@ import java.lang.reflect.Constructor
  * [Constructor] 查找条件实现类
  * @param rulesData 当前查找条件规则数据
  */
-class ConstructorRules internal constructor(@PublishedApi internal val rulesData: ConstructorRulesData) : BaseRules() {
+class ConstructorRules internal constructor(private val rulesData: ConstructorRulesData) : BaseRules() {
 
     /**
      * 设置 [Constructor] 参数个数
@@ -160,6 +160,5 @@ class ConstructorRules internal constructor(@PublishedApi internal val rulesData
      * 返回结果实现类
      * @return [MemberRulesResult]
      */
-    @PublishedApi
     internal fun build() = MemberRulesResult(rulesData)
 }

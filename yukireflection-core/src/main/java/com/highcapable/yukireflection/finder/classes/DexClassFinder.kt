@@ -26,14 +26,13 @@
  * This file is created by fankes on 2022/9/4.
  * This file is modified by fankes on 2023/1/25.
  */
-@file:Suppress("unused", "MemberVisibilityCanBePrivate")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate", "NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
 
 package com.highcapable.yukireflection.finder.classes
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import com.highcapable.yukireflection.annotation.YukiPrivateApi
 import com.highcapable.yukireflection.factory.hasClass
 import com.highcapable.yukireflection.factory.searchClass
 import com.highcapable.yukireflection.factory.toClass
@@ -68,7 +67,7 @@ import java.lang.reflect.Method
  * @param async 是否启用异步
  * @param loaderSet 当前使用的 [ClassLoader] 实例
  */
-class DexClassFinder @PublishedApi internal constructor(
+class DexClassFinder internal constructor(
     private val context: Context?,
     internal var name: String,
     internal var async: Boolean,
@@ -106,7 +105,6 @@ class DexClassFinder @PublishedApi internal constructor(
             context.currentSp(versionName, versionCode)?.edit()?.clear()?.apply() ?: YukiLog.warn(msg = "Failed to clear DexClassFinder's cache")
     }
 
-    @PublishedApi
     override var rulesData = ClassRulesData()
 
     /**
@@ -467,7 +465,6 @@ class DexClassFinder @PublishedApi internal constructor(
         classes.takeIf { it.isNotEmpty() }?.forEach { classInstances.add(it) }
     }
 
-    @YukiPrivateApi
     override fun build() = runCatching {
         if (loaderSet != null) {
             /** 开始任务 */
@@ -500,8 +497,8 @@ class DexClassFinder @PublishedApi internal constructor(
      * @param throwable 错误信息
      */
     inner class Result internal constructor(
-        @PublishedApi internal var isNotFound: Boolean = false,
-        @PublishedApi internal var throwable: Throwable? = null
+        internal var isNotFound: Boolean = false,
+        internal var throwable: Throwable? = null
     ) : BaseResult {
 
         /** 异步方法体回调结果 */

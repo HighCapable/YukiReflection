@@ -68,7 +68,6 @@ import kotlin.math.abs
 /**
  * 这是一个对 [Class]、[Member] 查找的工具实现类
  */
-@PublishedApi
 internal object ReflectionTool {
 
     /** 当前工具类的标签 */
@@ -125,7 +124,6 @@ internal object ReflectionTool {
      * @return [Class]
      * @throws NoClassDefFoundError 如果找不到 [Class] 或设置了错误的 [ClassLoader]
      */
-    @PublishedApi
     internal fun findClassByName(name: String, loader: ClassLoader?, initialize: Boolean = false): Class<*> {
         val uniqueCode = "[$name][$loader]"
 

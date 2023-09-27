@@ -431,7 +431,7 @@ method {
 ## Result <span class="symbol">- class</span>
 
 ```kotlin:no-line-numbers
-inner class Result internal constructor(internal val isNoSuch: Boolean, private val throwable: Throwable?) : BaseResult
+inner class Result internal constructor(internal val isNoSuch: Boolean, internal val throwable: Throwable?) : BaseResult
 ```
 
 **Change Records**

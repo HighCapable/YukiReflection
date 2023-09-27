@@ -28,7 +28,6 @@
  */
 package com.highcapable.yukireflection.finder.base
 
-import com.highcapable.yukireflection.annotation.YukiPrivateApi
 import com.highcapable.yukireflection.bean.VariousClass
 import com.highcapable.yukireflection.factory.toClass
 import com.highcapable.yukireflection.finder.base.data.BaseRulesData
@@ -42,20 +41,18 @@ import kotlin.math.abs
 abstract class BaseFinder {
 
     /** 当前查找条件规则数据 */
-    @PublishedApi
     internal abstract val rulesData: BaseRulesData
 
     /**
      * 字节码、数组下标筛选数据类型
      */
-    @PublishedApi
     internal enum class IndexConfigType { ORDER, MATCH }
 
     /**
      * 字节码、数组下标筛选实现类
      * @param type 类型
      */
-    inner class IndexTypeCondition @PublishedApi internal constructor(private val type: IndexConfigType) {
+    inner class IndexTypeCondition internal constructor(private val type: IndexConfigType) {
 
         /**
          * 设置下标
@@ -124,8 +121,7 @@ abstract class BaseFinder {
      * - ❗此功能交由方法体自动完成 - 你不应该手动调用此方法
      * @return [BaseResult]
      */
-    @YukiPrivateApi
-    abstract fun build(): BaseResult
+    internal abstract fun build(): BaseResult
 
     /**
      * 返回只有异常的结果实现类
@@ -134,14 +130,12 @@ abstract class BaseFinder {
      * @param throwable 异常
      * @return [BaseResult]
      */
-    @YukiPrivateApi
-    abstract fun failure(throwable: Throwable?): BaseResult
+    internal abstract fun failure(throwable: Throwable?): BaseResult
 
     /**
      * 查找结果实现、处理类接口
      *
      * - ❗此功能交由方法体自动完成 - 你不应该手动继承此接口
      */
-    @YukiPrivateApi
-    interface BaseResult
+    internal interface BaseResult
 }

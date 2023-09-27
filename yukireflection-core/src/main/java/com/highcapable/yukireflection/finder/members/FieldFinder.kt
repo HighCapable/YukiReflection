@@ -26,11 +26,10 @@
  * This file is created by fankes on 2022/2/4.
  * This file is modified by fankes on 2023/1/21.
  */
-@file:Suppress("unused", "UNCHECKED_CAST", "MemberVisibilityCanBePrivate", "KotlinConstantConditions")
+@file:Suppress("unused", "UNCHECKED_CAST", "MemberVisibilityCanBePrivate", "KotlinConstantConditions", "NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
 
 package com.highcapable.yukireflection.finder.members
 
-import com.highcapable.yukireflection.annotation.YukiPrivateApi
 import com.highcapable.yukireflection.bean.CurrentClass
 import com.highcapable.yukireflection.bean.VariousClass
 import com.highcapable.yukireflection.factory.current
@@ -53,10 +52,8 @@ import java.lang.reflect.Field
  * 可通过指定类型查找指定 [Field] 或一组 [Field]
  * @param classSet 当前需要查找的 [Class] 实例
  */
-class FieldFinder @PublishedApi internal constructor(@PublishedApi override val classSet: Class<*>? = null) :
-    MemberBaseFinder(tag = "Field", classSet) {
+class FieldFinder internal constructor(override val classSet: Class<*>? = null) : MemberBaseFinder(tag = "Field", classSet) {
 
-    @PublishedApi
     override var rulesData = FieldRulesData()
 
     /** 当前使用的 [classSet] */
@@ -210,7 +207,6 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
         }
     }
 
-    @YukiPrivateApi
     override fun build() = runCatching {
         internalBuild()
         Result()
@@ -219,7 +215,6 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
         Result(isNoSuch = true, it)
     }
 
-    @YukiPrivateApi
     override fun failure(throwable: Throwable?) = Result(isNoSuch = true, throwable)
 
     /**
@@ -227,11 +222,10 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
      *
      * 可累计失败次数直到查找成功
      */
-    inner class RemedyPlan @PublishedApi internal constructor() {
+    inner class RemedyPlan internal constructor() {
 
         /** 失败尝试次数数组 */
-        @PublishedApi
-        internal val remedyPlans = HashSet<Pair<FieldFinder, Result>>()
+        private val remedyPlans = HashSet<Pair<FieldFinder, Result>>()
 
         /**
          * 创建需要重新查找的 [Field]
@@ -245,7 +239,6 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
         inline fun field(initiate: FieldConditions) = Result().apply { remedyPlans.add(FieldFinder(classSet).apply(initiate) to this) }
 
         /** 开始重查找 */
-        @PublishedApi
         internal fun build() {
             if (classSet == null) return
             if (remedyPlans.isNotEmpty()) {
@@ -277,7 +270,7 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
          *
          * 可在这里处理是否成功的回调
          */
-        inner class Result @PublishedApi internal constructor() {
+        inner class Result internal constructor() {
 
             /** 找到结果时的回调 */
             internal var onFindCallback: (HashSet<Field>.() -> Unit)? = null
@@ -299,8 +292,8 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
      * @param throwable 错误信息
      */
     inner class Result internal constructor(
-        @PublishedApi internal val isNoSuch: Boolean = false,
-        private val throwable: Throwable? = null
+        internal val isNoSuch: Boolean = false,
+        internal val throwable: Throwable? = null
     ) : BaseResult {
 
         /**
@@ -448,9 +441,7 @@ class FieldFinder @PublishedApi internal constructor(@PublishedApi override val 
              * - 若要直接获取不确定的实例对象 - 请调用 [any] 方法
              * @return [Any] or null
              */
-            @PublishedApi
-            internal val self
-                get() = field?.get(instance)
+            private val self get() = field?.get(instance)
 
             /**
              * 获得当前 [Field] 自身 [self] 实例的类操作对象

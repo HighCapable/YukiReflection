@@ -26,7 +26,7 @@
  * This file is created by fankes on 2022/2/2.
  * This file is modified by fankes on 2023/1/21.
  */
-@file:Suppress("unused", "UNCHECKED_CAST")
+@file:Suppress("unused", "UNCHECKED_CAST", "NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
 
 package com.highcapable.yukireflection.factory
 
@@ -338,7 +338,7 @@ inline fun Class<*>.generic(initiate: GenericClass.() -> Unit) = generic()?.appl
  * @return [CurrentClass]
  */
 inline fun <reified T : Any> T.current(ignored: Boolean = false) =
-    CurrentClass(javaClass, instance = this).apply { isShutErrorPrinting = ignored }
+    CurrentClass(javaClass, instance = this).apply { isIgnoreErrorLogs = ignored }
 
 /**
  * 获得当前实例的类操作对象

@@ -26,11 +26,10 @@
  * This file is created by fankes on 2022/2/4.
  * This file is modified by fankes on 2023/1/21.
  */
-@file:Suppress("unused", "MemberVisibilityCanBePrivate", "UNCHECKED_CAST", "KotlinConstantConditions")
+@file:Suppress("unused", "MemberVisibilityCanBePrivate", "UNCHECKED_CAST", "KotlinConstantConditions", "NON_PUBLIC_CALL_FROM_PUBLIC_INLINE")
 
 package com.highcapable.yukireflection.finder.members
 
-import com.highcapable.yukireflection.annotation.YukiPrivateApi
 import com.highcapable.yukireflection.bean.VariousClass
 import com.highcapable.yukireflection.factory.hasExtends
 import com.highcapable.yukireflection.finder.base.BaseFinder
@@ -55,10 +54,8 @@ import java.lang.reflect.Method
  * 可通过指定类型查找指定 [Method] 或一组 [Method]
  * @param classSet 当前需要查找的 [Class] 实例
  */
-class MethodFinder @PublishedApi internal constructor(@PublishedApi override val classSet: Class<*>? = null) :
-    MemberBaseFinder(tag = "Method", classSet) {
+class MethodFinder internal constructor(override val classSet: Class<*>? = null) : MemberBaseFinder(tag = "Method", classSet) {
 
-    @PublishedApi
     override var rulesData = MethodRulesData()
 
     /** 当前使用的 [classSet] */
@@ -344,7 +341,6 @@ class MethodFinder @PublishedApi internal constructor(@PublishedApi override val
         }
     }
 
-    @YukiPrivateApi
     override fun build() = runCatching {
         internalBuild()
         Result()
@@ -353,7 +349,6 @@ class MethodFinder @PublishedApi internal constructor(@PublishedApi override val
         Result(isNoSuch = true, it)
     }
 
-    @YukiPrivateApi
     override fun failure(throwable: Throwable?) = Result(isNoSuch = true, throwable)
 
     /**
@@ -361,11 +356,10 @@ class MethodFinder @PublishedApi internal constructor(@PublishedApi override val
      *
      * 可累计失败次数直到查找成功
      */
-    inner class RemedyPlan @PublishedApi internal constructor() {
+    inner class RemedyPlan internal constructor() {
 
         /** 失败尝试次数数组 */
-        @PublishedApi
-        internal val remedyPlans = HashSet<Pair<MethodFinder, Result>>()
+        private val remedyPlans = HashSet<Pair<MethodFinder, Result>>()
 
         /**
          * 创建需要重新查找的 [Method]
@@ -379,7 +373,6 @@ class MethodFinder @PublishedApi internal constructor(@PublishedApi override val
         inline fun method(initiate: MethodConditions) = Result().apply { remedyPlans.add(MethodFinder(classSet).apply(initiate) to this) }
 
         /** 开始重查找 */
-        @PublishedApi
         internal fun build() {
             if (classSet == null) return
             if (remedyPlans.isNotEmpty()) {
@@ -411,7 +404,7 @@ class MethodFinder @PublishedApi internal constructor(@PublishedApi override val
          *
          * 可在这里处理是否成功的回调
          */
-        inner class Result @PublishedApi internal constructor() {
+        inner class Result internal constructor() {
 
             /** 找到结果时的回调 */
             internal var onFindCallback: (HashSet<Method>.() -> Unit)? = null
@@ -432,8 +425,8 @@ class MethodFinder @PublishedApi internal constructor(@PublishedApi override val
      * @param throwable 错误信息
      */
     inner class Result internal constructor(
-        @PublishedApi internal val isNoSuch: Boolean = false,
-        @PublishedApi internal val throwable: Throwable? = null
+        internal val isNoSuch: Boolean = false,
+        internal val throwable: Throwable? = null
     ) : BaseResult {
 
         /**

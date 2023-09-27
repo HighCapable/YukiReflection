@@ -43,10 +43,7 @@ import java.lang.reflect.Method
  * @param tag 当前查找类的标识
  * @param classSet 当前需要查找的 [Class] 实例
  */
-abstract class MemberBaseFinder internal constructor(
-    private val tag: String,
-    @PublishedApi internal open val classSet: Class<*>? = null
-) : BaseFinder() {
+abstract class MemberBaseFinder internal constructor(private val tag: String, internal open val classSet: Class<*>? = null) : BaseFinder() {
 
     internal companion object {
 
@@ -55,7 +52,6 @@ abstract class MemberBaseFinder internal constructor(
     }
 
     /** 是否使用了重查找功能 */
-    @PublishedApi
     internal var isUsingRemedyPlan = false
 
     /** 是否开启忽略错误警告功能 */
