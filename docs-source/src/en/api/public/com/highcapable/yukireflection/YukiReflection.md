@@ -86,23 +86,29 @@ object Configs
 
 > 对 API 相关功能的配置类。
 
-### debugTag <span class="symbol">- field</span>
+### debugLog <span class="symbol">- method</span>
 
 ```kotlin:no-line-numbers
-var debugTag: String
+inline fun debugLog(initiate: YLog.Configs.() -> Unit)
 ```
+
+**Change Records**
+
+`v1.0.3` `added`
+
+**Function Illustrate**
+
+> 配置 `YLog.Configs` 相关参数。
+
+<h3 class="deprecated">debugTag - field</h3>
 
 **Change Records**
 
 `v1.0.0` `first`
 
-**Function Illustrate**
+`v1.0.3` `deprecated`
 
-> 这是一个调试日志的全局标识。
-
-默认文案为 `YukiReflection`。
-
-你可以修改为你自己的文案。
+请迁移到 `debugLog`
 
 ### isDebug <span class="symbol">- field</span>
 
@@ -120,28 +126,6 @@ var isDebug: Boolean
 
 默认不启用，启用后将交由日志输出管理器打印详细日志 (例如反射查找功能的耗时) 到控制台。
 
-请过滤 `debugTag` 即可找到每条日志。
-
-### isEnableLogs <span class="symbol">- field</span>
-
-```kotlin:no-line-numbers
-var isEnableLogs: Boolean
-```
-
-**Change Records**
-
-`v1.0.3` `added`
-
-**Function Illustrate**
-
-> 是否启用调试日志的输出功能。
-
-::: warning
-
-关闭后将会停用 **YukiReflection** 对全部日志的输出，同时 **isDebug** 将不再有效。
-
-:::
-
 <h3 class="deprecated">isAllowPrintingLogs - field</h3>
 
 **Change Records**
@@ -150,7 +134,7 @@ var isEnableLogs: Boolean
 
 `v1.0.3` `deprecated`
 
-请迁移到 `isEnableLogs`
+请迁移到 `debugLog`
 
 <h3 class="deprecated">isEnableMemberCache - field</h3>
 

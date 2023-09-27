@@ -23,6 +23,7 @@ const navigationLinks = {
         baseApiPath + 'type/android/ViewTypeFactory',
         baseApiPath + 'type/java/VariableTypeFactory',
         baseApiPath + 'type/defined/DefinedTypeFactory',
+        baseApiPath + 'log/YLog',
         baseApiPath + 'factory/ReflectionFactory',
         baseApiPath + 'finder/members/MethodFinder',
         baseApiPath + 'finder/members/ConstructorFinder',
