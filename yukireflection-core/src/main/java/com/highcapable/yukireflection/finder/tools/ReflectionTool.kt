@@ -666,7 +666,7 @@ internal object ReflectionTool {
                 addAll(declaredConstructors.toList())
             }.asSequence()
         }.onFailure {
-            YukiLog.warn(msg = "Failed to get the declared Members in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Members in [$this] because got an exception", e = it)
         }.getOrNull()
 
     /**
@@ -675,7 +675,7 @@ internal object ReflectionTool {
      */
     private val Class<*>.existFields
         get() = runCatching { declaredFields.asSequence() }.onFailure {
-            YukiLog.warn(msg = "Failed to get the declared Fields in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Fields in [$this] because got an exception", e = it)
         }.getOrNull()
 
     /**
@@ -684,7 +684,7 @@ internal object ReflectionTool {
      */
     private val Class<*>.existMethods
         get() = runCatching { declaredMethods.asSequence() }.onFailure {
-            YukiLog.warn(msg = "Failed to get the declared Methods in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Methods in [$this] because got an exception", e = it)
         }.getOrNull()
 
     /**
@@ -693,7 +693,7 @@ internal object ReflectionTool {
      */
     private val Class<*>.existConstructors
         get() = runCatching { declaredConstructors.asSequence() }.onFailure {
-            YukiLog.warn(msg = "Failed to get the declared Constructors in [$this] because got an exception\n$it")
+            YukiLog.warn(msg = "Failed to get the declared Constructors in [$this] because got an exception", e = it)
         }.getOrNull()
 
     /**
