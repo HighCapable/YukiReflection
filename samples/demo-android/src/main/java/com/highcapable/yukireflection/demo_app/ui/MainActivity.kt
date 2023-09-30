@@ -32,6 +32,7 @@ package com.highcapable.yukireflection.demo_app.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.highcapable.yukireflection.YukiReflection
+import com.highcapable.yukireflection.demo_app.BuildConfig
 import com.highcapable.yukireflection.demo_app.databinding.ActivityMainBinding
 import com.highcapable.yukireflection.demo_app.test.Main
 import com.highcapable.yukireflection.factory.buildOf
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        YukiReflection.configs { isDebug = BuildConfig.DEBUG }
         ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
             yukiReflectionVersionText.text = "${YukiReflection.TAG} Version: ${YukiReflection.VERSION}"

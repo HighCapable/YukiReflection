@@ -133,6 +133,7 @@ fun MainLayout() {
 }
 
 fun main() = application {
+    YukiReflection.configs { isDebug = true }
     Window(
         onCloseRequest = ::exitApplication,
         title = YukiReflection.TAG,
