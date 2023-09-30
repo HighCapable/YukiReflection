@@ -27,17 +27,27 @@ class GenericClass internal constructor(private val type: ParameterizedType)
 ## argument <span class="symbol">- method</span>
 
 ```kotlin:no-line-numbers
-fun argument(index: Int): Class<*>
+fun argument(index: Int): Class<*>?
 ```
 
 ```kotlin:no-line-numbers
-inline fun <reified T> argument(index: Int): Class<T>
+inline fun <reified T> argument(index: Int): Class<T>?
 ```
 
 **Change Records**
 
 `v1.0.0` `first`
 
+`v1.0.3` `modified`
+
+方法的返回值可为 `null`
+
 **Function Illustrate**
 
 > 获得泛型参数数组下标的 `Class` 实例。
+
+::: warning
+
+在运行时局部变量的泛型会被擦除，获取不到时将会返回 **null**。
+
+:::
