@@ -427,27 +427,27 @@ class DexClassFinder internal constructor(
 
     /**
      * 得到 [Class] 或一组 [Class]
-     * @return [HashSet]<[Class]>
+     * @return [MutableList]<[Class]>
      * @throws NoClassDefFoundError 如果找不到 [Class]
      */
     private val result get() = ReflectionTool.findClasses(loaderSet, rulesData)
 
     /**
      * 从本地缓存读取 [Class] 数据
-     * @return [HashSet]<[Class]>
+     * @return [MutableList]<[Class]>
      */
-    private fun readFromCache(): HashSet<Class<*>> =
-        if (async && name.isNotBlank()) hashSetOf<Class<*>>().also { classes ->
+    private fun readFromCache(): MutableList<Class<*>> =
+        if (async && name.isNotBlank()) mutableListOf<Class<*>>().also { classes ->
             context?.currentSp()?.getStringSet(name, emptySet())?.takeIf { it.isNotEmpty() }
                 ?.forEach { className -> if (className.hasClass(loaderSet)) classes.add(className.toClass(loaderSet)) }
-        } else hashSetOf()
+        } else mutableListOf()
 
     /**
      * 将当前 [Class] 数组名称保存到本地缓存
      * @throws IllegalStateException 如果当前包名为 "android"
      */
-    private fun HashSet<Class<*>>.saveToCache() {
-        if (name.isNotBlank() && isNotEmpty()) hashSetOf<String>().also { names ->
+    private fun MutableList<Class<*>>.saveToCache() {
+        if (name.isNotBlank() && isNotEmpty()) mutableSetOf<String>().also { names ->
             takeIf { it.isNotEmpty() }?.forEach { names.add(it.name) }
             context?.also {
                 if (it.packageName == "android") error("Cannot create classes cache for \"android\", please remove \"name\" param")
@@ -460,7 +460,7 @@ class DexClassFinder internal constructor(
      * 设置实例
      * @param classes 当前找到的 [Class] 数组
      */
-    private fun setInstance(classes: HashSet<Class<*>>) {
+    private fun setInstance(classes: MutableList<Class<*>>) {
         classInstances.clear()
         classes.takeIf { it.isNotEmpty() }?.forEach { classInstances.add(it) }
     }
@@ -505,7 +505,7 @@ class DexClassFinder internal constructor(
         internal var waitResultCallback: ((Class<*>?) -> Unit)? = null
 
         /** 异步方法体回调数组结果 */
-        internal var waitAllResultCallback: ((HashSet<Class<*>>) -> Unit)? = null
+        internal var waitAllResultCallback: ((MutableList<Class<*>>) -> Unit)? = null
 
         /** 异常结果重新回调方法体 */
         internal var noClassDefFoundErrorCallback: (() -> Unit)? = null
@@ -534,10 +534,10 @@ class DexClassFinder internal constructor(
          *
          * - 返回全部查找条件匹配的多个 [Class] 实例
          *
-         * - 在查找条件找不到任何结果的时候将返回空的 [HashSet]
+         * - 在查找条件找不到任何结果的时候将返回空的 [MutableList]
          *
          * - 若你设置了 [async] 请使用 [waitAll] 方法
-         * @return [HashSet]<[Class]>
+         * @return [MutableList]<[Class]>
          */
         fun all() = classInstances
 
@@ -578,13 +578,13 @@ class DexClassFinder internal constructor(
          *
          * - 回调全部查找条件匹配的多个 [Class] 实例
          *
-         * - 在查找条件找不到任何结果的时候将回调空的 [HashSet]
+         * - 在查找条件找不到任何结果的时候将回调空的 [MutableList]
          *
          * - 你需要设置 [async] 后此方法才会被回调 - 否则请使用 [all] 方法
-         * @param result 回调 - ([HashSet]<[Class]>)
+         * @param result 回调 - ([MutableList]<[Class]>)
          * @return [Result] 可继续向下监听
          */
-        fun waitAll(result: (HashSet<Class<*>>) -> Unit): Result {
+        fun waitAll(result: (MutableList<Class<*>>) -> Unit): Result {
             waitAllResultCallback = result
             return this
         }

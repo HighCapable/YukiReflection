@@ -42,9 +42,9 @@ import com.highcapable.yukireflection.finder.type.factory.ModifierConditions
 import com.highcapable.yukireflection.finder.type.factory.NameConditions
 import com.highcapable.yukireflection.finder.type.factory.ObjectConditions
 import com.highcapable.yukireflection.finder.type.factory.ObjectsConditions
+import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.type.defined.UndefinedType
 import com.highcapable.yukireflection.type.defined.VagueType
-import com.highcapable.yukireflection.log.YLog
 import com.highcapable.yukireflection.utils.factory.runBlocking
 import java.lang.reflect.Method
 
@@ -317,7 +317,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
 
     /**
      * 得到 [Method] 或一组 [Method]
-     * @return [HashSet]<[Method]>
+     * @return [MutableList]<[Method]>
      * @throws NoSuchMethodError 如果找不到 [Method]
      */
     private val result get() = ReflectionTool.findMethods(usedClassSet, rulesData)
@@ -326,7 +326,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
      * 设置实例
      * @param methods 当前找到的 [Method] 数组
      */
-    private fun setInstance(methods: HashSet<Method>) {
+    private fun setInstance(methods: MutableList<Method>) {
         memberInstances.clear()
         methods.takeIf { it.isNotEmpty() }?.forEach { memberInstances.add(it) }
     }
@@ -359,7 +359,7 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
     inner class RemedyPlan internal constructor() {
 
         /** 失败尝试次数数组 */
-        private val remedyPlans = HashSet<Pair<MethodFinder, Result>>()
+        private val remedyPlans = mutableListOf<Pair<MethodFinder, Result>>()
 
         /**
          * 创建需要重新查找的 [Method]
@@ -407,13 +407,13 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
         inner class Result internal constructor() {
 
             /** 找到结果时的回调 */
-            internal var onFindCallback: (HashSet<Method>.() -> Unit)? = null
+            internal var onFindCallback: (MutableList<Method>.() -> Unit)? = null
 
             /**
              * 当找到结果时
              * @param initiate 回调
              */
-            fun onFind(initiate: HashSet<Method>.() -> Unit) {
+            fun onFind(initiate: MutableList<Method>.() -> Unit) {
                 onFindCallback = initiate
             }
         }
@@ -458,10 +458,10 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 若你设置了 [remedys] 请使用 [waitAll] 回调结果方法
          * @param instance 所在实例
-         * @return [ArrayList]<[Instance]>
+         * @return [MutableList]<[Instance]>
          */
         fun all(instance: Any? = null) =
-            arrayListOf<Instance>().apply { giveAll().takeIf { it.isNotEmpty() }?.forEach { add(Instance(instance, it)) } }
+            mutableListOf<Instance>().apply { giveAll().takeIf { it.isNotEmpty() }?.forEach { add(Instance(instance, it)) } }
 
         /**
          * 得到 [Method] 本身
@@ -478,10 +478,10 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 返回全部查找条件匹配的多个 [Method] 实例
          *
-         * - 在查找条件找不到任何结果的时候将返回空的 [HashSet]
-         * @return [HashSet]<[Method]>
+         * - 在查找条件找不到任何结果的时候将返回空的 [MutableList]
+         * @return [MutableList]<[Method]>
          */
-        fun giveAll() = memberInstances.takeIf { it.isNotEmpty() }?.methods() ?: HashSet()
+        fun giveAll() = memberInstances.takeIf { it.isNotEmpty() }?.methods() ?: mutableListOf()
 
         /**
          * 获得 [Method] 实例处理类
@@ -508,9 +508,9 @@ class MethodFinder internal constructor(override val classSet: Class<*>? = null)
          *
          * - 若你没有设置 [remedys] 此方法将不会被回调
          * @param instance 所在实例
-         * @param initiate 回调 [ArrayList]<[Instance]>
+         * @param initiate 回调 [MutableList]<[Instance]>
          */
-        fun waitAll(instance: Any? = null, initiate: ArrayList<Instance>.() -> Unit) {
+        fun waitAll(instance: Any? = null, initiate: MutableList<Instance>.() -> Unit) {
             if (memberInstances.isNotEmpty()) initiate(all(instance))
             else remedyPlansCallback = { initiate(all(instance)) }
         }

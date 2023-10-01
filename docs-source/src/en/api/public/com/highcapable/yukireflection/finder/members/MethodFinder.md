@@ -403,12 +403,16 @@ inner class Result internal constructor()
 #### onFind <span class="symbol">- method</span>
 
 ```kotlin:no-line-numbers
-fun onFind(initiate: HashSet<Method>.() -> Unit)
+fun onFind(initiate: MutableList<Method>.() -> Unit)
 ```
 
 **Change Records**
 
 `v1.0.0` `first`
+
+`v1.0.3` `修改`
+
+`initiate` 类型由 `HashSet` 修改为 `MutableList`
 
 **Function Illustrate**
 
@@ -520,12 +524,16 @@ method {
 ### all <span class="symbol">- method</span>
 
 ```kotlin:no-line-numbers
-fun all(instance: Any?): ArrayList<Instance>
+fun all(instance: Any?): MutableList<Instance>
 ```
 
 **Change Records**
 
 `v1.0.0` `first`
+
+`v1.0.3` `修改`
+
+返回值类型由 `ArrayList` 修改为 `MutableList`
 
 **Function Illustrate**
 
@@ -568,12 +576,16 @@ fun give(): Method?
 ### giveAll <span class="symbol">- method</span>
 
 ```kotlin:no-line-numbers
-fun giveAll(): HashSet<Method>
+fun giveAll(): MutableList<Method>
 ```
 
 **Change Records**
 
 `v1.0.0` `first`
+
+`v1.0.3` `修改`
+
+返回值类型由 `HashSet` 修改为 `MutableList`
 
 **Function Illustrate**
 
@@ -581,7 +593,7 @@ fun giveAll(): HashSet<Method>
 
 返回全部查找条件匹配的多个 `Method` 实例。
 
-在查找条件找不到任何结果的时候将返回空的 `HashSet`。
+在查找条件找不到任何结果的时候将返回空的 `MutableList`。
 
 ### wait <span class="symbol">- method</span>
 
@@ -610,12 +622,16 @@ fun wait(instance: Any?, initiate: Instance.() -> Unit)
 ### waitAll <span class="symbol">- method</span>
 
 ```kotlin:no-line-numbers
-fun waitAll(instance: Any?, initiate: ArrayList<Instance>.() -> Unit)
+fun waitAll(instance: Any?, initiate: MutableList<Instance>.() -> Unit)
 ```
 
 **Change Records**
 
 `v1.0.0` `first`
+
+`v1.0.3` `修改`
+
+`initiate` 类型由 `ArrayList` 修改为 `MutableList`
 
 **Function Illustrate**
 
