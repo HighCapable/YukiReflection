@@ -58,6 +58,7 @@ import com.highcapable.yukireflection.utils.factory.runOrFalse
 import com.highcapable.yukireflection.utils.factory.takeIf
 import com.highcapable.yukireflection.utils.factory.value
 import dalvik.system.BaseDexClassLoader
+import java.lang.reflect.AccessibleObject
 import java.lang.reflect.Constructor
 import java.lang.reflect.Field
 import java.lang.reflect.Member
@@ -298,9 +299,10 @@ internal object ReflectionTool {
      * @throws IllegalStateException 如果未设置任何条件或 [FieldRulesData.type] 目标类不存在
      * @throws NoSuchFieldError 如果找不到 [Field]
      */
-    internal fun findFields(classSet: Class<*>?, rulesData: FieldRulesData) = rulesData.createResult {
+    internal fun findFields(classSet: Class<*>?, rulesData: FieldRulesData) = rulesData.createResult { hasCondition ->
         if (type == UndefinedType) error("Field match type class is not found")
         if (classSet == null) return@createResult mutableListOf()
+        if (hasCondition.not()) return@createResult classSet.existFields?.toList()?.toAccessibleMembers() ?: mutableListOf()
         mutableListOf<Field>().also { fields ->
             classSet.existFields?.also { declares ->
                 var iType = -1
@@ -347,10 +349,10 @@ internal object ReflectionTool {
                             })
                         }
                         orderIndex.compare(index, declares.lastIndex()) { and(it) }
-                    }.finally { fields.add(instance.apply { isAccessible = true }) }
+                    }.finally { fields.add(instance) }
                 }
             }
-        }.takeIf { it.isNotEmpty() } ?: findSuperOrThrow(classSet)
+        }.takeIf { it.isNotEmpty() }?.toAccessibleMembers() ?: findSuperOrThrow(classSet)
     }
 
     /**
@@ -361,9 +363,10 @@ internal object ReflectionTool {
      * @throws IllegalStateException 如果未设置任何条件或 [MethodRulesData.paramTypes] 以及 [MethodRulesData.returnType] 目标类不存在
      * @throws NoSuchMethodError 如果找不到 [Method]
      */
-    internal fun findMethods(classSet: Class<*>?, rulesData: MethodRulesData) = rulesData.createResult {
+    internal fun findMethods(classSet: Class<*>?, rulesData: MethodRulesData) = rulesData.createResult { hasCondition ->
         if (returnType == UndefinedType) error("Method match returnType class is not found")
         if (classSet == null) return@createResult mutableListOf()
+        if (hasCondition.not()) return@createResult classSet.existMethods?.toList()?.toAccessibleMembers() ?: mutableListOf()
         paramTypes?.takeIf { it.isNotEmpty() }
             ?.forEachIndexed { p, it -> if (it == UndefinedType) error("Method match paramType[$p] class is not found") }
         mutableListOf<Method>().also { methods ->
@@ -458,10 +461,10 @@ internal object ReflectionTool {
                             })
                         }
                         orderIndex.compare(index, declares.lastIndex()) { and(it) }
-                    }.finally { methods.add(instance.apply { isAccessible = true }) }
+                    }.finally { methods.add(instance) }
                 }
             }
-        }.takeIf { it.isNotEmpty() } ?: findSuperOrThrow(classSet)
+        }.takeIf { it.isNotEmpty() }?.toAccessibleMembers() ?: findSuperOrThrow(classSet)
     }
 
     /**
@@ -472,8 +475,9 @@ internal object ReflectionTool {
      * @throws IllegalStateException 如果未设置任何条件或 [ConstructorRulesData.paramTypes] 目标类不存在
      * @throws NoSuchMethodError 如果找不到 [Constructor]
      */
-    internal fun findConstructors(classSet: Class<*>?, rulesData: ConstructorRulesData) = rulesData.createResult {
+    internal fun findConstructors(classSet: Class<*>?, rulesData: ConstructorRulesData) = rulesData.createResult { hasCondition ->
         if (classSet == null) return@createResult mutableListOf()
+        if (hasCondition.not()) return@createResult classSet.existConstructors?.toList()?.toAccessibleMembers() ?: mutableListOf()
         paramTypes?.takeIf { it.isNotEmpty() }
             ?.forEachIndexed { p, it -> if (it == UndefinedType) error("Constructor match paramType[$p] class is not found") }
         mutableListOf<Constructor<*>>().also { constructors ->
@@ -534,10 +538,10 @@ internal object ReflectionTool {
                             })
                         }
                         orderIndex.compare(index, declares.lastIndex()) { and(it) }
-                    }.finally { constructors.add(instance.apply { isAccessible = true }) }
+                    }.finally { constructors.add(instance) }
                 }
             }
-        }.takeIf { it.isNotEmpty() } ?: findSuperOrThrow(classSet)
+        }.takeIf { it.isNotEmpty() }?.toAccessibleMembers() ?: findSuperOrThrow(classSet)
     }
 
     /**
@@ -568,16 +572,14 @@ internal object ReflectionTool {
      * @return [T]
      * @throws IllegalStateException 如果没有 [BaseRulesData.isInitialize]
      */
-    private inline fun <reified T, R : BaseRulesData> R.createResult(result: R.() -> T): T {
-        when (this) {
-            is FieldRulesData -> isInitialize.not()
-            is MethodRulesData -> isInitialize.not()
-            is ConstructorRulesData -> isInitialize.not()
-            is ClassRulesData -> isInitialize.not()
-            else -> true
-        }.takeIf { it }?.also { error("You must set a condition when finding a $objectName") }
-        return result(this)
-    }
+    private inline fun <reified T, R : BaseRulesData> R.createResult(result: R.(hasCondition: Boolean) -> T) =
+        result(when (this) {
+            is FieldRulesData -> isInitialize
+            is MethodRulesData -> isInitialize
+            is ConstructorRulesData -> isInitialize
+            is ClassRulesData -> isInitialize
+            else -> false
+        })
 
     /**
      * 在 [Class.getSuperclass] 中查找或抛出异常
@@ -695,6 +697,20 @@ internal object ReflectionTool {
         get() = runCatching { declaredConstructors.asSequence() }.onFailure {
             YLog.warn(msg = "Failed to get the declared Constructors in [$this] because got an exception", e = it)
         }.getOrNull()
+
+    /**
+     * 批量允许访问内部方法
+     * @return [MutableList]<[T]>
+     */
+    private inline fun <reified T : AccessibleObject> List<T>.toAccessibleMembers() =
+        mutableListOf<T>().also { list ->
+            forEach { member ->
+                runCatching {
+                    member.isAccessible = true
+                    list.add(member)
+                }.onFailure { YLog.warn(msg = "Failed to access [$member] because got an exception", e = it) }
+            }
+        }
 
     /**
      * 判断两个方法、构造方法类型数组是否相等
