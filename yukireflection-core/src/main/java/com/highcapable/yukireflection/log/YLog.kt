@@ -110,13 +110,13 @@ object YLog {
      */
     private fun log(type: Type, msg: String, e: Throwable? = null) {
         val isAndroid = "android.util.Log".hasClass()
-        val mixedContent = "[${Configs.tag}][${type.alias}] $msg"
 
         /**
          * 打印 Log
          * @param msg 消息内容
          */
         fun innerLog(msg: String) {
+            val mixedContent = "[${Configs.tag}][${type.alias}] $msg"
             when {
                 isAndroid -> when (type) {
                     Type.DEBUG -> Log.d(Configs.tag, msg, e)
