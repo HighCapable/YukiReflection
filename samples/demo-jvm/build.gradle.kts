@@ -1,6 +1,6 @@
 plugins {
     autowire(libs.plugins.kotlin.jvm)
-    autowire(libs.plugins.kotlin.compose)
+    autowire(libs.plugins.jetbrains.compose)
 }
 
 group = property.project.samples.demo.jvm.groupName
@@ -19,5 +19,5 @@ compose.desktop {
 dependencies {
     implementation(projects.yukireflectionCore)
     implementation(compose.desktop.currentOs)
-    implementation(org.jetbrains.compose.material3.material3.desktop)
+    implementation(compose.material3)
 }

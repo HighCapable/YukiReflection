@@ -33,19 +33,26 @@ android {
             "-Xno-receiver-assertions"
         )
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
     buildFeatures {
         buildConfig = true
-        viewBinding = true
+        compose = true
     }
     lint { checkReleaseBuilds = false }
 }
 
 dependencies {
     implementation(projects.yukireflectionCore)
+    implementation(platform(androidx.compose.compose.bom))
+    implementation(androidx.compose.foundation.foundation)
+    implementation(androidx.compose.ui.ui)
+    implementation(androidx.compose.material3.material3)
+    implementation(androidx.activity.activity.compose)
     implementation(androidx.core.core.ktx)
     implementation(androidx.appcompat.appcompat)
     implementation(com.google.android.material.material)
-    implementation(androidx.constraintlayout.constraintlayout)
     testImplementation(junit.junit)
     androidTestImplementation(androidx.test.ext.junit)
     androidTestImplementation(androidx.test.espresso.espresso.core)

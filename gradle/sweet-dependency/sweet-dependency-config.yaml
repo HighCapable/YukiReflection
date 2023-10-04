@@ -16,7 +16,7 @@ plugins:
     alias: kotlin-android
     version-ref: kotlin-jvm
   org.jetbrains.compose:
-    alias: kotlin-compose
+    alias: jetbrains-compose
     version: 1.5.1
   com.android.application:
     alias: android-application
@@ -26,9 +26,21 @@ plugins:
     version: 0.25.3
 
 libraries:
-  org.jetbrains.compose.material3:
-    material3-desktop:
-      version: 1.5.1
+  androidx.compose:
+    compose-bom:
+      version: 2023.09.02
+  androidx.compose.foundation:
+    foundation:
+      version: <no-spec>
+  androidx.compose.ui:
+    ui:
+      version: <no-spec>
+  androidx.compose.material3:
+    material3:
+      version: <no-spec>
+  androidx.activity:
+    activity-compose:
+      version: 1.7.2
   androidx.core:
     core-ktx:
       version: 1.10.0
@@ -38,9 +50,6 @@ libraries:
   com.google.android.material:
     material:
       version: 1.8.0
-  androidx.constraintlayout:
-    constraintlayout:
-      version: 2.1.4
   androidx.test.ext:
     junit:
       version: 1.1.5
