@@ -4,7 +4,7 @@
 
 ## License
 
-[The MIT License (MIT)](https://github.com/fankes/YukiReflection/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/HighCapable/YukiReflection/blob/master/LICENSE)
 
 ```:no-line-numbers
 MIT License

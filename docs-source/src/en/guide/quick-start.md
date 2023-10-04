@@ -110,11 +110,11 @@ Please change **&lt;yuki-version&gt;** to the latest version [here](../about/cha
 
 ::: danger
 
-If your project is currently using the 1.x.x version of [YukiHookAPI](https://github.com/fankes/YukiHookAPI), please do not integrate **YukiReflection** repeatedly, because **YukiHookAPI** already includes it functions and there are changes to related functions.
+If your project is currently using the 1.x.x version of [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI), please do not integrate **YukiReflection** repeatedly, because **YukiHookAPI** already includes it functions and there are changes to related functions.
 
 Repeated integration will cause functional conflicts and cause exceptions.
 
-In this case, you should go to the [Documentation](https://fankes.github.io/YukiHookAPI/zh-cn/) of **YukiHookAPI** view the corresponding usage tutorial.
+In this case, you should go to the [Documentation](https://highcapable.github.io/YukiHookAPI/zh-cn/) of **YukiHookAPI** view the corresponding usage tutorial.
 
 **YukiHookAPI** will be completely separated from **YukiReflection** in version 2.x.x, by which time you can use it with **YukiHookAPI** at the same time.
 

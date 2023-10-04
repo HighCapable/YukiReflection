@@ -6,7 +6,7 @@
 
 This is a set of simple and efficient Reflection API rebuilt based on Java native Reflection API using Kotlin.
 
-`YukiReflection` is also the core functionality that [YukiHookAPI](https://github.com/fankes/YukiHookAPI) is using.
+`YukiReflection` is also the core functionality that [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI) is using.
 
 The name is taken from ["ももくり" heroine Yuki Kurihara](https://www.bilibili.com/bangumi/play/ss5016).
 
@@ -24,7 +24,7 @@ All Demo sample codes in the document will be described using Kotlin, if you don
 
 ## Source of Inspiration
 
-`YukiReflection` was originally the core function integrated in the [YukiHookAPI](https://github.com/fankes/YukiHookAPI) project, and now it is decoupled so that this Reflection API can be used in any Java and Android platform project.
+`YukiReflection` was originally the core function integrated in the [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI) project, and now it is decoupled so that this Reflection API can be used in any Java and Android platform project.
 
 Now, we only need to write a small amount of code to implement a simple reflection call.
 

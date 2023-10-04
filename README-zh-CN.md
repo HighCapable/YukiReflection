@@ -1,25 +1,26 @@
 # Yuki Reflection
 
-[![GitHub license](https://img.shields.io/github/license/fankes/YukiReflection?color=blue)](https://github.com/fankes/YukiReflection/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/fankes/YukiReflection?display_name=release&logo=github&color=green)](https://github.com/fankes/YukiReflection/releases)
+[![GitHub license](https://img.shields.io/github/license/HighCapable/YukiReflection?color=blue)](https://github.com/HighCapable/YukiReflection/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/HighCapable/YukiReflection?display_name=release&logo=github&color=green)](https://github.com/HighCapable/YukiReflection/releases)
 [![Telegram](https://img.shields.io/badge/discussion-Telegram-blue.svg?logo=telegram)](https://t.me/YukiReflection)
 [![Telegram](https://img.shields.io/badge/discussion%20dev-Telegram-blue.svg?logo=telegram)](https://t.me/HighCapable_Dev)
 
-<img src="https://github.com/fankes/YukiReflection/blob/master/img-src/icon.png?raw=true" width = "100" height = "100" alt="LOGO"/>
+<img src="https://github.com/HighCapable/YukiReflection/blob/master/img-src/icon.png?raw=true" width = "100" height = "100" alt="LOGO"/>
 
 🌴️ 一个使用 Kotlin 构建的用于 Java 和 Android 平台高效反射 API。
 
-[English](https://github.com/fankes/YukiReflection/blob/master/README.md) | 简体中文
+[English](https://github.com/HighCapable/YukiReflection/blob/master/README.md) | 简体中文
 
 ## 这是什么
 
-这是一个使用 Kotlin 基于 Java 原生反射 API 重新打造的一套简洁、高效的反射 API，同时也是 [YukiHookAPI](https://github.com/fankes/YukiHookAPI) 正在使用的核心功能。
+这是一个使用 Kotlin 基于 Java 原生反射 API 重新打造的一套简洁、高效的反射 API，同时也是 [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI)
+正在使用的核心功能。
 
 名称取自 [《ももくり》女主 栗原 雪(Yuki)](https://www.bilibili.com/bangumi/play/ss5016)。
 
 ## 开始使用
 
-[点击这里](https://fankes.github.io/YukiReflection/zh-cn/) 前往文档页面查看更多详细教程和内容。
+[点击这里](https://highcapable.github.io/YukiReflection/zh-cn/) 前往文档页面查看更多详细教程和内容。
 
 ## 项目推广
 
@@ -33,11 +34,11 @@
 
 工作不易，无意外情况此项目将继续维护下去，提供更多可能，欢迎打赏。
 
-<img src="https://github.com/fankes/fankes/blob/main/img-src/payment_code.jpg?raw=true" width = "500" alt="Payment Code"/>
+<img src="https://github.com/HighCapable/fankes/blob/main/img-src/payment_code.jpg?raw=true" width = "500" alt="Payment Code"/>
 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=fankes/YukiReflection&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=HighCapable/YukiReflection&type=Date)
 
 ## 许可证
 

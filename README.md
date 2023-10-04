@@ -1,26 +1,26 @@
 # Yuki Reflection
 
-[![GitHub license](https://img.shields.io/github/license/fankes/YukiReflection?color=blue)](https://github.com/fankes/YukiReflection/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/fankes/YukiReflection?display_name=release&logo=github&color=green)](https://github.com/fankes/YukiReflection/releases)
+[![GitHub license](https://img.shields.io/github/license/HighCapable/YukiReflection?color=blue)](https://github.com/HighCapable/YukiReflection/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/HighCapable/YukiReflection?display_name=release&logo=github&color=green)](https://github.com/HighCapable/YukiReflection/releases)
 [![Telegram](https://img.shields.io/badge/discussion-Telegram-blue.svg?logo=telegram)](https://t.me/YukiReflection)
 [![Telegram](https://img.shields.io/badge/discussion%20dev-Telegram-blue.svg?logo=telegram)](https://t.me/HighCapable_Dev)
 
-<img src="https://github.com/fankes/YukiReflection/blob/master/img-src/icon.png?raw=true" width = "100" height = "100" alt="LOGO"/>
+<img src="https://github.com/HighCapable/YukiReflection/blob/master/img-src/icon.png?raw=true" width = "100" height = "100" alt="LOGO"/>
 
 🌴️ An efficient Reflection API for Java and Android built in Kotlin.
 
-English | [简体中文](https://github.com/fankes/YukiReflection/blob/master/README-zh-CN.md)
+English | [简体中文](https://github.com/HighCapable/YukiReflection/blob/master/README-zh-CN.md)
 
 ## What's this
 
 This is a concise and efficient Reflection API rebuilt based on Java's native Reflection API using Kotlin,
-and it is also the core function being used by [YukiHookAPI](https://github.com/fankes/YukiHookAPI).
+and it is also the core function being used by [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI).
 
 The name is taken from ["ももくり" heroine Yuki Kurihara](https://www.bilibili.com/bangumi/play/ss5016).
 
 ## Get Started
 
-[Click here](https://fankes.github.io/YukiReflection/en/) go to the documentation page for more detailed tutorials and content.
+[Click here](https://highcapable.github.io/YukiReflection/en/) go to the documentation page for more detailed tutorials and content.
 
 ## Promotion
 
@@ -34,7 +34,7 @@ This project also uses **SweetDependency** and **SweetProperty**.
 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=fankes/YukiReflection&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=HighCapable/YukiReflection&type=Date)
 
 ## License
 

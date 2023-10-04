@@ -73,7 +73,7 @@ export const configs = {
         }
     },
     github: {
-        repo: 'https://github.com/fankes/YukiReflection',
+        repo: 'https://github.com/HighCapable/YukiReflection',
         branch: 'master',
         dir: 'docs-source/src'
     }

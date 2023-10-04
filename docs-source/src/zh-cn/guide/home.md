@@ -6,7 +6,7 @@
 
 这是一个使用 Kotlin 基于 Java 原生反射 API 重新打造的一套简洁、高效的反射 API。
 
-`YukiReflection` 同时也是 [YukiHookAPI](https://github.com/fankes/YukiHookAPI) 正在使用的核心功能。
+`YukiReflection` 同时也是 [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI) 正在使用的核心功能。
 
 名称取自 [《ももくり》女主 栗原 雪(Yuki)](https://www.bilibili.com/bangumi/play/ss5016)。
 
@@ -24,7 +24,7 @@
 
 ## 灵感来源
 
-`YukiReflection` 最初是集成在 [YukiHookAPI](https://github.com/fankes/YukiHookAPI) 项目中的核心功能，现在进行了解耦合，使得这套反射 API 可以在任何 Java 和 Android 平台的项目中使用。
+`YukiReflection` 最初是集成在 [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI) 项目中的核心功能，现在进行了解耦合，使得这套反射 API 可以在任何 Java 和 Android 平台的项目中使用。
 
 现在，我们只需要编写少量的代码，就能实现一个简单的反射调用。
 
