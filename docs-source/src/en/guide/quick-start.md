@@ -18,6 +18,8 @@
 
 - Java 11 and above
 
+- Java 17 and above (Since API `1.0.3`)
+
 ## Project Requirements
 
 The project needs to be created using `Android Studio` or `IntelliJ IDEA` and the type is an Java or Android project and the Kotlin environment dependency has been integrated.
@@ -120,18 +122,18 @@ In this case, you should go to the [Documentation](https://fankes.github.io/Yuki
 
 #### Configure Java Version
 
-Modify the Java version of Kotlin in your project `build.gradle.kts` or `build.gradle` to 11 or above.
+Modify the Java version of Kotlin in your project `build.gradle.kts` or `build.gradle` to 17 or above.
 
 > Kotlin DSL
 
 ```kt
 android {
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 ```
@@ -141,11 +143,17 @@ android {
 ```groovy
 android {
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
 }
 ```
+
+::: warning
+
+Since API **1.0.3**, the Java version used by Kotlin defaults to 17, and versions 11 and below are no longer supported.
+
+:::

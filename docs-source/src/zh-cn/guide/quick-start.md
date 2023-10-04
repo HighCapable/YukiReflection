@@ -18,6 +18,8 @@
 
 - Java 11 及以上
 
+- Java 17 及以上 (Since API `1.0.3`)
+
 ## 项目要求
 
 项目需要使用 `Android Studio` 或 `IntelliJ IDEA` 创建且类型为 Java 或 Android 项目并已集成 Kotlin 环境依赖。
@@ -115,18 +117,18 @@ dependencies {
 
 #### 配置 Java 版本
 
-在你的项目 `build.gradle.kts` 或 `build.gradle` 中修改 Kotlin 的 Java 版本为 11 及以上。
+在你的项目 `build.gradle.kts` 或 `build.gradle` 中修改 Kotlin 的 Java 版本为 17 及以上。
 
 > Kotlin DSL
 
 ```kt
 android {
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 ```
@@ -136,11 +138,17 @@ android {
 ```groovy
 android {
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = '17'
     }
 }
 ```
+
+::: warning
+
+自 API **1.0.3** 版本后 Kotlin 使用的 Java 版本默认为 17，不再支持 11 及以下版本。
+
+:::
