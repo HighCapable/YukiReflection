@@ -37,6 +37,9 @@ import com.highcapable.yukireflection.finder.members.ConstructorFinder
 import com.highcapable.yukireflection.finder.members.FieldFinder
 import com.highcapable.yukireflection.finder.members.MethodFinder
 
+/** 定义 [ClassLoader] 装载实例方法体类型 */
+internal typealias ClassLoaderInitializer = () -> ClassLoader?
+
 /** 定义 [DexClassFinder] 方法体类型 */
 internal typealias ClassConditions = DexClassFinder.() -> Unit
 
