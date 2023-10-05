@@ -20,6 +20,24 @@ You can use the **Chrome Translation Plugin** to translate entire pages for refe
 
 > 这是自定义 `Member` 和 `Class` 相关功能的查找匹配以及 `invoke` 的封装类。
 
+## LazyClass <span class="symbol">- class</span>
+
+```kotlin:no-line-numbers
+open class LazyClass<T> internal constructor(
+    private val instance: Any,
+    private val initialize: Boolean,
+    private val loader: ClassLoaderInitializer?
+)
+```
+
+**Change Records**
+
+`v1.2.0` `added`
+
+**Function Illustrate**
+
+> 懒装载 `Class` 实例。
+
 ## ClassLoader.listOfClasses <span class="symbol">- ext-method</span>
 
 ```kotlin:no-line-numbers
@@ -377,6 +395,50 @@ classOf<DemoClass>()
 val customClassLoader: ClassLoader? = ... // 假设这个就是你的 ClassLoader
 classOf<DemoClass>(customClassLoader)
 ```
+
+## lazyClass <span class="symbol">- method</span>
+
+```kotlin:no-line-numbers
+fun lazyClass(name: String, initialize: Boolean, loader: ClassLoaderInitializer?): LazyClass.NonNull<Any>
+```
+
+```kotlin:no-line-numbers
+inline fun <reified T> lazyClass(name: String, initialize: Boolean, loader: ClassLoaderInitializer?): LazyClass.NonNull<T>
+```
+
+```kotlin:no-line-numbers
+fun lazyClass(variousClass: VariousClass, initialize: Boolean, loader: ClassLoaderInitializer?): LazyClass.NonNull<Any>
+```
+
+**Change Records**
+
+`v1.0.3` `added`
+
+**Function Illustrate**
+
+> 懒装载 `Class`。
+
+## lazyClassOrNull <span class="symbol">- method</span>
+
+```kotlin:no-line-numbers
+fun lazyClassOrNull(name: String, initialize: Boolean, loader: ClassLoaderInitializer?): LazyClass.Nullable<Any>
+```
+
+```kotlin:no-line-numbers
+inline fun <reified T> lazyClassOrNull(name: String, initialize: Boolean, loader: ClassLoaderInitializer?): LazyClass.Nullable<T>
+```
+
+```kotlin:no-line-numbers
+fun lazyClassOrNull(variousClass: VariousClass, initialize: Boolean, loader: ClassLoaderInitializer?): LazyClass.Nullable<Any>
+```
+
+**Change Records**
+
+`v1.0.3` `added`
+
+**Function Illustrate**
+
+> 懒装载 `Class`。
 
 ## String.hasClass <span class="symbol">- ext-method</span>
 
