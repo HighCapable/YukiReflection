@@ -16,7 +16,7 @@ features:
     details: 不仅仅是 Android 平台，它与 Java API 高度兼容，可使用在任何 Kotlin on JVM 的项目上，有 Java 的地方就可以使用。
   - title: 快速上手
     details: 简单易用，不需要繁琐的配置，不需要十足的开发经验，搭建环境集成依赖即可立即开始使用。
-footer: MIT License | Copyright (C) 2019-2023 HighCapable
+footer: Apache-2.0 License | Copyright (C) 2019-2023 HighCapable
 ---
 
 ### 来吧！让反射也变得诗情画意
