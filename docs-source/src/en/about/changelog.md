@@ -18,6 +18,7 @@ Time zone of version release date: **UTC+8**
 
 ### 1.0.3 | 2023.10.07 &ensp;<Badge type="tip" text="latest" vertical="middle" />
 
+- The license agreement has been changed from `MIT` to `Apache-2.0`, subsequent versions will be distributed under this license agreement, you should change the relevant license agreement after using this version
 - Change the type of dependency library from **Android Library** (aar) back to **Java Library** (jar)
 - Adapt and support the native Java platform (some functions are only available on the Android platform)
 - Fixed [fix get interfaces of class](https://github.com/HighCapable/YukiHookAPI/pull/38) issue and merged into `YukiReflection`

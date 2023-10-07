@@ -10,6 +10,7 @@
 
 ### 1.0.3 | 2023.10.07 &ensp;<Badge type="tip" text="最新" vertical="middle" />
 
+- 许可协议由 `MIT` 变更为 `Apache-2.0`，在此之后的版本将由此许可协议进行分发，您在使用此版本后应变更相关许可协议
 - 将依赖库的类型由 **Android Library** (aar) 修改回 **Java Library** (jar)
 - 适配并支持原生 Java 平台 (部分功能仅限 Android 平台)
 - 修复 [fix get interfaces of class](https://github.com/HighCapable/YukiHookAPI/pull/38) 问题并合并到 `YukiReflection`
