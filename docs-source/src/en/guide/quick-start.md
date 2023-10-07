@@ -116,7 +116,7 @@ Repeated integration will cause functional conflicts and cause exceptions.
 
 In this case, you should go to the [Documentation](https://highcapable.github.io/YukiHookAPI/zh-cn/) of **YukiHookAPI** view the corresponding usage tutorial.
 
-**YukiHookAPI** will be completely separated from **YukiReflection** in version 2.x.x, by which time you can use it with **YukiHookAPI** at the same time.
+**YukiHookAPI** will be completely separated from **YukiReflection** in version **2.0.0**, by which time you can use it with **YukiHookAPI** at the same time.
 
 :::
 
