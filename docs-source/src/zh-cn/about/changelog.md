@@ -8,7 +8,21 @@
 
 :::
 
-### 1.0.2 | 2023.04.25 &ensp;<Badge type="tip" text="最新" vertical="middle" />
+### 1.0.3 | 2023.10.07 &ensp;<Badge type="tip" text="最新" vertical="middle" />
+
+- 将依赖库的类型由 **Android Library** (aar) 修改回 **Java Library** (jar)
+- 适配并支持原生 Java 平台 (部分功能仅限 Android 平台)
+- 修复 [fix get interfaces of class](https://github.com/HighCapable/YukiHookAPI/pull/38) 问题并合并到 `YukiReflection`
+- 作废了 ~~`isAllowPrintingLogs`~~，请开始使用 `debugLog` 方法
+- 新增 `YukiReflection.TAG`
+- 作废了 ~~`YukiReflection.API_VERSION_NAME`~~、~~`YukiReflection.API_VERSION_CODE`~~，统一合并到 `YukiReflection.VERSION`
+- 重构方法查找中的 `remendy` 功能，现在可以对其进行分步打印异常
+- 多重方法查找结果类型由 `HashSet` 改为 `MutableList`
+- 新增使用 `method()`、`constructor()`、`field()` 可直接获取到类中的所有对象功能
+- `constructor()` 的行为不再是 `constructor { emptyParam() }`
+- 新增 `lazyClass`、`lazyClassOrNull` 方法，可延迟装载 `Class`
+
+### 1.0.2 | 2023.04.25 &ensp;<Badge type="warning" text="过旧" vertical="middle" />
 
 - 修复一个严重问题，`Member` 缓存未生效且持续存储最终引发 APP 内存溢出 (OOM)，感谢 [Art-Chen](https://github.com/Art-Chen)
 - 移除 `Member` 的直接缓存功能并作废 ~~`YukiReflection.Configs.isEnableMemberCache`~~，保留 `Class` 的缓存功能
