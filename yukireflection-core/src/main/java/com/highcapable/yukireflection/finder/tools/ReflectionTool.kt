@@ -166,6 +166,8 @@ internal object ReflectionTool {
                     simpleNameConditions?.also { instance.simpleName.also { n -> runCatching { and(it(n.cast(), n)) } } }
                     singleNameConditions?.also { classSingleName(instance).also { n -> runCatching { and(it(n.cast(), n)) } } }
                     modifiers?.also { runCatching { and(it(instance.cast())) } }
+                    annotationClass.takeIf { it.isNotEmpty() }
+                        ?.also { and(instance.annotations.isNotEmpty() && instance.annotations.any { e -> it.contains(e.annotationClass.qualifiedName) }) }
                     extendsClass.takeIf { it.isNotEmpty() }?.also { and(instance.hasExtends && it.contains(instance.superclass.name)) }
                     implementsClass.takeIf { it.isNotEmpty() }
                         ?.also { and(instance.interfaces.isNotEmpty() && instance.interfaces.any { e -> it.contains(e.name) }) }
