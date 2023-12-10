@@ -11,16 +11,16 @@ repositories:
 plugins:
   org.jetbrains.kotlin.jvm:
     alias: kotlin-jvm
-    version: 1.9.10
+    version: 1.9.21
   org.jetbrains.kotlin.android:
     alias: kotlin-android
     version-ref: kotlin-jvm
   org.jetbrains.compose:
     alias: jetbrains-compose
-    version: 1.5.10
+    version: 1.5.11
   com.android.application:
     alias: android-application
-    version: 8.1.2
+    version: 8.2.0
   com.vanniktech.maven.publish:
     alias: maven-publish
     version: 0.25.3
@@ -40,7 +40,7 @@ libraries:
       version: <no-spec>
   androidx.activity:
     activity-compose:
-      version: 1.8.0
+      version: 1.8.1
   androidx.core:
     core-ktx:
       version: 1.12.0
