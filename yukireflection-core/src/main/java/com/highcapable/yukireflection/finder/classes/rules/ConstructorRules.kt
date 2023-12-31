@@ -1,6 +1,6 @@
 /*
  * YukiReflection - An efficient Reflection API for Java and Android built in Kotlin.
- * Copyright (C) 2019-2023 HighCapable
+ * Copyright (C) 2019-2024 HighCapable
  * https://github.com/HighCapable/YukiReflection
  *
  * Apache License Version 2.0
