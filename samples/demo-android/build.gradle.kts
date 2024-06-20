@@ -1,6 +1,7 @@
 plugins {
     autowire(libs.plugins.android.application)
     autowire(libs.plugins.kotlin.android)
+    autowire(libs.plugins.compose.compiler)
 }
 
 android {
