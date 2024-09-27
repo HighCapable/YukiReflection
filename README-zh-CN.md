@@ -10,7 +10,7 @@
 
 🌴️ 一个使用 Kotlin 构建的用于 Java 和 Android 平台高效反射 API。
 
-[English](README.md) | 简体中文
+[English](README.md) | 简体中文 | [日本語](README-ja-JP.md)
 
 | <img src="https://github.com/HighCapable/.github/blob/main/img-src/logo.jpg?raw=true" width = "30" height = "30" alt="LOGO"/> | [HighCapable](https://github.com/HighCapable) |
 |-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|

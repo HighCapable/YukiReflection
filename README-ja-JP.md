@@ -8,42 +8,41 @@
 
 <img src="img-src/icon.png" width = "100" height = "100" alt="LOGO"/>
 
-🌴️ An efficient Reflection API for Java and Android built in Kotlin.
+🌴️ Kotlin でビルドされた Java および Android 用の効率的な リフレクション API です。
 
-English | [简体中文](README-zh-CN.md) | [日本語](README-ja-JP.md)
+[English](README.md) | [简体中文](README-zh-CN.md) | 日本語
 
 | <img src="https://github.com/HighCapable/.github/blob/main/img-src/logo.jpg?raw=true" width = "30" height = "30" alt="LOGO"/> | [HighCapable](https://github.com/HighCapable) |
 |-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 
-This project belongs to the above-mentioned organization, **click the link above to follow this organization** and discover more good projects.
+このプロジェクトは上記の組織に属しています。**この組織をフォローするには上記のリンクをクリック**して、その他の優れたプロジェクトをご確認ください。
 
-## What's this
+## これは何でしょうか?
 
-This is a concise and efficient Reflection API rebuilt based on Java's native Reflection API using Kotlin,
-and it is also the core function being used by [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI).
+これは、Kotlin を使用して Java のネイティブリフレクション API に基づいて再構築された簡潔で効率的なリフレクション API で、[YukiHookAPI](https://github.com/HighCapable/YukiHookAPI) で使用されているコア機能の一つです。
 
-The name is taken from ["ももくり" heroine Yuki Kurihara](https://www.bilibili.com/bangumi/play/ss5016).
+この API 名は[ももくり](https://www.comico.jp/comic/29)のヒロイン、[栗原雪](https://momokuri-anime.jp/character.html)の名前から由来しています。
 
-## Get Started
+## 始め方
 
-[Click here](https://highcapable.github.io/YukiReflection/en/) go to the documentation page for more detailed tutorials and content.
+より詳細なチュートリアルとコンテンツに関しては、[こちら](https://highcapable.github.io/YukiReflection/en/)をクリックしてドキュメントのページをご確認ください。
 
-## Promotion
+## プロモーション
 
 <!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
-     <h2>Hey, please stay! 👋</h2>
-     <h3>Here are related projects such as Android development tools, UI design, Gradle plugins, Xposed Modules and practical software. </h3>
-     <h3>If the project below can help you, please give me a star! </h3>
-     <h3>All projects are free, open source, and follow the corresponding open source license agreement. </h3>
-     <h1><a href="https://github.com/fankes/fankes/blob/main/project-promote/README.md">→ To see more about my projects, please click here ←</a></h1>
+     <h2>ねぇねぇ、ちょっときいて! 👋</h2>
+     <h3>ここではAndroid の開発ツール、UI デザイン、Gradle プラグイン、実用的なソフトウェアなどの関連したプロジェクトを紹介しています。</h3>
+     <h3>プロジェクトがあなたの役に立てたのであれば、Star を付けてください!</h3>
+     <h3>すべてのプロジェクトは無料でオープンソースであり、対応するオープンソースライセンスのルールに従っています。</h3>
+     <h1><a href="https://github.com/fankes/fankes/blob/main/project-promote/README.md">→ 私のプロジェクトの詳細はここをクリックしてください ←</a></h1>
 </div>
 
-## Star History
+## Star の推移
 
 ![Star History Chart](https://api.star-history.com/svg?repos=HighCapable/YukiReflection&type=Date)
 
-## License
+## ライセンス
 
 - [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
