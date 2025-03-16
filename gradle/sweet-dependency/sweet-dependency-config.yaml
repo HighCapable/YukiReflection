@@ -11,27 +11,27 @@ repositories:
 plugins:
   org.jetbrains.kotlin.jvm:
     alias: kotlin-jvm
-    version: 2.0.21
+    version: 2.1.10
   org.jetbrains.kotlin.android:
     alias: kotlin-android
     version-ref: kotlin-jvm
   org.jetbrains.compose:
     alias: jetbrains-compose
-    version: 1.7.0
+    version: 1.7.3
   org.jetbrains.kotlin.plugin.compose:
     alias: compose-compiler
     version-ref: kotlin-jvm
   com.android.application:
     alias: android-application
-    version: 8.5.2
+    version: 8.9.0
   com.vanniktech.maven.publish:
     alias: maven-publish
-    version: 0.30.0
+    version: 0.31.0
 
 libraries:
   androidx.compose:
     compose-bom:
-      version: 2024.10.01
+      version: 2025.03.00
   androidx.compose.foundation:
     foundation:
       version: <no-spec>
@@ -43,7 +43,7 @@ libraries:
       version: <no-spec>
   androidx.activity:
     activity-compose:
-      version: 1.9.3
+      version: 1.10.1
   androidx.core:
     core-ktx:
       version: 1.15.0
