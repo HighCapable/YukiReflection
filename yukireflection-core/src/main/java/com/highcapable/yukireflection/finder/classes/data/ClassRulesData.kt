@@ -49,6 +49,7 @@ import java.lang.reflect.Method
  * @param isNoExtendsClass 无继承的父类
  * @param isNoImplementsClass 无继承的实现的接口类
  * @param extendsClass 继承的父类名称数组
+ * @param annotationClass 注解类名称数组
  * @param implementsClass 实现的接口类名称数组
  * @param enclosingClass 包含的封闭类 (主类) 名称数组
  * @param memberRules [Member] 查找条件数据数组
@@ -68,6 +69,7 @@ internal class ClassRulesData internal constructor(
     var isNoExtendsClass: Boolean? = null,
     var isNoImplementsClass: Boolean? = null,
     var extendsClass: MutableList<String> = mutableListOf(),
+    var annotationClass: MutableList<String> = mutableListOf(),
     var implementsClass: MutableList<String> = mutableListOf(),
     var enclosingClass: MutableList<String> = mutableListOf(),
     var memberRules: MutableList<MemberRulesData> = mutableListOf(),
@@ -152,6 +154,7 @@ internal class ClassRulesData internal constructor(
             isAnonymousClass?.let { "isAnonymousClass:[$it]" } ?: "",
             isNoExtendsClass?.let { "isNoExtendsClass:[$it]" } ?: "",
             isNoImplementsClass?.let { "isNoImplementsClass:[$it]" } ?: "",
+            annotationClass.takeIf { it.isNotEmpty() }?.let { "annotationClass:$it" } ?: "",
             extendsClass.takeIf { it.isNotEmpty() }?.let { "extendsClass:$it" } ?: "",
             implementsClass.takeIf { it.isNotEmpty() }?.let { "implementsClass:$it" } ?: "",
             enclosingClass.takeIf { it.isNotEmpty() }?.let { "enclosingClass:$it" } ?: "",
@@ -166,10 +169,10 @@ internal class ClassRulesData internal constructor(
     override val isInitialize
         get() = super.isInitialize || fromPackages.isNotEmpty() || fullName != null || simpleName != null || singleName != null ||
             fullNameConditions != null || simpleNameConditions != null || singleNameConditions != null || isAnonymousClass != null ||
-            isNoExtendsClass != null || isNoImplementsClass != null || extendsClass.isNotEmpty() || enclosingClass.isNotEmpty() ||
+            isNoExtendsClass != null || isNoImplementsClass != null || annotationClass.isNotEmpty() || extendsClass.isNotEmpty() || enclosingClass.isNotEmpty() ||
             memberRules.isNotEmpty() || fieldRules.isNotEmpty() || methodRules.isNotEmpty() || constroctorRules.isNotEmpty()
 
     override fun toString() = "[$fromPackages][$fullName][$simpleName][$singleName][$fullNameConditions][$simpleNameConditions]" +
-        "[$singleNameConditions][$modifiers][$isAnonymousClass][$isNoExtendsClass][$isNoImplementsClass][$extendsClass][$implementsClass]" +
+        "[$singleNameConditions][$modifiers][$isAnonymousClass][$isNoExtendsClass][$isNoImplementsClass][$annotationClass][$extendsClass][$implementsClass]" +
         "[$enclosingClass][$memberRules][$fieldRules][$methodRules][$constroctorRules]" + super.toString()
 }

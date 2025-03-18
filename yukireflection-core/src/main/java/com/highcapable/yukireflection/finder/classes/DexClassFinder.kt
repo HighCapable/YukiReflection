@@ -268,6 +268,21 @@ class DexClassFinder internal constructor(
         rulesData.extendsClass.addAll(name.toList())
     }
 
+    /** 设置 [Class] 修饰的注解 */
+    inline fun <reified T> annotations() {
+        rulesData.annotationClass.add(T::class.java.name)
+    }
+
+    /**
+     * 设置 [Class] 修饰的注解
+     *
+     * 会同时查找 [name] 中所有匹配的注解类
+     * @param name [Class] 完整名称
+     */
+    fun annotations(vararg name: String) {
+        rulesData.annotationClass.addAll(name.toList())
+    }
+
     /** 设置 [Class] 实现的接口类 */
     inline fun <reified T> implements() {
         rulesData.implementsClass.add(T::class.java.name)
