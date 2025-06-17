@@ -17,6 +17,10 @@
 
 这个项目属于上述组织，**点击上方链接关注这个组织**，发现更多好项目。
 
+## 🚨 此项目已停止维护
+
+此项目由于很多未能解决的黑盒问题已被弃用，我们不再推荐任何人使用它，现在请迁移到全新设计的 [KavaRef](https://github.com/HighCapable/KavaRef)。
+
 ## 这是什么
 
 这是一个使用 Kotlin 基于 Java 原生反射 API 重新打造的一套简洁、高效的反射 API，同时也是 [YukiHookAPI](https://github.com/HighCapable/YukiHookAPI)
